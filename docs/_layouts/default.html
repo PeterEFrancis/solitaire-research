@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description | escape }}">
+    <meta name="theme-color" content="#244f3e">
+    <title>{{ page.title | escape }} · {{ site.title | escape }}</title>
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  </head>
+  <body>
+    <a class="skip-link" href="#guide">Skip to the research guide</a>
+    <header class="masthead">
+      <div class="masthead-inner">
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="Solitaire Research home">
+          <svg class="brand-mark" viewBox="0 0 38 42" fill="none" aria-hidden="true">
+            <rect x="2.5" y="3.5" width="25" height="33" rx="3" transform="rotate(-6 2.5 3.5)" stroke="currentColor"/>
+            <rect x="10.5" y="7.5" width="25" height="33" rx="3" fill="var(--paper)" stroke="currentColor"/>
+            <path d="M23 16 28 24 23 32 18 24Z" fill="currentColor"/>
+          </svg>
+          <span>{{ site.title }}<small>An open study of Klondike</small></span>
+        </a>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="#guide">The guide</a>
+          <a class="repository-link" href="{{ site.repository_url }}">Code &amp; data <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="page-grid">
+      <aside class="contents-panel">
+        <nav aria-label="Contents" class="contents">
+          <p class="eyebrow">In this report</p>
+          <ol>
+            {% for section in page.toc %}
+            <li><a href="#{{ section.id | escape }}">{{ section.title | escape }}</a></li>
+            {% endfor %}
+          </ol>
+          <a class="source-link" href="{{ site.source_guide_url }}">Read the source guide <span aria-hidden="true">↗</span></a>
+        </nav>
+      </aside>
+
+      <main id="guide" tabindex="-1">
+        <div class="report-kicker"><span class="kicker-line"></span> Strategy · experiments · evidence</div>
+        <details class="mobile-contents">
+          <summary>Jump to a section <span aria-hidden="true">+</span></summary>
+          <nav aria-label="Contents on a small screen">
+            <ol>
+              {% for section in page.toc %}
+              <li><a href="#{{ section.id | escape }}">{{ section.title | escape }}</a></li>
+              {% endfor %}
+            </ol>
+            <a href="{{ site.source_guide_url }}">Read the source guide ↗</a>
+          </nav>
+        </details>
+        <article class="research-article">
+          {{ content }}
+        </article>
+        <a class="back-to-top" href="#guide">Back to the guide <span aria-hidden="true">↑</span></a>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div><strong>{{ site.title }}</strong><p>A research notebook on how to play, what can be solved, and how we know.</p></div>
+      <a href="{{ site.repository_url }}">Explore the repository <span aria-hidden="true">↗</span></a>
+    </footer>
+    <script src="{{ '/assets/site.js' | relative_url }}" defer></script>
+  </body>
+</html>

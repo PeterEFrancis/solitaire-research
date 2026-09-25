@@ -24,6 +24,7 @@ class DeckConfig:
     t: Optional[int]
     draw_count: int = 1
     max_recycles: Optional[int] = 3
+    allow_tableau_stack_splitting: bool = True
 
     def __init__(
         self,
@@ -32,6 +33,7 @@ class DeckConfig:
         t: Optional[int] = None,
         draw_count: int = 1,
         max_recycles: Optional[int] = 3,
+        allow_tableau_stack_splitting: bool = True,
         *,
         ranks: Optional[int] = None,
         suits: Optional[int] = None,
@@ -62,12 +64,15 @@ class DeckConfig:
             raise ValueError("draw_count must be >= 1")
         if max_recycles is not None and max_recycles < 0:
             raise ValueError("max_recycles must be >= 0 or None")
+        if not isinstance(allow_tableau_stack_splitting, bool):
+            raise ValueError("allow_tableau_stack_splitting must be a boolean")
 
         object.__setattr__(self, "n", n)
         object.__setattr__(self, "k", k)
         object.__setattr__(self, "t", t)
         object.__setattr__(self, "draw_count", draw_count)
         object.__setattr__(self, "max_recycles", max_recycles)
+        object.__setattr__(self, "allow_tableau_stack_splitting", allow_tableau_stack_splitting)
 
     @property
     def suits(self) -> int:
@@ -94,6 +99,13 @@ class DeckConfig:
 
     def resolved_tableau_columns(self) -> int:
         return self.default_tableau_columns() if self.t is None else self.t
+
+    def rule_key(self) -> tuple[object, ...]:
+        """Identity shared by parameter records and cached game positions."""
+        return (
+            self.n, self.k, self.resolved_tableau_columns(), self.draw_count,
+            self.max_recycles, self.allow_tableau_stack_splitting,
+        )
 
 
 @dataclass(frozen=True)
@@ -132,11 +144,12 @@ class GameState:
 
     def position_key(self) -> tuple[object, ...]:
         return (
+            self.config.rule_key(),
             self.tableau,
             self.stock,
             self.waste,
             self.foundations,
-            self.recycles_used,
+            self.recycles_used if self.config.max_recycles is not None else 0,
         )
 
     def legal_moves(self) -> tuple[Move, ...]:
@@ -174,6 +187,12 @@ class GameState:
             for start in range(len(pile)):
                 moving_stack = pile[start:]
                 if not moving_stack[0].face_up:
+                    continue
+                if (
+                    not self.config.allow_tableau_stack_splitting
+                    and start > 0
+                    and pile[start - 1].face_up
+                ):
                     continue
                 if not is_packed_tableau_stack(moving_stack):
                     continue
@@ -226,7 +245,7 @@ class GameState:
         elif move.kind == MoveKind.RECYCLE:
             stock = [card.face_down_card() for card in reversed(waste)]
             waste = []
-            recycles_used += 1
+            recycles_used = recycles_used + 1 if self.config.max_recycles is not None else 0
 
         elif move.kind == MoveKind.WASTE_TO_FOUNDATION:
             card = waste.pop()

@@ -92,7 +92,9 @@ public:
         const std::array<double, kModelFeatureCount>& model_weights,
         int max_recycles = 3,
         uint64_t exact_node_limit = 0,
-        bool stock_as_reserve = false
+        bool stock_as_reserve = false,
+        int draw_count = 1,
+        bool allow_tableau_stack_splitting = true
     )
         : n_(n),
           tableau_count_(tableau_count),
@@ -102,7 +104,9 @@ public:
           model_weights_(model_weights),
           max_recycles_(max_recycles),
           exact_node_limit_(exact_node_limit),
-          stock_as_reserve_(stock_as_reserve) {
+          stock_as_reserve_(stock_as_reserve),
+          draw_count_(draw_count),
+          allow_tableau_stack_splitting_(allow_tableau_stack_splitting) {
         if (stock_as_reserve_) {
             model_enabled_ = false;
         }
@@ -127,6 +131,10 @@ public:
     uint64_t model_attempts = 0;
     uint64_t model_wins = 0;
     uint64_t model_steps = 0;
+    uint64_t model_foundation_cards = 0;
+    uint64_t model_foundation_cards_squared = 0;
+    uint64_t model_cutoffs = 0;
+    uint8_t last_model_foundation_cards = 0;
     uint64_t exact_fallbacks = 0;
     uint64_t exact_budget_exhaustions = 0;
 
@@ -140,11 +148,16 @@ private:
     int max_recycles_;
     uint64_t exact_node_limit_;
     bool stock_as_reserve_;
+    int draw_count_;
+    bool allow_tableau_stack_splitting_;
     std::unordered_set<Key, KeyHash> known_unsolvable_;
 
     bool exact_solvable(const State& initial) {
         std::vector<State> pending;
         pending.push_back(initial);
+        if (max_recycles_ < 0) {
+            pending.back().recycles = 0;
+        }
         std::unordered_set<Key, KeyHash> visited;
         visited.reserve(128);
         std::vector<Candidate> successors;
@@ -191,15 +204,29 @@ private:
         return false;
     }
 
+    void record_model_result(const State& state, bool cutoff) {
+        uint64_t cards = std::accumulate(
+            state.foundations.begin(), state.foundations.end(), uint64_t{0}
+        );
+        last_model_foundation_cards = static_cast<uint8_t>(cards);
+        model_foundation_cards += cards;
+        model_foundation_cards_squared += cards * cards;
+        model_cutoffs += cutoff;
+    }
+
     bool model_solves(const State& initial) {
         State state = initial;
+        if (max_recycles_ < 0) {
+            state.recycles = 0;
+        }
         std::unordered_set<Key, KeyHash> seen;
         seen.reserve(512);
         seen.insert(position_key(state, false));
         std::vector<Candidate> moves;
         moves.reserve(32);
 
-        for (int step = 0; step < model_max_steps_ && !is_won(state); ++step) {
+        int step = 0;
+        for (; step < model_max_steps_ && !is_won(state); ++step) {
             moves.clear();
             generate_successors(state, moves, false);
             const Candidate* choice = nullptr;
@@ -215,13 +242,16 @@ private:
                 }
             }
             if (choice == nullptr) {
+                record_model_result(state, false);
                 return false;
             }
             state = choice->state;
             seen.insert(choice_key);
             ++model_steps;
         }
-        return is_won(state);
+        bool won = is_won(state);
+        record_model_result(state, !won && step == model_max_steps_);
+        return won;
     }
 
     int suit(uint8_t card) const { return card_id(card) / n_; }
@@ -275,6 +305,10 @@ private:
     }
 
     bool packed_stack(const Pile& pile, int start) const {
+        if (!allow_tableau_stack_splitting_ && start > 0 &&
+            face_up(pile.cards[start - 1])) {
+            return false;
+        }
         for (int i = start; i < pile.size; ++i) {
             if (!face_up(pile.cards[i])) {
                 return false;
@@ -539,7 +573,8 @@ private:
         int foundation_support_demand = foundation_move
             ? visible_foundation_support_demand(state, foundation_card)
             : 0;
-        int recycle_pressure = kind == MoveType::Recycle ? state.recycles + 1 : 0;
+        int recycle_pressure = kind == MoveType::Recycle && max_recycles_ >= 0
+            ? state.recycles + 1 : 0;
         int draw_stock_remaining = kind == MoveType::Draw ? state.stock_size : 0;
         int revealed_card_tableau_moves = reveals_hidden
             ? count_tableau_destinations(next, revealed_card)
@@ -572,7 +607,8 @@ private:
         bool draw_buries_playable_waste = kind == MoveType::Draw &&
             state.waste_size > 0 &&
             exposed_card_playable(state, state.waste[state.waste_size - 1]);
-        int waste_play_recycle_pressure = waste_play ? state.recycles : 0;
+        int waste_play_recycle_pressure = waste_play && max_recycles_ >= 0
+            ? state.recycles : 0;
         int next_empty_source_moves = count_empty_source_moves(next);
         int foundation_lag = foundation_move
             ? static_cast<int>(*std::max_element(
@@ -693,7 +729,9 @@ private:
         for (uint8_t foundation : state.foundations) {
             key.bytes[cursor++] = foundation;
         }
-        key.bytes[cursor++] = state.recycles;
+        // Unlimited passes have no remaining-pass resource. Including the
+        // historical count would turn stock cycles into distinct positions.
+        key.bytes[cursor++] = max_recycles_ < 0 ? 0 : state.recycles;
         return key;
     }
 
@@ -794,21 +832,24 @@ private:
 
         if (!stock_as_reserve_ && state.stock_size > 0) {
             State next = state;
-            uint8_t card = next.stock[--next.stock_size];
-            next.waste[next.waste_size++] = make_face_up(card);
+            int cards_to_draw = std::min(draw_count_, static_cast<int>(next.stock_size));
+            for (int index = 0; index < cards_to_draw; ++index) {
+                uint8_t card = next.stock[--next.stock_size];
+                next.waste[next.waste_size++] = make_face_up(card);
+            }
             double model_score = model_move_score(
                 state, next, MoveType::Draw, -1, -1, 1
             );
             result.push_back({10, model_score, std::move(next)});
         } else if (!stock_as_reserve_ && state.waste_size > 0 &&
-                   state.recycles < max_recycles_) {
+                   (max_recycles_ < 0 || state.recycles < max_recycles_)) {
             State next = state;
             next.stock_size = next.waste_size;
             for (int i = 0; i < next.waste_size; ++i) {
                 next.stock[i] = make_face_down(next.waste[next.waste_size - 1 - i]);
             }
             next.waste_size = 0;
-            ++next.recycles;
+            next.recycles = max_recycles_ < 0 ? 0 : next.recycles + 1;
             double model_score = model_move_score(
                 state, next, MoveType::Recycle, -1, -1, 1
             );
@@ -868,20 +909,7 @@ private:
             }
 
             for (int start = 0; start < source_pile.size; ++start) {
-                bool packed = true;
-                for (int i = start; i < source_pile.size; ++i) {
-                    if (!face_up(source_pile.cards[i])) {
-                        packed = false;
-                        break;
-                    }
-                    if (i + 1 < source_pile.size &&
-                        (rank(source_pile.cards[i]) != rank(source_pile.cards[i + 1]) + 1 ||
-                         color(source_pile.cards[i]) == color(source_pile.cards[i + 1]))) {
-                        packed = false;
-                        break;
-                    }
-                }
-                if (!packed) {
+                if (!packed_stack(source_pile, start)) {
                     continue;
                 }
 
@@ -944,6 +972,8 @@ struct Options {
     bool stock_as_reserve = false;
     int model_max_steps = 300;
     int max_recycles = 3;
+    int draw_count = 1;
+    bool allow_tableau_stack_splitting = true;
     std::array<double, kModelFeatureCount> model_weights{
         8.042521340737478,
         5.079509858778847,
@@ -992,6 +1022,7 @@ struct Options {
     std::string completion;
     std::string verify_stock_order;
     std::string benchmark_outcomes;
+    std::string benchmark_foundations;
 };
 
 uint64_t factorial(int value) {
@@ -1238,6 +1269,10 @@ Options parse_options(int argc, char** argv) {
             options.stock_as_reserve = true;
             continue;
         }
+        if (argument == "--no-tableau-splitting") {
+            options.allow_tableau_stack_splitting = false;
+            continue;
+        }
         if (i + 1 >= argc) {
             throw std::runtime_error("missing value for " + argument);
         }
@@ -1257,6 +1292,11 @@ Options parse_options(int argc, char** argv) {
                 throw std::runtime_error("--benchmark-outcomes requires a path");
             }
             options.benchmark_outcomes = value;
+        } else if (argument == "--benchmark-foundations") {
+            if (value.empty()) {
+                throw std::runtime_error("--benchmark-foundations requires a path");
+            }
+            options.benchmark_foundations = value;
         } else if (argument == "--exact-node-limit") {
             options.exact_node_limit = std::stoull(value);
         } else if (argument == "--check-stock-orders") {
@@ -1267,6 +1307,8 @@ Options parse_options(int argc, char** argv) {
             options.model_max_steps = std::stoi(value);
         } else if (argument == "--max-recycles") {
             options.max_recycles = std::stoi(value);
+        } else if (argument == "--draw-count") {
+            options.draw_count = std::stoi(value);
         } else if (argument == "--model-weights") {
             std::stringstream stream(value);
             std::string item;
@@ -1290,6 +1332,36 @@ Options parse_options(int argc, char** argv) {
             throw std::runtime_error("unknown argument " + argument);
         }
     }
+    if (options.draw_count != 1 && options.draw_count != 3) {
+        throw std::runtime_error("--draw-count must be 1 or 3");
+    }
+    if (options.max_recycles < -1 || options.max_recycles > UINT8_MAX) {
+        throw std::runtime_error("--max-recycles must be -1 (unlimited) or 0 through 255");
+    }
+    bool variant = options.draw_count != 1 || options.max_recycles != 3 ||
+        !options.allow_tableau_stack_splitting;
+    if (variant &&
+        (options.benchmark_deals == 0 || !options.model_only ||
+         !options.model_enabled || options.stock_order_tableaus != 0 ||
+         !options.verify_stock_order.empty() || options.collapse_stock_order ||
+         options.stock_as_reserve)) {
+        throw std::runtime_error(
+            "rule variants require a model-only benchmark without stock-order/reserve modes"
+        );
+    }
+    if (!options.benchmark_foundations.empty() &&
+        (options.benchmark_deals == 0 || !options.model_enabled ||
+         !options.model_only || options.stock_order_tableaus != 0 ||
+         !options.verify_stock_order.empty() || options.collapse_stock_order ||
+         options.stock_as_reserve)) {
+        throw std::runtime_error(
+            "--benchmark-foundations requires a model-only benchmark without stock-order/reserve modes"
+        );
+    }
+    if (!options.benchmark_foundations.empty() &&
+        options.benchmark_foundations == options.benchmark_outcomes) {
+        throw std::runtime_error("benchmark foundations and outcomes need different paths");
+    }
     if (!options.benchmark_outcomes.empty() &&
         (options.benchmark_deals == 0 || options.stock_order_tableaus != 0 ||
          !options.verify_stock_order.empty() || options.collapse_stock_order)) {
@@ -1298,7 +1370,7 @@ Options parse_options(int argc, char** argv) {
         );
     }
     if (options.n < 2 || options.n > 13 || options.threads < 1 ||
-        options.model_max_steps < 1 || options.max_recycles < 0 ||
+        options.model_max_steps < 1 ||
         (options.benchmark_deals == 0 && options.stock_order_tableaus == 0 &&
          options.verify_stock_order.empty() &&
          (options.output.empty() || options.completion.empty()))) {
@@ -1344,11 +1416,18 @@ int run_benchmark(const Options& options) {
     if (!options.benchmark_outcomes.empty()) {
         outcomes.resize(options.benchmark_deals);
     }
+    std::vector<uint8_t> foundations;
+    if (!options.benchmark_foundations.empty()) {
+        foundations.resize(options.benchmark_deals);
+    }
     std::atomic<uint64_t> next_deal{0};
     std::atomic<uint64_t> solvable{0};
     std::atomic<uint64_t> model_attempts{0};
     std::atomic<uint64_t> model_wins{0};
     std::atomic<uint64_t> model_steps{0};
+    std::atomic<uint64_t> model_foundation_cards{0};
+    std::atomic<uint64_t> model_foundation_cards_squared{0};
+    std::atomic<uint64_t> model_cutoffs{0};
     std::atomic<uint64_t> exact_fallbacks{0};
     std::atomic<uint64_t> exact_budget_exhaustions{0};
     std::atomic<uint64_t> expanded{0};
@@ -1364,7 +1443,10 @@ int run_benchmark(const Options& options) {
             options.model_max_steps,
             options.model_weights,
             options.max_recycles,
-            options.exact_node_limit
+            options.exact_node_limit,
+            false,
+            options.draw_count,
+            options.allow_tableau_stack_splitting
         );
         std::vector<uint8_t> deal(4 * options.n);
         while (true) {
@@ -1387,10 +1469,16 @@ int run_benchmark(const Options& options) {
             if (!outcomes.empty()) {
                 outcomes[index] = outcome;
             }
+            if (!foundations.empty()) {
+                foundations[index] = solver.last_model_foundation_cards;
+            }
         }
         model_attempts.fetch_add(solver.model_attempts);
         model_wins.fetch_add(solver.model_wins);
         model_steps.fetch_add(solver.model_steps);
+        model_foundation_cards.fetch_add(solver.model_foundation_cards);
+        model_foundation_cards_squared.fetch_add(solver.model_foundation_cards_squared);
+        model_cutoffs.fetch_add(solver.model_cutoffs);
         exact_fallbacks.fetch_add(solver.exact_fallbacks);
         exact_budget_exhaustions.fetch_add(solver.exact_budget_exhaustions);
         expanded.fetch_add(solver.expanded_positions);
@@ -1423,11 +1511,36 @@ int run_benchmark(const Options& options) {
         std::cout << "benchmark_outcomes " << options.benchmark_outcomes << "\n";
         std::cout << "benchmark_outcomes_bytes " << outcomes.size() << "\n";
     }
+    if (!options.benchmark_foundations.empty()) {
+        int file = open(
+            options.benchmark_foundations.c_str(),
+            O_WRONLY | O_CREAT | O_TRUNC,
+            0644
+        );
+        if (file < 0) {
+            throw std::runtime_error("could not open benchmark foundations file");
+        }
+        bool written = write_exact(file, foundations.data(), foundations.size(), 0);
+        int close_result = close(file);
+        if (!written || close_result != 0) {
+            throw std::runtime_error("could not write benchmark foundations file");
+        }
+        std::cout << "benchmark_foundations " << options.benchmark_foundations << "\n";
+        std::cout << "benchmark_foundations_bytes " << foundations.size() << "\n";
+    }
     std::cout << "benchmark_deals " << options.benchmark_deals << "\n";
+    std::cout << "draw_count " << options.draw_count << "\n";
+    std::cout << "max_recycles " << options.max_recycles << "\n";
+    std::cout << "allow_tableau_stack_splitting "
+              << options.allow_tableau_stack_splitting << "\n";
     std::cout << "solvable_deals " << solvable.load() << "\n";
     std::cout << "model_attempts " << model_attempts.load() << "\n";
     std::cout << "model_wins " << model_wins.load() << "\n";
     std::cout << "model_steps " << model_steps.load() << "\n";
+    std::cout << "model_foundation_cards " << model_foundation_cards.load() << "\n";
+    std::cout << "model_foundation_cards_squared "
+              << model_foundation_cards_squared.load() << "\n";
+    std::cout << "model_cutoffs " << model_cutoffs.load() << "\n";
     std::cout << "exact_fallbacks " << exact_fallbacks.load() << "\n";
     std::cout << "exact_budget_exhaustions "
               << exact_budget_exhaustions.load() << "\n";
@@ -1524,7 +1637,10 @@ int check_stock_orders(const Options& options) {
             options.model_max_steps,
             options.model_weights,
             options.max_recycles,
-            options.exact_node_limit
+            options.exact_node_limit,
+            false,
+            options.draw_count,
+            options.allow_tableau_stack_splitting
         );
         std::vector<uint8_t> shuffled(4 * options.n);
         std::vector<uint8_t> deal(4 * options.n);
@@ -1752,7 +1868,9 @@ int run_stock_collapsed(const Options& options) {
             options.model_weights,
             options.max_recycles,
             options.exact_node_limit,
-            options.stock_as_reserve
+            options.stock_as_reserve,
+            options.draw_count,
+            options.allow_tableau_stack_splitting
         );
         std::vector<uint8_t> deal(4 * n);
         while (true) {
@@ -1938,7 +2056,10 @@ int main(int argc, char** argv) {
                 options.model_max_steps,
                 options.model_weights,
                 options.max_recycles,
-                options.exact_node_limit
+                options.exact_node_limit,
+                false,
+                options.draw_count,
+                options.allow_tableau_stack_splitting
             );
             std::vector<uint8_t> deal(4 * n);
             while (true) {

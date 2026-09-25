@@ -68,6 +68,9 @@ def save_parameter_record(
         "n": config.n,
         "k": config.k,
         "t": config.resolved_tableau_columns(),
+        "draw_count": config.draw_count,
+        "max_recycles": config.max_recycles,
+        "allow_tableau_stack_splitting": config.allow_tableau_stack_splitting,
         "parameters": {
             name: float(value) for name, value in zip(PARAMETER_NAMES, parameters)
         },
@@ -107,9 +110,14 @@ def find_record(config: DeckConfig, data: dict[str, Any]) -> Optional[dict[str, 
 
 
 def find_record_index(config: DeckConfig, data: dict[str, Any]) -> Optional[int]:
-    target = (config.n, config.k, config.resolved_tableau_columns())
+    target = config.rule_key()
     for index, record in enumerate(data.get("records", [])):
-        record_key = (record.get("n"), record.get("k"), record.get("t"))
+        # Legacy records refer only to the historical draw-one/four-pass rules.
+        record_key = (
+            record.get("n"), record.get("k"), record.get("t"),
+            record.get("draw_count", 1), record.get("max_recycles", 3),
+            record.get("allow_tableau_stack_splitting", True),
+        )
         if record_key == target:
             return index
     return None

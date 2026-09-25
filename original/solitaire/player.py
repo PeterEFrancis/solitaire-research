@@ -5,7 +5,7 @@ import math
 import random
 from typing import Optional, Sequence
 
-from .game import GameState, Move, MoveKind
+from .game import DeckConfig, GameState, Move, MoveKind
 
 
 PARAMETER_NAMES = (
@@ -53,6 +53,38 @@ PARAMETER_NAMES = (
     "unsafe_foundation_distance",
 )
 FEATURE_COUNT = len(PARAMETER_NAMES)
+_WASTE_LOOKAHEAD_FEATURES = frozenset({
+    "waste_unlocks_playable", "waste_unlocks_foundation_ready",
+    "waste_unlocks_tableau_moves",
+})
+
+
+def hidden_information_features(config: DeckConfig) -> frozenset[str]:
+    """Features that can consult identities unseen before a candidate move.
+
+    This is a conservative feature-level classification, not a state-specific
+    observation mask. In draw-three, buried packet cards need never have been
+    exposed as the waste top; face_up flags do not record observation history.
+    """
+    names = {
+        "revealed_card_low_rank", "revealed_card_foundation_ready",
+        "revealed_card_tableau_moves", "revealed_card_foundation_distance",
+        "draw_playable", "draw_foundation_ready", "draw_tableau_moves",
+        "empty_king_queen_access", "next_foundation_moves", "next_reveal_moves",
+        "next_empty_source_moves",
+    }
+    if config.draw_count != 1:
+        names.update(_WASTE_LOOKAHEAD_FEATURES)
+    return frozenset(names)
+
+
+def waste_memory_features(config: DeckConfig) -> frozenset[str]:
+    """Draw-one waste lookahead can use memory of previously exposed cards."""
+    if config.draw_count != 1:
+        return frozenset()
+    return _WASTE_LOOKAHEAD_FEATURES
+
+
 DEFAULT_PARAMETERS = (
     8.0,
     5.0,
@@ -256,7 +288,9 @@ def move_features(state: GameState, move: Move) -> tuple[float, ...]:
         else 0
     )
     recycle_pressure = float(
-        state.recycles_used + 1 if move.kind == MoveKind.RECYCLE else 0
+        state.recycles_used + 1
+        if move.kind == MoveKind.RECYCLE and state.config.max_recycles is not None
+        else 0
     )
     draw_stock_remaining = float(
         len(state.stock) if move.kind == MoveKind.DRAW else 0
@@ -310,7 +344,8 @@ def move_features(state: GameState, move: Move) -> tuple[float, ...]:
     )
     waste_play_recycle_pressure = float(
         state.recycles_used
-        if move.kind in (MoveKind.WASTE_TO_FOUNDATION, MoveKind.WASTE_TO_TABLEAU)
+        if state.config.max_recycles is not None
+        and move.kind in (MoveKind.WASTE_TO_FOUNDATION, MoveKind.WASTE_TO_TABLEAU)
         else 0
     )
     next_empty_source_moves = float(

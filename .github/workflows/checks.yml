@@ -1,0 +1,27 @@
+name: Research checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build native player
+        run: python3 scripts/build_native.py
+      - name: Test Klondike engine and experiments
+        working-directory: original
+        env:
+          NATIVE_SOLVER_TEST_BINARY: ${{ github.workspace }}/original/brute_force/native_solver.variants
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python3 -m unittest discover
+      - name: Test one-color research
+        working-directory: one-color
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python3 -m unittest discover
+      - name: Check published guide is synchronized
+        run: python3 scripts/build_pages.py --check

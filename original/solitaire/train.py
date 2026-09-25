@@ -328,7 +328,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--ranks", type=int, default=None, help=argparse.SUPPRESS)
     parser.add_argument("--tableau-columns", type=int, default=None, help=argparse.SUPPRESS)
     parser.add_argument("--draw-count", type=int, default=1)
-    parser.add_argument("--max-recycles", type=int, default=3)
+    parser.add_argument("--max-recycles", type=int, default=3, help="recycles allowed; -1 means unlimited")
+    parser.add_argument("--no-tableau-splitting", action="store_true", help="move only whole face-up tableau runs")
     parser.add_argument("--parameter-file", type=Path, default=DEFAULT_PARAMETER_PATH)
     parser.add_argument("--no-load-parameters", action="store_true")
     parser.add_argument("--no-save-parameters", action="store_true")
@@ -349,7 +350,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         k=k,
         t=t,
         draw_count=args.draw_count,
-        max_recycles=args.max_recycles,
+        max_recycles=None if args.max_recycles == -1 else args.max_recycles,
+        allow_tableau_stack_splitting=not args.no_tableau_splitting,
     )
     stored_parameters = None
     if not args.no_load_parameters:
@@ -418,7 +420,9 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         "Deck: "
         f"n={deck_config.n} k={deck_config.k} "
         f"t={deck_config.resolved_tableau_columns()} "
-        f"suits={deck_config.suits} ranks={deck_config.ranks}"
+        f"suits={deck_config.suits} ranks={deck_config.ranks} "
+        f"draw_count={deck_config.draw_count} max_recycles={deck_config.max_recycles} "
+        f"allow_tableau_stack_splitting={deck_config.allow_tableau_stack_splitting}"
     )
     print(
         "Parameter source: "
