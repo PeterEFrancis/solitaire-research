@@ -6,6 +6,14 @@ terms and an independently confirmed gain over stage 7. The newer
 observable five-term/eight-term scorecards. The historical tuning results and
 stage-4 solvability bounds described below remain preserved.
 
+The new `variant_study.py` performs policy-only experiments for draw-three,
+unlimited recycles, and the specified Vegas game. It trains on 5,000 deals,
+selects on 50,000 different deals, and tests frozen policies on 250,000 fresh
+deals per rule set. Full records and the strongest tested policy portfolios
+are linked from the guide. Those policy failures are not exact losses.
+The exact datasets and stock-order proofs below retain their original rules;
+the native CLI rejects variant options in those historical checkpoint modes.
+
 This folder classifies solitaire deals for a fixed `k`. The `n=1` through
 `n=3` datasets are exhaustive modulo rule-preserving suit labels. The `n=4`
 dataset additionally uses the proved fact that the order of its six stock cards

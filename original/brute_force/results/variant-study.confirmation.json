@@ -1,0 +1,2694 @@
+{
+  "complete": true,
+  "evaluation_options": {
+    "deals": 250000,
+    "max_steps": 1000,
+    "seed": 2026092699,
+    "threads": 4
+  },
+  "finished_at": "2026-09-25T17:46:51.265681+00:00",
+  "frozen_policies_sha256": "724294a5c7ff732f148af23836ad1ee60f470384e3224e3b560784dccbbc6a7d",
+  "protocol": "variant-study.protocol.json",
+  "schema_version": 1,
+  "variants": {
+    "draw1_limited": {
+      "config": {
+        "allow_tableau_stack_splitting": true,
+        "draw_count": 1,
+        "k": 2,
+        "max_recycles": 3,
+        "n": 13,
+        "t": 7
+      },
+      "evaluations": {
+        "full": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 8267794,
+          "foundation_cards_squared": 384439574,
+          "foundations_file": "variant-study-outcomes/draw1_limited.full.foundations.u8.gz",
+          "foundations_sha256": "0468e8744d2b26161442c2c47a6d1e772f0b90c77f4ce8e0c81589c1a1a00974",
+          "mean_foundation_cards": 33.071176,
+          "mean_foundation_cards_95_ci": [
+            32.98857113645753,
+            33.15378086354247
+          ],
+          "mean_net_dollars": 113.35588000000001,
+          "mean_net_dollars_95_ci": [
+            112.94285568228764,
+            113.76890431771236
+          ],
+          "mean_steps": 125.792716,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 0,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 0.0,
+            "discordant_deals": 0,
+            "net_wins": 0,
+            "paired_normal_95_ci_percentage_points": [
+              0.0,
+              0.0
+            ],
+            "standard_error_percentage_points": 0.0
+          },
+          "steps": 31448179,
+          "win_rate": 0.543632,
+          "win_rate_wilson_95_ci": [
+            0.5416788572988367,
+            0.5455838018375168
+          ],
+          "wins": 135908,
+          "wins_file": "variant-study-outcomes/draw1_limited.full.wins.u8.gz",
+          "wins_sha256": "7cefe8977a2e86bf41ced357fa432a7bd3b7637ae27c2bca5f335e33c37fd720"
+        },
+        "portfolio": {
+          "attempts_per_deal": 5,
+          "deals": 250000,
+          "foundation_cards": 9457754,
+          "foundation_cards_squared": 455919726,
+          "foundations_file": "variant-study-outcomes/draw1_limited.portfolio.foundations.u8.gz",
+          "foundations_sha256": "e2ea56f514e333750c8144e2639a3598ae87a96eeb06f685ce08370309765ce0",
+          "mean_foundation_cards": 37.831016,
+          "mean_foundation_cards_95_ci": [
+            37.753355002100456,
+            37.90867699789954
+          ],
+          "mean_net_dollars": 137.15508,
+          "mean_net_dollars_95_ci": [
+            136.76677501050227,
+            137.5433849894977
+          ],
+          "members": [
+            "portfolio_0",
+            "portfolio_1",
+            "portfolio_2",
+            "portfolio_3",
+            "portfolio_4"
+          ],
+          "paired_vs_selected_full": {
+            "b_candidate_wins_baseline_loses": 27392,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 10.9568,
+            "discordant_deals": 27392,
+            "net_wins": 27392,
+            "paired_normal_95_ci_percentage_points": [
+              10.834360842264687,
+              11.079239157735312
+            ],
+            "standard_error_percentage_points": 0.062470105931077144
+          },
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 27392,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 10.9568,
+            "discordant_deals": 27392,
+            "net_wins": 27392,
+            "paired_normal_95_ci_percentage_points": [
+              10.834360842264687,
+              11.079239157735312
+            ],
+            "standard_error_percentage_points": 0.062470105931077144
+          },
+          "win_rate": 0.6532,
+          "win_rate_wilson_95_ci": [
+            0.6513319635318815,
+            0.6550633284485305
+          ],
+          "wins": 163300,
+          "wins_file": "variant-study-outcomes/draw1_limited.portfolio.wins.u8.gz",
+          "wins_sha256": "a9ae42439a2ef7c00b3a7b1711a0d235153fc4c5206e7a6ef82621f194291f30"
+        },
+        "portfolio_0": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 8267794,
+          "foundation_cards_squared": 384439574,
+          "foundations_file": "variant-study-outcomes/draw1_limited.portfolio_0.foundations.u8.gz",
+          "foundations_sha256": "0468e8744d2b26161442c2c47a6d1e772f0b90c77f4ce8e0c81589c1a1a00974",
+          "mean_foundation_cards": 33.071176,
+          "mean_foundation_cards_95_ci": [
+            32.98857113645753,
+            33.15378086354247
+          ],
+          "mean_net_dollars": 113.35588000000001,
+          "mean_net_dollars_95_ci": [
+            112.94285568228764,
+            113.76890431771236
+          ],
+          "mean_steps": 125.792716,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 0,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 0.0,
+            "discordant_deals": 0,
+            "net_wins": 0,
+            "paired_normal_95_ci_percentage_points": [
+              0.0,
+              0.0
+            ],
+            "standard_error_percentage_points": 0.0
+          },
+          "steps": 31448179,
+          "win_rate": 0.543632,
+          "win_rate_wilson_95_ci": [
+            0.5416788572988367,
+            0.5455838018375168
+          ],
+          "wins": 135908,
+          "wins_file": "variant-study-outcomes/draw1_limited.portfolio_0.wins.u8.gz",
+          "wins_sha256": "7cefe8977a2e86bf41ced357fa432a7bd3b7637ae27c2bca5f335e33c37fd720"
+        },
+        "portfolio_1": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 8234703,
+          "foundation_cards_squared": 382665185,
+          "foundations_file": "variant-study-outcomes/draw1_limited.portfolio_1.foundations.u8.gz",
+          "foundations_sha256": "c0c7b8c6ca074df1c1551eecf108747fdb167f7e279f4170c104e448a15b6533",
+          "mean_foundation_cards": 32.938812,
+          "mean_foundation_cards_95_ci": [
+            32.856054757105426,
+            33.02156924289457
+          ],
+          "mean_net_dollars": 112.69405999999998,
+          "mean_net_dollars_95_ci": [
+            112.28027378552713,
+            113.10784621447286
+          ],
+          "mean_steps": 124.5034,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 7933,
+            "c_baseline_wins_candidate_loses": 8578,
+            "deals": 250000,
+            "delta_percentage_points": -0.258,
+            "discordant_deals": 16511,
+            "net_wins": -645,
+            "paired_normal_95_ci_percentage_points": [
+              -0.35873325887062896,
+              -0.15726674112937103
+            ],
+            "standard_error_percentage_points": 0.05139546423566967
+          },
+          "steps": 31125850,
+          "win_rate": 0.541052,
+          "win_rate_wilson_95_ci": [
+            0.5390980374271137,
+            0.5430047009957313
+          ],
+          "wins": 135263,
+          "wins_file": "variant-study-outcomes/draw1_limited.portfolio_1.wins.u8.gz",
+          "wins_sha256": "4070931dc9c34ca5dd7f8b2ff44dac7c0c683b5f70fc7d5dc64a94072d4ed4f4"
+        },
+        "portfolio_2": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 8240003,
+          "foundation_cards_squared": 382836467,
+          "foundations_file": "variant-study-outcomes/draw1_limited.portfolio_2.foundations.u8.gz",
+          "foundations_sha256": "af6f8a7cc83b4b2bbd8b929935540262d3d86813fabcd5f5287228283224474b",
+          "mean_foundation_cards": 32.960012,
+          "mean_foundation_cards_95_ci": [
+            32.87732087924546,
+            33.04270312075454
+          ],
+          "mean_net_dollars": 112.80006,
+          "mean_net_dollars_95_ci": [
+            112.38660439622731,
+            113.21351560377269
+          ],
+          "mean_steps": 124.138668,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 7220,
+            "c_baseline_wins_candidate_loses": 7840,
+            "deals": 250000,
+            "delta_percentage_points": -0.248,
+            "discordant_deals": 15060,
+            "net_wins": -620,
+            "paired_normal_95_ci_percentage_points": [
+              -0.3442051667739905,
+              -0.1517948332260095
+            ],
+            "standard_error_percentage_points": 0.04908517071377057
+          },
+          "steps": 31034667,
+          "win_rate": 0.541152,
+          "win_rate_wilson_95_ci": [
+            0.5391980682226125,
+            0.5431046671271127
+          ],
+          "wins": 135288,
+          "wins_file": "variant-study-outcomes/draw1_limited.portfolio_2.wins.u8.gz",
+          "wins_sha256": "7c49c2a6eefd5c4ed2247eedab9fa4cbe49fb9e050e062b931b5759f1f411a29"
+        },
+        "portfolio_3": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 7873882,
+          "foundation_cards_squared": 361562770,
+          "foundations_file": "variant-study-outcomes/draw1_limited.portfolio_3.foundations.u8.gz",
+          "foundations_sha256": "67ff28597f2232f43f0f718682fb6505e7b722d29d1d11b6e0fc23356637982f",
+          "mean_foundation_cards": 31.495528,
+          "mean_foundation_cards_95_ci": [
+            31.411977302340738,
+            31.579078697659263
+          ],
+          "mean_net_dollars": 105.47764000000001,
+          "mean_net_dollars_95_ci": [
+            105.0598865117037,
+            105.89539348829632
+          ],
+          "mean_steps": 127.937096,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 16290,
+            "c_baseline_wins_candidate_loses": 24928,
+            "deals": 250000,
+            "delta_percentage_points": -3.4552,
+            "discordant_deals": 41218,
+            "net_wins": -8638,
+            "paired_normal_95_ci_percentage_points": [
+              -3.6137891432327693,
+              -3.2966108567672308
+            ],
+            "standard_error_percentage_points": 0.08091431499951043
+          },
+          "steps": 31984274,
+          "win_rate": 0.50908,
+          "win_rate_wilson_95_ci": [
+            0.5071202347570369,
+            0.511039486203682
+          ],
+          "wins": 127270,
+          "wins_file": "variant-study-outcomes/draw1_limited.portfolio_3.wins.u8.gz",
+          "wins_sha256": "85bc4d43fbcf619cd6a3a00a43010979aa8472b1cd6460f3d0d103df31098bb9"
+        },
+        "portfolio_4": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 7707782,
+          "foundation_cards_squared": 350810268,
+          "foundations_file": "variant-study-outcomes/draw1_limited.portfolio_4.foundations.u8.gz",
+          "foundations_sha256": "15bba68e062b96645a967d26988525a68cd00223a5ceb78ccab679deabb04ae0",
+          "mean_foundation_cards": 30.831128,
+          "mean_foundation_cards_95_ci": [
+            30.747724582746507,
+            30.914531417253492
+          ],
+          "mean_net_dollars": 102.15564,
+          "mean_net_dollars_95_ci": [
+            101.73862291373254,
+            102.57265708626747
+          ],
+          "mean_steps": 118.450464,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 15055,
+            "c_baseline_wins_candidate_loses": 28103,
+            "deals": 250000,
+            "delta_percentage_points": -5.2192,
+            "discordant_deals": 43158,
+            "net_wins": -13048,
+            "paired_normal_95_ci_percentage_points": [
+              -5.380779029161788,
+              -5.0576209708382125
+            ],
+            "standard_error_percentage_points": 0.08243979503516491
+          },
+          "steps": 29612616,
+          "win_rate": 0.49144,
+          "win_rate_wilson_95_ci": [
+            0.48948046984471955,
+            0.4933997932143382
+          ],
+          "wins": 122860,
+          "wins_file": "variant-study-outcomes/draw1_limited.portfolio_4.wins.u8.gz",
+          "wins_sha256": "b14a7e6e79c4800ef79351df41bae3d96ee4b8b2304789190f9b7012a48aaf52"
+        },
+        "simple_eight": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 7707782,
+          "foundation_cards_squared": 350810268,
+          "foundations_file": "variant-study-outcomes/draw1_limited.simple_eight.foundations.u8.gz",
+          "foundations_sha256": "15bba68e062b96645a967d26988525a68cd00223a5ceb78ccab679deabb04ae0",
+          "mean_foundation_cards": 30.831128,
+          "mean_foundation_cards_95_ci": [
+            30.747724582746507,
+            30.914531417253492
+          ],
+          "mean_net_dollars": 102.15564,
+          "mean_net_dollars_95_ci": [
+            101.73862291373254,
+            102.57265708626747
+          ],
+          "mean_steps": 118.450464,
+          "paired_vs_simple_baseline": {
+            "b_candidate_wins_baseline_loses": 1695,
+            "c_baseline_wins_candidate_loses": 1298,
+            "deals": 250000,
+            "delta_percentage_points": 0.1588,
+            "discordant_deals": 2993,
+            "net_wins": 397,
+            "paired_normal_95_ci_percentage_points": [
+              0.1159139846450535,
+              0.20168601535494654
+            ],
+            "standard_error_percentage_points": 0.02188102214797106
+          },
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 15055,
+            "c_baseline_wins_candidate_loses": 28103,
+            "deals": 250000,
+            "delta_percentage_points": -5.2192,
+            "discordant_deals": 43158,
+            "net_wins": -13048,
+            "paired_normal_95_ci_percentage_points": [
+              -5.380779029161788,
+              -5.0576209708382125
+            ],
+            "standard_error_percentage_points": 0.08243979503516491
+          },
+          "steps": 29612616,
+          "win_rate": 0.49144,
+          "win_rate_wilson_95_ci": [
+            0.48948046984471955,
+            0.4933997932143382
+          ],
+          "wins": 122860,
+          "wins_file": "variant-study-outcomes/draw1_limited.simple_eight.wins.u8.gz",
+          "wins_sha256": "b14a7e6e79c4800ef79351df41bae3d96ee4b8b2304789190f9b7012a48aaf52"
+        },
+        "simple_eight_baseline": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 7694158,
+          "foundation_cards_squared": 349910414,
+          "foundations_file": "variant-study-outcomes/draw1_limited.simple_eight_baseline.foundations.u8.gz",
+          "foundations_sha256": "b90322cc305268cfea4cce84b30e1932930c031cb047a1d381f89ad73e4b9d5a",
+          "mean_foundation_cards": 30.776632,
+          "mean_foundation_cards_95_ci": [
+            30.693250882720722,
+            30.860013117279276
+          ],
+          "mean_net_dollars": 101.88316,
+          "mean_net_dollars_95_ci": [
+            101.46625441360362,
+            102.30006558639639
+          ],
+          "mean_steps": 114.079896,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 15010,
+            "c_baseline_wins_candidate_loses": 28455,
+            "deals": 250000,
+            "delta_percentage_points": -5.378,
+            "discordant_deals": 43465,
+            "net_wins": -13445,
+            "paired_normal_95_ci_percentage_points": [
+              -5.54008213026484,
+              -5.2159178697351605
+            ],
+            "standard_error_percentage_points": 0.0826964839881358
+          },
+          "steps": 28519974,
+          "win_rate": 0.489852,
+          "win_rate_wilson_95_ci": [
+            0.4878926107175492,
+            0.4918117011426516
+          ],
+          "wins": 122463,
+          "wins_file": "variant-study-outcomes/draw1_limited.simple_eight_baseline.wins.u8.gz",
+          "wins_sha256": "bfc8e41ffe87ff2ad73af642c059fc906194dcd5eca87b01b863c1216be73a27"
+        },
+        "stage8_baseline": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 8267794,
+          "foundation_cards_squared": 384439574,
+          "foundations_file": "variant-study-outcomes/draw1_limited.stage8_baseline.foundations.u8.gz",
+          "foundations_sha256": "0468e8744d2b26161442c2c47a6d1e772f0b90c77f4ce8e0c81589c1a1a00974",
+          "mean_foundation_cards": 33.071176,
+          "mean_foundation_cards_95_ci": [
+            32.98857113645753,
+            33.15378086354247
+          ],
+          "mean_net_dollars": 113.35588000000001,
+          "mean_net_dollars_95_ci": [
+            112.94285568228764,
+            113.76890431771236
+          ],
+          "mean_steps": 125.792716,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 0,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 0.0,
+            "discordant_deals": 0,
+            "net_wins": 0,
+            "paired_normal_95_ci_percentage_points": [
+              0.0,
+              0.0
+            ],
+            "standard_error_percentage_points": 0.0
+          },
+          "steps": 31448179,
+          "win_rate": 0.543632,
+          "win_rate_wilson_95_ci": [
+            0.5416788572988367,
+            0.5455838018375168
+          ],
+          "wins": 135908,
+          "wins_file": "variant-study-outcomes/draw1_limited.stage8_baseline.wins.u8.gz",
+          "wins_sha256": "7cefe8977a2e86bf41ced357fa432a7bd3b7637ae27c2bca5f335e33c37fd720"
+        },
+        "visible": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 7873882,
+          "foundation_cards_squared": 361562770,
+          "foundations_file": "variant-study-outcomes/draw1_limited.visible.foundations.u8.gz",
+          "foundations_sha256": "67ff28597f2232f43f0f718682fb6505e7b722d29d1d11b6e0fc23356637982f",
+          "mean_foundation_cards": 31.495528,
+          "mean_foundation_cards_95_ci": [
+            31.411977302340738,
+            31.579078697659263
+          ],
+          "mean_net_dollars": 105.47764000000001,
+          "mean_net_dollars_95_ci": [
+            105.0598865117037,
+            105.89539348829632
+          ],
+          "mean_steps": 127.937096,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 16290,
+            "c_baseline_wins_candidate_loses": 24928,
+            "deals": 250000,
+            "delta_percentage_points": -3.4552,
+            "discordant_deals": 41218,
+            "net_wins": -8638,
+            "paired_normal_95_ci_percentage_points": [
+              -3.6137891432327693,
+              -3.2966108567672308
+            ],
+            "standard_error_percentage_points": 0.08091431499951043
+          },
+          "steps": 31984274,
+          "win_rate": 0.50908,
+          "win_rate_wilson_95_ci": [
+            0.5071202347570369,
+            0.511039486203682
+          ],
+          "wins": 127270,
+          "wins_file": "variant-study-outcomes/draw1_limited.visible.wins.u8.gz",
+          "wins_sha256": "85bc4d43fbcf619cd6a3a00a43010979aa8472b1cd6460f3d0d103df31098bb9"
+        }
+      }
+    },
+    "draw1_unlimited": {
+      "config": {
+        "allow_tableau_stack_splitting": true,
+        "draw_count": 1,
+        "k": 2,
+        "max_recycles": null,
+        "n": 13,
+        "t": 7
+      },
+      "evaluations": {
+        "full": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 8385002,
+          "foundation_cards_squared": 393872740,
+          "foundations_file": "variant-study-outcomes/draw1_unlimited.full.foundations.u8.gz",
+          "foundations_sha256": "ab853234bd6755f603efab89d1be566126aa4059f82d8d534fbf851615dfc135",
+          "mean_foundation_cards": 33.540008,
+          "mean_foundation_cards_95_ci": [
+            33.4568004594928,
+            33.6232155405072
+          ],
+          "mean_net_dollars": 115.70004,
+          "mean_net_dollars_95_ci": [
+            115.28400229746399,
+            116.11607770253602
+          ],
+          "mean_steps": 157.940804,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 19730,
+            "c_baseline_wins_candidate_loses": 16439,
+            "deals": 250000,
+            "delta_percentage_points": 1.3164,
+            "discordant_deals": 36169,
+            "net_wins": 3291,
+            "paired_normal_95_ci_percentage_points": [
+              1.167389771290457,
+              1.465410228709543
+            ],
+            "standard_error_percentage_points": 0.07602702390702927
+          },
+          "steps": 39485201,
+          "win_rate": 0.560012,
+          "win_rate_wilson_95_ci": [
+            0.5580652972242518,
+            0.5619568585350724
+          ],
+          "wins": 140003,
+          "wins_file": "variant-study-outcomes/draw1_unlimited.full.wins.u8.gz",
+          "wins_sha256": "87ed93151b2bdfe06331ec57eb286e199b508feab8d2b5aba46f64f93553ca8d"
+        },
+        "portfolio": {
+          "attempts_per_deal": 6,
+          "deals": 250000,
+          "foundation_cards": 9756814,
+          "foundation_cards_squared": 474491984,
+          "foundations_file": "variant-study-outcomes/draw1_unlimited.portfolio.foundations.u8.gz",
+          "foundations_sha256": "4eb8eb3da805337002fdb108f07752872058cbd33e494c6e578b0ca742ad5f58",
+          "mean_foundation_cards": 39.027256,
+          "mean_foundation_cards_95_ci": [
+            38.95136144656255,
+            39.10315055343745
+          ],
+          "mean_net_dollars": 143.13628,
+          "mean_net_dollars_95_ci": [
+            142.75680723281275,
+            143.51575276718725
+          ],
+          "members": [
+            "portfolio_0",
+            "portfolio_1",
+            "portfolio_2",
+            "portfolio_3",
+            "portfolio_4",
+            "portfolio_5"
+          ],
+          "paired_vs_selected_full": {
+            "b_candidate_wins_baseline_loses": 30584,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 12.2336,
+            "discordant_deals": 30584,
+            "net_wins": 30584,
+            "paired_normal_95_ci_percentage_points": [
+              12.105154359925152,
+              12.362045640074848
+            ],
+            "standard_error_percentage_points": 0.06553469404948803
+          },
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 33875,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 13.55,
+            "discordant_deals": 33875,
+            "net_wins": 33875,
+            "paired_normal_95_ci_percentage_points": [
+              13.41583778089322,
+              13.684162219106783
+            ],
+            "standard_error_percentage_points": 0.06845136959915411
+          },
+          "win_rate": 0.682348,
+          "win_rate_wilson_95_ci": [
+            0.6805202352960796,
+            0.6841701609313625
+          ],
+          "wins": 170587,
+          "wins_file": "variant-study-outcomes/draw1_unlimited.portfolio.wins.u8.gz",
+          "wins_sha256": "3d52e4f18de362f7c7f126ecae77e64f4c89ed5498f315abfc6620cf6a6dd516"
+        },
+        "portfolio_0": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 8385002,
+          "foundation_cards_squared": 393872740,
+          "foundations_file": "variant-study-outcomes/draw1_unlimited.portfolio_0.foundations.u8.gz",
+          "foundations_sha256": "ab853234bd6755f603efab89d1be566126aa4059f82d8d534fbf851615dfc135",
+          "mean_foundation_cards": 33.540008,
+          "mean_foundation_cards_95_ci": [
+            33.4568004594928,
+            33.6232155405072
+          ],
+          "mean_net_dollars": 115.70004,
+          "mean_net_dollars_95_ci": [
+            115.28400229746399,
+            116.11607770253602
+          ],
+          "mean_steps": 157.940804,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 19730,
+            "c_baseline_wins_candidate_loses": 16439,
+            "deals": 250000,
+            "delta_percentage_points": 1.3164,
+            "discordant_deals": 36169,
+            "net_wins": 3291,
+            "paired_normal_95_ci_percentage_points": [
+              1.167389771290457,
+              1.465410228709543
+            ],
+            "standard_error_percentage_points": 0.07602702390702927
+          },
+          "steps": 39485201,
+          "win_rate": 0.560012,
+          "win_rate_wilson_95_ci": [
+            0.5580652972242518,
+            0.5619568585350724
+          ],
+          "wins": 140003,
+          "wins_file": "variant-study-outcomes/draw1_unlimited.portfolio_0.wins.u8.gz",
+          "wins_sha256": "87ed93151b2bdfe06331ec57eb286e199b508feab8d2b5aba46f64f93553ca8d"
+        },
+        "portfolio_1": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 8397275,
+          "foundation_cards_squared": 393828249,
+          "foundations_file": "variant-study-outcomes/draw1_unlimited.portfolio_1.foundations.u8.gz",
+          "foundations_sha256": "914527076111d5a5a6ca299a33b2751d2b1a95a8d4f62e014c1691f48241c9cf",
+          "mean_foundation_cards": 33.5891,
+          "mean_foundation_cards_95_ci": [
+            33.50621381349583,
+            33.67198618650417
+          ],
+          "mean_net_dollars": 115.94550000000001,
+          "mean_net_dollars_95_ci": [
+            115.53106906747917,
+            116.35993093252085
+          ],
+          "mean_steps": 155.086496,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 19593,
+            "c_baseline_wins_candidate_loses": 16550,
+            "deals": 250000,
+            "delta_percentage_points": 1.2172,
+            "discordant_deals": 36143,
+            "net_wins": 3043,
+            "paired_normal_95_ci_percentage_points": [
+              1.0682304402413056,
+              1.3661695597586945
+            ],
+            "standard_error_percentage_points": 0.07600627406102736
+          },
+          "steps": 38771624,
+          "win_rate": 0.55902,
+          "win_rate_wilson_95_ci": [
+            0.5570728462990617,
+            0.5609653399456114
+          ],
+          "wins": 139755,
+          "wins_file": "variant-study-outcomes/draw1_unlimited.portfolio_1.wins.u8.gz",
+          "wins_sha256": "62e3416d31d8f7a2690ab3854d5086d8403d88eb9dee47855059e4db88d88f3d"
+        },
+        "portfolio_2": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 8400446,
+          "foundation_cards_squared": 393977592,
+          "foundations_file": "variant-study-outcomes/draw1_unlimited.portfolio_2.foundations.u8.gz",
+          "foundations_sha256": "1c2424fe1f7b7e46bf59230d23a3c5f479b2704d49e89cafffd26f78d5eab6a2",
+          "mean_foundation_cards": 33.601784,
+          "mean_foundation_cards_95_ci": [
+            33.518921442997744,
+            33.68464655700226
+          ],
+          "mean_net_dollars": 116.00892000000002,
+          "mean_net_dollars_95_ci": [
+            115.59460721498871,
+            116.4232327850113
+          ],
+          "mean_steps": 155.028788,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 19598,
+            "c_baseline_wins_candidate_loses": 16510,
+            "deals": 250000,
+            "delta_percentage_points": 1.2352,
+            "discordant_deals": 36108,
+            "net_wins": 3088,
+            "paired_normal_95_ci_percentage_points": [
+              1.0863049387381727,
+              1.3840950612618272
+            ],
+            "standard_error_percentage_points": 0.07596826392540507
+          },
+          "steps": 38757197,
+          "win_rate": 0.5592,
+          "win_rate_wilson_95_ci": [
+            0.5572529275348903,
+            0.5611452531781671
+          ],
+          "wins": 139800,
+          "wins_file": "variant-study-outcomes/draw1_unlimited.portfolio_2.wins.u8.gz",
+          "wins_sha256": "733de21d2cd87e73d96b400d2b9f43d2fc12aade2aae7b1da99dff0d4ff55b0f"
+        },
+        "portfolio_3": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 8248887,
+          "foundation_cards_squared": 385510063,
+          "foundations_file": "variant-study-outcomes/draw1_unlimited.portfolio_3.foundations.u8.gz",
+          "foundations_sha256": "620582fe116fbb04fee6df12cd9e8cb81e53c08e8bb308954a22f2efbf785a69",
+          "mean_foundation_cards": 32.995548,
+          "mean_foundation_cards_95_ci": [
+            32.91208459227917,
+            33.07901140772083
+          ],
+          "mean_net_dollars": 112.97773999999998,
+          "mean_net_dollars_95_ci": [
+            112.56042296139586,
+            113.39505703860414
+          ],
+          "mean_steps": 134.166704,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 0,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 0.0,
+            "discordant_deals": 0,
+            "net_wins": 0,
+            "paired_normal_95_ci_percentage_points": [
+              0.0,
+              0.0
+            ],
+            "standard_error_percentage_points": 0.0
+          },
+          "steps": 33541676,
+          "win_rate": 0.546848,
+          "win_rate_wilson_95_ci": [
+            0.544895953195529,
+            0.5487986071092904
+          ],
+          "wins": 136712,
+          "wins_file": "variant-study-outcomes/draw1_unlimited.portfolio_3.wins.u8.gz",
+          "wins_sha256": "44de5a5c017f086aef63d91aa3373cd1e054ccfd0a99825642738328e5c87573"
+        },
+        "portfolio_4": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 7935073,
+          "foundation_cards_squared": 366601249,
+          "foundations_file": "variant-study-outcomes/draw1_unlimited.portfolio_4.foundations.u8.gz",
+          "foundations_sha256": "455a7910149efa1b7e4b4342ae5a0b27373bb3f3fa19996d35e546a4b0f200e3",
+          "mean_foundation_cards": 31.740292,
+          "mean_foundation_cards_95_ci": [
+            31.656312397519223,
+            31.824271602480778
+          ],
+          "mean_net_dollars": 106.70146,
+          "mean_net_dollars_95_ci": [
+            106.28156198759612,
+            107.1213580124039
+          ],
+          "mean_steps": 133.612572,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 18071,
+            "c_baseline_wins_candidate_loses": 25341,
+            "deals": 250000,
+            "delta_percentage_points": -2.9080000000000004,
+            "discordant_deals": 43412,
+            "net_wins": -7270,
+            "paired_normal_95_ci_percentage_points": [
+              -3.0709494554116,
+              -2.7450505445884
+            ],
+            "standard_error_percentage_points": 0.08313900494954218
+          },
+          "steps": 33403143,
+          "win_rate": 0.517768,
+          "win_rate_wilson_95_ci": [
+            0.5158090159483708,
+            0.5197264380196969
+          ],
+          "wins": 129442,
+          "wins_file": "variant-study-outcomes/draw1_unlimited.portfolio_4.wins.u8.gz",
+          "wins_sha256": "a871159f20099b159df402d0a87802ab7cad0d229517cadcf988687a16805eaf"
+        },
+        "portfolio_5": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 7799656,
+          "foundation_cards_squared": 357235224,
+          "foundations_file": "variant-study-outcomes/draw1_unlimited.portfolio_5.foundations.u8.gz",
+          "foundations_sha256": "ea07603499bf42e1b9261efa20da8b8f41c71f6b8fd7ef02523ce5af1d0a731f",
+          "mean_foundation_cards": 31.198624,
+          "mean_foundation_cards_95_ci": [
+            31.11495347748335,
+            31.282294522516647
+          ],
+          "mean_net_dollars": 103.99312,
+          "mean_net_dollars_95_ci": [
+            103.57476738741676,
+            104.41147261258322
+          ],
+          "mean_steps": 128.604896,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 17125,
+            "c_baseline_wins_candidate_loses": 28272,
+            "deals": 250000,
+            "delta_percentage_points": -4.4588,
+            "discordant_deals": 45397,
+            "net_wins": -11147,
+            "paired_normal_95_ci_percentage_points": [
+              -4.624923527466616,
+              -4.292676472533385
+            ],
+            "standard_error_percentage_points": 0.08475845922525964
+          },
+          "steps": 32151224,
+          "win_rate": 0.50226,
+          "win_rate_wilson_95_ci": [
+            0.5003000363683391,
+            0.5042198941791528
+          ],
+          "wins": 125565,
+          "wins_file": "variant-study-outcomes/draw1_unlimited.portfolio_5.wins.u8.gz",
+          "wins_sha256": "710b95b7846921e330a588f14a0c663c09d1702ef52a0eec9cf8474c81c588c6"
+        },
+        "simple_eight": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 7799656,
+          "foundation_cards_squared": 357235224,
+          "foundations_file": "variant-study-outcomes/draw1_unlimited.simple_eight.foundations.u8.gz",
+          "foundations_sha256": "ea07603499bf42e1b9261efa20da8b8f41c71f6b8fd7ef02523ce5af1d0a731f",
+          "mean_foundation_cards": 31.198624,
+          "mean_foundation_cards_95_ci": [
+            31.11495347748335,
+            31.282294522516647
+          ],
+          "mean_net_dollars": 103.99312,
+          "mean_net_dollars_95_ci": [
+            103.57476738741676,
+            104.41147261258322
+          ],
+          "mean_steps": 128.604896,
+          "paired_vs_simple_baseline": {
+            "b_candidate_wins_baseline_loses": 2855,
+            "c_baseline_wins_candidate_loses": 2000,
+            "deals": 250000,
+            "delta_percentage_points": 0.34199999999999997,
+            "discordant_deals": 4855,
+            "net_wins": 855,
+            "paired_normal_95_ci_percentage_points": [
+              0.2873900378835768,
+              0.3966099621164232
+            ],
+            "standard_error_percentage_points": 0.02786273755394469
+          },
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 17125,
+            "c_baseline_wins_candidate_loses": 28272,
+            "deals": 250000,
+            "delta_percentage_points": -4.4588,
+            "discordant_deals": 45397,
+            "net_wins": -11147,
+            "paired_normal_95_ci_percentage_points": [
+              -4.624923527466616,
+              -4.292676472533385
+            ],
+            "standard_error_percentage_points": 0.08475845922525964
+          },
+          "steps": 32151224,
+          "win_rate": 0.50226,
+          "win_rate_wilson_95_ci": [
+            0.5003000363683391,
+            0.5042198941791528
+          ],
+          "wins": 125565,
+          "wins_file": "variant-study-outcomes/draw1_unlimited.simple_eight.wins.u8.gz",
+          "wins_sha256": "710b95b7846921e330a588f14a0c663c09d1702ef52a0eec9cf8474c81c588c6"
+        },
+        "simple_eight_baseline": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 7779227,
+          "foundation_cards_squared": 355407279,
+          "foundations_file": "variant-study-outcomes/draw1_unlimited.simple_eight_baseline.foundations.u8.gz",
+          "foundations_sha256": "4fe85b877a42bd22fc3e9e888d23f7397a074fb7721c8637c619963d44892f96",
+          "mean_foundation_cards": 31.116908,
+          "mean_foundation_cards_95_ci": [
+            31.033441546384957,
+            31.20037445361504
+          ],
+          "mean_net_dollars": 103.58454,
+          "mean_net_dollars_95_ci": [
+            103.16720773192478,
+            104.0018722680752
+          ],
+          "mean_steps": 120.774684,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 16641,
+            "c_baseline_wins_candidate_loses": 28643,
+            "deals": 250000,
+            "delta_percentage_points": -4.800800000000001,
+            "discordant_deals": 45284,
+            "net_wins": -12002,
+            "paired_normal_95_ci_percentage_points": [
+              -4.9665676462203825,
+              -4.635032353779618
+            ],
+            "standard_error_percentage_points": 0.08457688382436421
+          },
+          "steps": 30193671,
+          "win_rate": 0.49884,
+          "win_rate_wilson_95_ci": [
+            0.49688007417216384,
+            0.5007999614760261
+          ],
+          "wins": 124710,
+          "wins_file": "variant-study-outcomes/draw1_unlimited.simple_eight_baseline.wins.u8.gz",
+          "wins_sha256": "b7d758bfde3e88564f8fdc37575c9cc1ecd836c4ce31668c8d18aa768ed37201"
+        },
+        "stage8_baseline": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 8248887,
+          "foundation_cards_squared": 385510063,
+          "foundations_file": "variant-study-outcomes/draw1_unlimited.stage8_baseline.foundations.u8.gz",
+          "foundations_sha256": "620582fe116fbb04fee6df12cd9e8cb81e53c08e8bb308954a22f2efbf785a69",
+          "mean_foundation_cards": 32.995548,
+          "mean_foundation_cards_95_ci": [
+            32.91208459227917,
+            33.07901140772083
+          ],
+          "mean_net_dollars": 112.97773999999998,
+          "mean_net_dollars_95_ci": [
+            112.56042296139586,
+            113.39505703860414
+          ],
+          "mean_steps": 134.166704,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 0,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 0.0,
+            "discordant_deals": 0,
+            "net_wins": 0,
+            "paired_normal_95_ci_percentage_points": [
+              0.0,
+              0.0
+            ],
+            "standard_error_percentage_points": 0.0
+          },
+          "steps": 33541676,
+          "win_rate": 0.546848,
+          "win_rate_wilson_95_ci": [
+            0.544895953195529,
+            0.5487986071092904
+          ],
+          "wins": 136712,
+          "wins_file": "variant-study-outcomes/draw1_unlimited.stage8_baseline.wins.u8.gz",
+          "wins_sha256": "44de5a5c017f086aef63d91aa3373cd1e054ccfd0a99825642738328e5c87573"
+        },
+        "visible": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 7935073,
+          "foundation_cards_squared": 366601249,
+          "foundations_file": "variant-study-outcomes/draw1_unlimited.visible.foundations.u8.gz",
+          "foundations_sha256": "455a7910149efa1b7e4b4342ae5a0b27373bb3f3fa19996d35e546a4b0f200e3",
+          "mean_foundation_cards": 31.740292,
+          "mean_foundation_cards_95_ci": [
+            31.656312397519223,
+            31.824271602480778
+          ],
+          "mean_net_dollars": 106.70146,
+          "mean_net_dollars_95_ci": [
+            106.28156198759612,
+            107.1213580124039
+          ],
+          "mean_steps": 133.612572,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 18071,
+            "c_baseline_wins_candidate_loses": 25341,
+            "deals": 250000,
+            "delta_percentage_points": -2.9080000000000004,
+            "discordant_deals": 43412,
+            "net_wins": -7270,
+            "paired_normal_95_ci_percentage_points": [
+              -3.0709494554116,
+              -2.7450505445884
+            ],
+            "standard_error_percentage_points": 0.08313900494954218
+          },
+          "steps": 33403143,
+          "win_rate": 0.517768,
+          "win_rate_wilson_95_ci": [
+            0.5158090159483708,
+            0.5197264380196969
+          ],
+          "wins": 129442,
+          "wins_file": "variant-study-outcomes/draw1_unlimited.visible.wins.u8.gz",
+          "wins_sha256": "a871159f20099b159df402d0a87802ab7cad0d229517cadcf988687a16805eaf"
+        }
+      }
+    },
+    "draw3_limited": {
+      "config": {
+        "allow_tableau_stack_splitting": true,
+        "draw_count": 3,
+        "k": 2,
+        "max_recycles": 3,
+        "n": 13,
+        "t": 7
+      },
+      "evaluations": {
+        "full": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2983393,
+          "foundation_cards_squared": 92089913,
+          "foundations_file": "variant-study-outcomes/draw3_limited.full.foundations.u8.gz",
+          "foundations_sha256": "232fbf68f6adb185bc108998a194773b4419fc4fe21f5efe2e8e1eb89e53a61a",
+          "mean_foundation_cards": 11.933572,
+          "mean_foundation_cards_95_ci": [
+            11.874647943291912,
+            11.992496056708088
+          ],
+          "mean_net_dollars": 7.6678599999999975,
+          "mean_net_dollars_95_ci": [
+            7.373239716459558,
+            7.962480283540444
+          ],
+          "mean_steps": 76.719092,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 20385,
+            "c_baseline_wins_candidate_loses": 7391,
+            "deals": 250000,
+            "delta_percentage_points": 5.1976,
+            "discordant_deals": 27776,
+            "net_wins": 12994,
+            "paired_normal_95_ci_percentage_points": [
+              5.068538197404224,
+              5.326661802595776
+            ],
+            "standard_error_percentage_points": 0.06584906845931839
+          },
+          "steps": 19179773,
+          "win_rate": 0.109476,
+          "win_rate_wilson_95_ci": [
+            0.10825805467223802,
+            0.11070594659826836
+          ],
+          "wins": 27369,
+          "wins_file": "variant-study-outcomes/draw3_limited.full.wins.u8.gz",
+          "wins_sha256": "a2983ed0c834256ecce7e658b499584acba5ef467195b024366dd19c5e97b178"
+        },
+        "portfolio": {
+          "attempts_per_deal": 6,
+          "deals": 250000,
+          "foundation_cards": 3737454,
+          "foundation_cards_squared": 128984716,
+          "foundations_file": "variant-study-outcomes/draw3_limited.portfolio.foundations.u8.gz",
+          "foundations_sha256": "d4cefec0d9602ef411cd26b18bcfeeca0712cb61e4668dd8b5d3c38c0d7cd96d",
+          "mean_foundation_cards": 14.949816,
+          "mean_foundation_cards_95_ci": [
+            14.88278021360033,
+            15.01685178639967
+          ],
+          "mean_net_dollars": 22.749080000000006,
+          "mean_net_dollars_95_ci": [
+            22.41390106800165,
+            23.08425893199835
+          ],
+          "members": [
+            "portfolio_0",
+            "portfolio_1",
+            "portfolio_2",
+            "portfolio_3",
+            "portfolio_4",
+            "portfolio_5"
+          ],
+          "paired_vs_selected_full": {
+            "b_candidate_wins_baseline_loses": 12823,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 5.1292,
+            "discordant_deals": 12823,
+            "net_wins": 12823,
+            "paired_normal_95_ci_percentage_points": [
+              5.042729258152654,
+              5.215670741847346
+            ],
+            "standard_error_percentage_points": 0.044118536120773544
+          },
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 25817,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 10.3268,
+            "discordant_deals": 25817,
+            "net_wins": 25817,
+            "paired_normal_95_ci_percentage_points": [
+              10.20751322324764,
+              10.44608677675236
+            ],
+            "standard_error_percentage_points": 0.060861718732221154
+          },
+          "win_rate": 0.160768,
+          "win_rate_wilson_95_ci": [
+            0.15933335863286877,
+            0.16221306637301156
+          ],
+          "wins": 40192,
+          "wins_file": "variant-study-outcomes/draw3_limited.portfolio.wins.u8.gz",
+          "wins_sha256": "ce9e7023e6637a4afece9cca7f8b80eb99d78c9896e616d67cd3962790a267a2"
+        },
+        "portfolio_0": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2983393,
+          "foundation_cards_squared": 92089913,
+          "foundations_file": "variant-study-outcomes/draw3_limited.portfolio_0.foundations.u8.gz",
+          "foundations_sha256": "232fbf68f6adb185bc108998a194773b4419fc4fe21f5efe2e8e1eb89e53a61a",
+          "mean_foundation_cards": 11.933572,
+          "mean_foundation_cards_95_ci": [
+            11.874647943291912,
+            11.992496056708088
+          ],
+          "mean_net_dollars": 7.6678599999999975,
+          "mean_net_dollars_95_ci": [
+            7.373239716459558,
+            7.962480283540444
+          ],
+          "mean_steps": 76.719092,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 20385,
+            "c_baseline_wins_candidate_loses": 7391,
+            "deals": 250000,
+            "delta_percentage_points": 5.1976,
+            "discordant_deals": 27776,
+            "net_wins": 12994,
+            "paired_normal_95_ci_percentage_points": [
+              5.068538197404224,
+              5.326661802595776
+            ],
+            "standard_error_percentage_points": 0.06584906845931839
+          },
+          "steps": 19179773,
+          "win_rate": 0.109476,
+          "win_rate_wilson_95_ci": [
+            0.10825805467223802,
+            0.11070594659826836
+          ],
+          "wins": 27369,
+          "wins_file": "variant-study-outcomes/draw3_limited.portfolio_0.wins.u8.gz",
+          "wins_sha256": "a2983ed0c834256ecce7e658b499584acba5ef467195b024366dd19c5e97b178"
+        },
+        "portfolio_1": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2975402,
+          "foundation_cards_squared": 91389566,
+          "foundations_file": "variant-study-outcomes/draw3_limited.portfolio_1.foundations.u8.gz",
+          "foundations_sha256": "34cf633aca06365b1a8c969266785ad469c0b2295ee1fae8eb53be5d317dee22",
+          "mean_foundation_cards": 11.901608,
+          "mean_foundation_cards_95_ci": [
+            11.842950483442104,
+            11.960265516557895
+          ],
+          "mean_net_dollars": 7.508039999999994,
+          "mean_net_dollars_95_ci": [
+            7.214752417210519,
+            7.801327582789476
+          ],
+          "mean_steps": 77.559712,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 20087,
+            "c_baseline_wins_candidate_loses": 7440,
+            "deals": 250000,
+            "delta_percentage_points": 5.0588,
+            "discordant_deals": 27527,
+            "net_wins": 12647,
+            "paired_normal_95_ci_percentage_points": [
+              4.930247365668803,
+              5.187352634331196
+            ],
+            "standard_error_percentage_points": 0.06558928395889073
+          },
+          "steps": 19389928,
+          "win_rate": 0.108088,
+          "win_rate_wilson_95_ci": [
+            0.10687691202074122,
+            0.1093111319046685
+          ],
+          "wins": 27022,
+          "wins_file": "variant-study-outcomes/draw3_limited.portfolio_1.wins.u8.gz",
+          "wins_sha256": "b8bcd481d67c2164ea19beed2ed17c7f585dba112b70cda0692ca88791fff00b"
+        },
+        "portfolio_2": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2975705,
+          "foundation_cards_squared": 91430073,
+          "foundations_file": "variant-study-outcomes/draw3_limited.portfolio_2.foundations.u8.gz",
+          "foundations_sha256": "3f546671a25817109f268341b38c7a5c5f7c134290f754a6dc1f24b08d8f4a0e",
+          "mean_foundation_cards": 11.90282,
+          "mean_foundation_cards_95_ci": [
+            11.844145041896143,
+            11.961494958103858
+          ],
+          "mean_net_dollars": 7.514099999999999,
+          "mean_net_dollars_95_ci": [
+            7.220725209480712,
+            7.8074747905192865
+          ],
+          "mean_steps": 77.564316,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 20117,
+            "c_baseline_wins_candidate_loses": 7446,
+            "deals": 250000,
+            "delta_percentage_points": 5.0684,
+            "discordant_deals": 27563,
+            "net_wins": 12671,
+            "paired_normal_95_ci_percentage_points": [
+              4.939767139841401,
+              5.197032860158599
+            ],
+            "standard_error_percentage_points": 0.06563021625562421
+          },
+          "steps": 19391079,
+          "win_rate": 0.108184,
+          "win_rate_wilson_95_ci": [
+            0.10697243571918547,
+            0.10940760525602919
+          ],
+          "wins": 27046,
+          "wins_file": "variant-study-outcomes/draw3_limited.portfolio_2.wins.u8.gz",
+          "wins_sha256": "d8b2010f358540c3d4733b5ffd395ecd17a70a6a88f96165a9a1a655b3af0b40"
+        },
+        "portfolio_3": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2281339,
+          "foundation_cards_squared": 54911581,
+          "foundations_file": "variant-study-outcomes/draw3_limited.portfolio_3.foundations.u8.gz",
+          "foundations_sha256": "4d2004d528d8aed0266dfba367a5a233b1faa9d5bd5c40126fb70f8d4bd6b8da",
+          "mean_foundation_cards": 9.125356,
+          "mean_foundation_cards_95_ci": [
+            9.079578397201022,
+            9.171133602798978
+          ],
+          "mean_net_dollars": -6.373220000000003,
+          "mean_net_dollars_95_ci": [
+            -6.6021080139948936,
+            -6.144331986005113
+          ],
+          "mean_steps": 66.703632,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 0,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 0.0,
+            "discordant_deals": 0,
+            "net_wins": 0,
+            "paired_normal_95_ci_percentage_points": [
+              0.0,
+              0.0
+            ],
+            "standard_error_percentage_points": 0.0
+          },
+          "steps": 16675908,
+          "win_rate": 0.0575,
+          "win_rate_wilson_95_ci": [
+            0.0565942393231111,
+            0.058419359232161
+          ],
+          "wins": 14375,
+          "wins_file": "variant-study-outcomes/draw3_limited.portfolio_3.wins.u8.gz",
+          "wins_sha256": "36fb9c661059af33b24a68ddc77da9b9a39744f9f3ea42cdfa693b3bbadf2768"
+        },
+        "portfolio_4": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2916236,
+          "foundation_cards_squared": 89258864,
+          "foundations_file": "variant-study-outcomes/draw3_limited.portfolio_4.foundations.u8.gz",
+          "foundations_sha256": "b530ee1b796e63bc270cfdfc4dad17cf24d76db66a882351e24d7c02f5bec168",
+          "mean_foundation_cards": 11.664944,
+          "mean_foundation_cards_95_ci": [
+            11.606673569673319,
+            11.723214430326681
+          ],
+          "mean_net_dollars": 6.324719999999999,
+          "mean_net_dollars_95_ci": [
+            6.033367848366595,
+            6.616072151633404
+          ],
+          "mean_steps": 83.74124,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 19758,
+            "c_baseline_wins_candidate_loses": 7639,
+            "deals": 250000,
+            "delta_percentage_points": 4.8476,
+            "discordant_deals": 27397,
+            "net_wins": 12119,
+            "paired_normal_95_ci_percentage_points": [
+              4.719233235074697,
+              4.975966764925303
+            ],
+            "standard_error_percentage_points": 0.06549445088677361
+          },
+          "steps": 20935310,
+          "win_rate": 0.105976,
+          "win_rate_wilson_95_ci": [
+            0.10477546762007152,
+            0.1071886412096291
+          ],
+          "wins": 26494,
+          "wins_file": "variant-study-outcomes/draw3_limited.portfolio_4.wins.u8.gz",
+          "wins_sha256": "0c39406f2c1304f690a59861d43dd9a8c232423f30d6ca83c1e70326ce77c462"
+        },
+        "portfolio_5": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2896515,
+          "foundation_cards_squared": 87955725,
+          "foundations_file": "variant-study-outcomes/draw3_limited.portfolio_5.foundations.u8.gz",
+          "foundations_sha256": "2868d07043a448c347e49010d937c6c851def5dd684563a28914255d93dadbaa",
+          "mean_foundation_cards": 11.58606,
+          "mean_foundation_cards_95_ci": [
+            11.528236746621177,
+            11.643883253378823
+          ],
+          "mean_net_dollars": 5.930300000000003,
+          "mean_net_dollars_95_ci": [
+            5.641183733105883,
+            6.219416266894115
+          ],
+          "mean_steps": 76.845004,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 19396,
+            "c_baseline_wins_candidate_loses": 7815,
+            "deals": 250000,
+            "delta_percentage_points": 4.6324,
+            "discordant_deals": 27211,
+            "net_wins": 11581,
+            "paired_normal_95_ci_percentage_points": [
+              4.504356834223839,
+              4.76044316577616
+            ],
+            "standard_error_percentage_points": 0.06532934624623149
+          },
+          "steps": 19211251,
+          "win_rate": 0.103824,
+          "win_rate_wilson_95_ci": [
+            0.10263437734382537,
+            0.10502579761941412
+          ],
+          "wins": 25956,
+          "wins_file": "variant-study-outcomes/draw3_limited.portfolio_5.wins.u8.gz",
+          "wins_sha256": "c2d3b0125570a2412d6631f7801c870919b69f85c7215f6da0cfdd1666e6088a"
+        },
+        "simple_eight": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2896515,
+          "foundation_cards_squared": 87955725,
+          "foundations_file": "variant-study-outcomes/draw3_limited.simple_eight.foundations.u8.gz",
+          "foundations_sha256": "2868d07043a448c347e49010d937c6c851def5dd684563a28914255d93dadbaa",
+          "mean_foundation_cards": 11.58606,
+          "mean_foundation_cards_95_ci": [
+            11.528236746621177,
+            11.643883253378823
+          ],
+          "mean_net_dollars": 5.930300000000003,
+          "mean_net_dollars_95_ci": [
+            5.641183733105883,
+            6.219416266894115
+          ],
+          "mean_steps": 76.845004,
+          "paired_vs_simple_baseline": {
+            "b_candidate_wins_baseline_loses": 1673,
+            "c_baseline_wins_candidate_loses": 1381,
+            "deals": 250000,
+            "delta_percentage_points": 0.1168,
+            "discordant_deals": 3054,
+            "net_wins": 292,
+            "paired_normal_95_ci_percentage_points": [
+              0.07347701748804396,
+              0.16012298251195603
+            ],
+            "standard_error_percentage_points": 0.02210396867171142
+          },
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 19396,
+            "c_baseline_wins_candidate_loses": 7815,
+            "deals": 250000,
+            "delta_percentage_points": 4.6324,
+            "discordant_deals": 27211,
+            "net_wins": 11581,
+            "paired_normal_95_ci_percentage_points": [
+              4.504356834223839,
+              4.76044316577616
+            ],
+            "standard_error_percentage_points": 0.06532934624623149
+          },
+          "steps": 19211251,
+          "win_rate": 0.103824,
+          "win_rate_wilson_95_ci": [
+            0.10263437734382537,
+            0.10502579761941412
+          ],
+          "wins": 25956,
+          "wins_file": "variant-study-outcomes/draw3_limited.simple_eight.wins.u8.gz",
+          "wins_sha256": "c2d3b0125570a2412d6631f7801c870919b69f85c7215f6da0cfdd1666e6088a"
+        },
+        "simple_eight_baseline": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2880221,
+          "foundation_cards_squared": 87076203,
+          "foundations_file": "variant-study-outcomes/draw3_limited.simple_eight_baseline.foundations.u8.gz",
+          "foundations_sha256": "c3ec17ef9ffccb5263172ec4bbc075799e6800a5706dc6513a0bde6656bf8197",
+          "mean_foundation_cards": 11.520884,
+          "mean_foundation_cards_95_ci": [
+            11.463328720155411,
+            11.57843927984459
+          ],
+          "mean_net_dollars": 5.604420000000005,
+          "mean_net_dollars_95_ci": [
+            5.316643600777056,
+            5.8921963992229465
+          ],
+          "mean_steps": 65.085816,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 19150,
+            "c_baseline_wins_candidate_loses": 7861,
+            "deals": 250000,
+            "delta_percentage_points": 4.5156,
+            "discordant_deals": 27011,
+            "net_wins": 11289,
+            "paired_normal_95_ci_percentage_points": [
+              4.387973420457401,
+              4.6432265795426
+            ],
+            "standard_error_percentage_points": 0.06511679834389894
+          },
+          "steps": 16271454,
+          "win_rate": 0.102656,
+          "win_rate_wilson_95_ci": [
+            0.1014723652749641,
+            0.10385184558231507
+          ],
+          "wins": 25664,
+          "wins_file": "variant-study-outcomes/draw3_limited.simple_eight_baseline.wins.u8.gz",
+          "wins_sha256": "f3d43f90b617b87a338410c0884009c57eabf0b8ec863faf7ea7b3f2264a986f"
+        },
+        "stage8_baseline": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2281339,
+          "foundation_cards_squared": 54911581,
+          "foundations_file": "variant-study-outcomes/draw3_limited.stage8_baseline.foundations.u8.gz",
+          "foundations_sha256": "4d2004d528d8aed0266dfba367a5a233b1faa9d5bd5c40126fb70f8d4bd6b8da",
+          "mean_foundation_cards": 9.125356,
+          "mean_foundation_cards_95_ci": [
+            9.079578397201022,
+            9.171133602798978
+          ],
+          "mean_net_dollars": -6.373220000000003,
+          "mean_net_dollars_95_ci": [
+            -6.6021080139948936,
+            -6.144331986005113
+          ],
+          "mean_steps": 66.703632,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 0,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 0.0,
+            "discordant_deals": 0,
+            "net_wins": 0,
+            "paired_normal_95_ci_percentage_points": [
+              0.0,
+              0.0
+            ],
+            "standard_error_percentage_points": 0.0
+          },
+          "steps": 16675908,
+          "win_rate": 0.0575,
+          "win_rate_wilson_95_ci": [
+            0.0565942393231111,
+            0.058419359232161
+          ],
+          "wins": 14375,
+          "wins_file": "variant-study-outcomes/draw3_limited.stage8_baseline.wins.u8.gz",
+          "wins_sha256": "36fb9c661059af33b24a68ddc77da9b9a39744f9f3ea42cdfa693b3bbadf2768"
+        },
+        "visible": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2916236,
+          "foundation_cards_squared": 89258864,
+          "foundations_file": "variant-study-outcomes/draw3_limited.visible.foundations.u8.gz",
+          "foundations_sha256": "b530ee1b796e63bc270cfdfc4dad17cf24d76db66a882351e24d7c02f5bec168",
+          "mean_foundation_cards": 11.664944,
+          "mean_foundation_cards_95_ci": [
+            11.606673569673319,
+            11.723214430326681
+          ],
+          "mean_net_dollars": 6.324719999999999,
+          "mean_net_dollars_95_ci": [
+            6.033367848366595,
+            6.616072151633404
+          ],
+          "mean_steps": 83.74124,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 19758,
+            "c_baseline_wins_candidate_loses": 7639,
+            "deals": 250000,
+            "delta_percentage_points": 4.8476,
+            "discordant_deals": 27397,
+            "net_wins": 12119,
+            "paired_normal_95_ci_percentage_points": [
+              4.719233235074697,
+              4.975966764925303
+            ],
+            "standard_error_percentage_points": 0.06549445088677361
+          },
+          "steps": 20935310,
+          "win_rate": 0.105976,
+          "win_rate_wilson_95_ci": [
+            0.10477546762007152,
+            0.1071886412096291
+          ],
+          "wins": 26494,
+          "wins_file": "variant-study-outcomes/draw3_limited.visible.wins.u8.gz",
+          "wins_sha256": "0c39406f2c1304f690a59861d43dd9a8c232423f30d6ca83c1e70326ce77c462"
+        }
+      }
+    },
+    "draw3_unlimited": {
+      "config": {
+        "allow_tableau_stack_splitting": true,
+        "draw_count": 3,
+        "k": 2,
+        "max_recycles": null,
+        "n": 13,
+        "t": 7
+      },
+      "evaluations": {
+        "full": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 3604798,
+          "foundation_cards_squared": 128600118,
+          "foundations_file": "variant-study-outcomes/draw3_unlimited.full.foundations.u8.gz",
+          "foundations_sha256": "6b85bd97e70ff81cbf767c6b979d6acba77bfa9e190ae4bc821124cf37b87435",
+          "mean_foundation_cards": 14.419192,
+          "mean_foundation_cards_95_ci": [
+            14.350565282000588,
+            14.487818717999414
+          ],
+          "mean_net_dollars": 20.095960000000005,
+          "mean_net_dollars_95_ci": [
+            19.75282641000294,
+            20.43909358999707
+          ],
+          "mean_steps": 84.231664,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 23770,
+            "c_baseline_wins_candidate_loses": 16149,
+            "deals": 250000,
+            "delta_percentage_points": 3.0484,
+            "discordant_deals": 39919,
+            "net_wins": 7621,
+            "paired_normal_95_ci_percentage_points": [
+              2.892218181613147,
+              3.2045818183868535
+            ],
+            "standard_error_percentage_points": 0.07968606546793486
+          },
+          "steps": 21057916,
+          "win_rate": 0.165932,
+          "win_rate_wilson_95_ci": [
+            0.16447884534944698,
+            0.16739542096052504
+          ],
+          "wins": 41483,
+          "wins_file": "variant-study-outcomes/draw3_unlimited.full.wins.u8.gz",
+          "wins_sha256": "0bcba5330c5c61ea20b5f1e46407518adc9acc05d992f4692e077120896516c5"
+        },
+        "portfolio": {
+          "attempts_per_deal": 6,
+          "deals": 250000,
+          "foundation_cards": 5093213,
+          "foundation_cards_squared": 208767803,
+          "foundations_file": "variant-study-outcomes/draw3_unlimited.portfolio.foundations.u8.gz",
+          "foundations_sha256": "11a0451d8f90e1b0361000c622e11c05d1a35618348a73984291d651726afe05",
+          "mean_foundation_cards": 20.372852,
+          "mean_foundation_cards_95_ci": [
+            20.29251401300565,
+            20.453189986994353
+          ],
+          "mean_net_dollars": 49.86426,
+          "mean_net_dollars_95_ci": [
+            49.462570065028245,
+            50.26594993497176
+          ],
+          "members": [
+            "portfolio_0",
+            "portfolio_1",
+            "portfolio_2",
+            "portfolio_3",
+            "portfolio_4",
+            "portfolio_5"
+          ],
+          "paired_vs_selected_full": {
+            "b_candidate_wins_baseline_loses": 29108,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 11.6432,
+            "discordant_deals": 29108,
+            "net_wins": 29108,
+            "paired_normal_95_ci_percentage_points": [
+              11.51747134928863,
+              11.768928650711368
+            ],
+            "standard_error_percentage_points": 0.06414844951392044
+          },
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 36729,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 14.6916,
+            "discordant_deals": 36729,
+            "net_wins": 36729,
+            "paired_normal_95_ci_percentage_points": [
+              14.552825863792071,
+              14.830374136207928
+            ],
+            "standard_error_percentage_points": 0.07080443176638027
+          },
+          "win_rate": 0.282364,
+          "win_rate_wilson_95_ci": [
+            0.2806028008838463,
+            0.2841318873312388
+          ],
+          "wins": 70591,
+          "wins_file": "variant-study-outcomes/draw3_unlimited.portfolio.wins.u8.gz",
+          "wins_sha256": "6fd9f61a912e0cbd4cf45be89460d266ba199a528b197bb3864f8ef65ee43d19"
+        },
+        "portfolio_0": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 3604798,
+          "foundation_cards_squared": 128600118,
+          "foundations_file": "variant-study-outcomes/draw3_unlimited.portfolio_0.foundations.u8.gz",
+          "foundations_sha256": "6b85bd97e70ff81cbf767c6b979d6acba77bfa9e190ae4bc821124cf37b87435",
+          "mean_foundation_cards": 14.419192,
+          "mean_foundation_cards_95_ci": [
+            14.350565282000588,
+            14.487818717999414
+          ],
+          "mean_net_dollars": 20.095960000000005,
+          "mean_net_dollars_95_ci": [
+            19.75282641000294,
+            20.43909358999707
+          ],
+          "mean_steps": 84.231664,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 23770,
+            "c_baseline_wins_candidate_loses": 16149,
+            "deals": 250000,
+            "delta_percentage_points": 3.0484,
+            "discordant_deals": 39919,
+            "net_wins": 7621,
+            "paired_normal_95_ci_percentage_points": [
+              2.892218181613147,
+              3.2045818183868535
+            ],
+            "standard_error_percentage_points": 0.07968606546793486
+          },
+          "steps": 21057916,
+          "win_rate": 0.165932,
+          "win_rate_wilson_95_ci": [
+            0.16447884534944698,
+            0.16739542096052504
+          ],
+          "wins": 41483,
+          "wins_file": "variant-study-outcomes/draw3_unlimited.portfolio_0.wins.u8.gz",
+          "wins_sha256": "0bcba5330c5c61ea20b5f1e46407518adc9acc05d992f4692e077120896516c5"
+        },
+        "portfolio_1": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 3601335,
+          "foundation_cards_squared": 128356325,
+          "foundations_file": "variant-study-outcomes/draw3_unlimited.portfolio_1.foundations.u8.gz",
+          "foundations_sha256": "287c758f5d53d9c944ee9f3972b2e7004ae90dc5325c0b6ce20d13c7e20c2af5",
+          "mean_foundation_cards": 14.40534,
+          "mean_foundation_cards_95_ci": [
+            14.336777787656342,
+            14.47390221234366
+          ],
+          "mean_net_dollars": 20.026700000000005,
+          "mean_net_dollars_95_ci": [
+            19.68388893828171,
+            20.3695110617183
+          ],
+          "mean_steps": 83.473804,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 23710,
+            "c_baseline_wins_candidate_loses": 16218,
+            "deals": 250000,
+            "delta_percentage_points": 2.9968000000000004,
+            "discordant_deals": 39928,
+            "net_wins": 7492,
+            "paired_normal_95_ci_percentage_points": [
+              2.840585131322354,
+              3.1530148686776465
+            ],
+            "standard_error_percentage_points": 0.07970292817105279
+          },
+          "steps": 20868451,
+          "win_rate": 0.165416,
+          "win_rate_wilson_95_ci": [
+            0.16396467210074678,
+            0.16687761006652363
+          ],
+          "wins": 41354,
+          "wins_file": "variant-study-outcomes/draw3_unlimited.portfolio_1.wins.u8.gz",
+          "wins_sha256": "e8a55c9f2c1333d360f1f0a07445e3be3fa49eee5864942163be7ccec7b1a8cc"
+        },
+        "portfolio_2": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 3602823,
+          "foundation_cards_squared": 128095027,
+          "foundations_file": "variant-study-outcomes/draw3_unlimited.portfolio_2.foundations.u8.gz",
+          "foundations_sha256": "7b6f429b057536363ccd93fb59d901eea2d7592593ef5fd3ba5c0ebacc2fbe49",
+          "mean_foundation_cards": 14.411292,
+          "mean_foundation_cards_95_ci": [
+            14.342866270513664,
+            14.479717729486335
+          ],
+          "mean_net_dollars": 20.05646,
+          "mean_net_dollars_95_ci": [
+            19.714331352568323,
+            20.39858864743168
+          ],
+          "mean_steps": 83.75596,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 23647,
+            "c_baseline_wins_candidate_loses": 16376,
+            "deals": 250000,
+            "delta_percentage_points": 2.9084,
+            "discordant_deals": 40023,
+            "net_wins": 7271,
+            "paired_normal_95_ci_percentage_points": [
+              2.7519727113369723,
+              3.0648272886630274
+            ],
+            "standard_error_percentage_points": 0.07981130770611393
+          },
+          "steps": 20938990,
+          "win_rate": 0.164532,
+          "win_rate_wilson_95_ci": [
+            0.16308381348370288,
+            0.1659904958499469
+          ],
+          "wins": 41133,
+          "wins_file": "variant-study-outcomes/draw3_unlimited.portfolio_2.wins.u8.gz",
+          "wins_sha256": "ee7cc0f9e74fb291f108fbd3ba8915c69c354948fc9036d34682366d2ec37bcd"
+        },
+        "portfolio_3": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 3081089,
+          "foundation_cards_squared": 106338345,
+          "foundations_file": "variant-study-outcomes/draw3_unlimited.portfolio_3.foundations.u8.gz",
+          "foundations_sha256": "73e1b6b54a4165fe5a5a9761dd4b0be77fbef25a4c5e1731ffa0b5c9e6d31e3f",
+          "mean_foundation_cards": 12.324356,
+          "mean_foundation_cards_95_ci": [
+            12.259531866221092,
+            12.389180133778908
+          ],
+          "mean_net_dollars": 9.621780000000001,
+          "mean_net_dollars_95_ci": [
+            9.297659331105464,
+            9.945900668894538
+          ],
+          "mean_steps": 78.654172,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 0,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 0.0,
+            "discordant_deals": 0,
+            "net_wins": 0,
+            "paired_normal_95_ci_percentage_points": [
+              0.0,
+              0.0
+            ],
+            "standard_error_percentage_points": 0.0
+          },
+          "steps": 19663543,
+          "win_rate": 0.135448,
+          "win_rate_wilson_95_ci": [
+            0.1341121950953955,
+            0.13679500802442726
+          ],
+          "wins": 33862,
+          "wins_file": "variant-study-outcomes/draw3_unlimited.portfolio_3.wins.u8.gz",
+          "wins_sha256": "f2d9de08db52b9efdb78d468cc7c180a9c1f2256f6396a190ed4018c3e6dcbfe"
+        },
+        "portfolio_4": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 3501385,
+          "foundation_cards_squared": 123239019,
+          "foundations_file": "variant-study-outcomes/draw3_unlimited.portfolio_4.foundations.u8.gz",
+          "foundations_sha256": "4c6590e2661622583cd97bca257066c83118a11bbdf166ac6bf5af7bf1e81fac",
+          "mean_foundation_cards": 14.00554,
+          "mean_foundation_cards_95_ci": [
+            13.938006452915763,
+            14.073073547084237
+          ],
+          "mean_net_dollars": 18.027699999999996,
+          "mean_net_dollars_95_ci": [
+            17.690032264578818,
+            18.365367735421188
+          ],
+          "mean_steps": 83.22992,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 23832,
+            "c_baseline_wins_candidate_loses": 18298,
+            "deals": 250000,
+            "delta_percentage_points": 2.2136,
+            "discordant_deals": 42130,
+            "net_wins": 5534,
+            "paired_normal_95_ci_percentage_points": [
+              2.052916420745248,
+              2.374283579254752
+            ],
+            "standard_error_percentage_points": 0.08198292444259353
+          },
+          "steps": 20807480,
+          "win_rate": 0.157584,
+          "win_rate_wilson_95_ci": [
+            0.1561610350140636,
+            0.15901748783995234
+          ],
+          "wins": 39396,
+          "wins_file": "variant-study-outcomes/draw3_unlimited.portfolio_4.wins.u8.gz",
+          "wins_sha256": "0122ecee16a9217bbfbb5116d38f7598c3f2423bcd1bb76b412bb764fa84bf1f"
+        },
+        "portfolio_5": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 3429261,
+          "foundation_cards_squared": 118292889,
+          "foundations_file": "variant-study-outcomes/draw3_unlimited.portfolio_5.foundations.u8.gz",
+          "foundations_sha256": "e311e6e1a2bd4c679aafdebb65165d5568a677c6c760f9425cccce47d44cf592",
+          "mean_foundation_cards": 13.717044,
+          "mean_foundation_cards_95_ci": [
+            13.650864995459273,
+            13.783223004540726
+          ],
+          "mean_net_dollars": 16.585219999999993,
+          "mean_net_dollars_95_ci": [
+            16.254324977296363,
+            16.916115022703636
+          ],
+          "mean_steps": 75.477656,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 22331,
+            "c_baseline_wins_candidate_loses": 19013,
+            "deals": 250000,
+            "delta_percentage_points": 1.3272000000000002,
+            "discordant_deals": 41344,
+            "net_wins": 3318,
+            "paired_normal_95_ci_percentage_points": [
+              1.1678753708446625,
+              1.4865246291553376
+            ],
+            "standard_error_percentage_points": 0.08128956981458323
+          },
+          "steps": 18869414,
+          "win_rate": 0.14872,
+          "win_rate_wilson_95_ci": [
+            0.14733063948461037,
+            0.15012015577074775
+          ],
+          "wins": 37180,
+          "wins_file": "variant-study-outcomes/draw3_unlimited.portfolio_5.wins.u8.gz",
+          "wins_sha256": "e59826ce926352325cd34db09deb3b760b92cd1853ddfa820b5d1dbde9a1e612"
+        },
+        "simple_eight": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 3429261,
+          "foundation_cards_squared": 118292889,
+          "foundations_file": "variant-study-outcomes/draw3_unlimited.simple_eight.foundations.u8.gz",
+          "foundations_sha256": "e311e6e1a2bd4c679aafdebb65165d5568a677c6c760f9425cccce47d44cf592",
+          "mean_foundation_cards": 13.717044,
+          "mean_foundation_cards_95_ci": [
+            13.650864995459273,
+            13.783223004540726
+          ],
+          "mean_net_dollars": 16.585219999999993,
+          "mean_net_dollars_95_ci": [
+            16.254324977296363,
+            16.916115022703636
+          ],
+          "mean_steps": 75.477656,
+          "paired_vs_simple_baseline": {
+            "b_candidate_wins_baseline_loses": 1233,
+            "c_baseline_wins_candidate_loses": 977,
+            "deals": 250000,
+            "delta_percentage_points": 0.10239999999999999,
+            "discordant_deals": 2210,
+            "net_wins": 256,
+            "paired_normal_95_ci_percentage_points": [
+              0.06554652368450883,
+              0.13925347631549118
+            ],
+            "standard_error_percentage_points": 0.018803139550617607
+          },
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 22331,
+            "c_baseline_wins_candidate_loses": 19013,
+            "deals": 250000,
+            "delta_percentage_points": 1.3272000000000002,
+            "discordant_deals": 41344,
+            "net_wins": 3318,
+            "paired_normal_95_ci_percentage_points": [
+              1.1678753708446625,
+              1.4865246291553376
+            ],
+            "standard_error_percentage_points": 0.08128956981458323
+          },
+          "steps": 18869414,
+          "win_rate": 0.14872,
+          "win_rate_wilson_95_ci": [
+            0.14733063948461037,
+            0.15012015577074775
+          ],
+          "wins": 37180,
+          "wins_file": "variant-study-outcomes/draw3_unlimited.simple_eight.wins.u8.gz",
+          "wins_sha256": "e59826ce926352325cd34db09deb3b760b92cd1853ddfa820b5d1dbde9a1e612"
+        },
+        "simple_eight_baseline": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 3420762,
+          "foundation_cards_squared": 117695006,
+          "foundations_file": "variant-study-outcomes/draw3_unlimited.simple_eight_baseline.foundations.u8.gz",
+          "foundations_sha256": "f075bc00ab4d7de6c45a886b1625321a184bf23bb15cb57f68ac06e32d0317af",
+          "mean_foundation_cards": 13.683048,
+          "mean_foundation_cards_95_ci": [
+            13.617038720219977,
+            13.749057279780022
+          ],
+          "mean_net_dollars": 16.415239999999997,
+          "mean_net_dollars_95_ci": [
+            16.08519360109989,
+            16.745286398900106
+          ],
+          "mean_steps": 73.4983,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 22179,
+            "c_baseline_wins_candidate_loses": 19117,
+            "deals": 250000,
+            "delta_percentage_points": 1.2248,
+            "discordant_deals": 41296,
+            "net_wins": 3062,
+            "paired_normal_95_ci_percentage_points": [
+              1.0655553752066496,
+              1.3840446247933504
+            ],
+            "standard_error_percentage_points": 0.08124875051248481
+          },
+          "steps": 18374575,
+          "win_rate": 0.147696,
+          "win_rate_wilson_95_ci": [
+            0.14631062941252082,
+            0.1490921973115844
+          ],
+          "wins": 36924,
+          "wins_file": "variant-study-outcomes/draw3_unlimited.simple_eight_baseline.wins.u8.gz",
+          "wins_sha256": "3f66d31a89f30e7a3482f7b76fa168128d5bacebbcfaabeb47d02e2966c513e4"
+        },
+        "stage8_baseline": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 3081089,
+          "foundation_cards_squared": 106338345,
+          "foundations_file": "variant-study-outcomes/draw3_unlimited.stage8_baseline.foundations.u8.gz",
+          "foundations_sha256": "73e1b6b54a4165fe5a5a9761dd4b0be77fbef25a4c5e1731ffa0b5c9e6d31e3f",
+          "mean_foundation_cards": 12.324356,
+          "mean_foundation_cards_95_ci": [
+            12.259531866221092,
+            12.389180133778908
+          ],
+          "mean_net_dollars": 9.621780000000001,
+          "mean_net_dollars_95_ci": [
+            9.297659331105464,
+            9.945900668894538
+          ],
+          "mean_steps": 78.654172,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 0,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 0.0,
+            "discordant_deals": 0,
+            "net_wins": 0,
+            "paired_normal_95_ci_percentage_points": [
+              0.0,
+              0.0
+            ],
+            "standard_error_percentage_points": 0.0
+          },
+          "steps": 19663543,
+          "win_rate": 0.135448,
+          "win_rate_wilson_95_ci": [
+            0.1341121950953955,
+            0.13679500802442726
+          ],
+          "wins": 33862,
+          "wins_file": "variant-study-outcomes/draw3_unlimited.stage8_baseline.wins.u8.gz",
+          "wins_sha256": "f2d9de08db52b9efdb78d468cc7c180a9c1f2256f6396a190ed4018c3e6dcbfe"
+        },
+        "visible": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 3501385,
+          "foundation_cards_squared": 123239019,
+          "foundations_file": "variant-study-outcomes/draw3_unlimited.visible.foundations.u8.gz",
+          "foundations_sha256": "4c6590e2661622583cd97bca257066c83118a11bbdf166ac6bf5af7bf1e81fac",
+          "mean_foundation_cards": 14.00554,
+          "mean_foundation_cards_95_ci": [
+            13.938006452915763,
+            14.073073547084237
+          ],
+          "mean_net_dollars": 18.027699999999996,
+          "mean_net_dollars_95_ci": [
+            17.690032264578818,
+            18.365367735421188
+          ],
+          "mean_steps": 83.22992,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 23832,
+            "c_baseline_wins_candidate_loses": 18298,
+            "deals": 250000,
+            "delta_percentage_points": 2.2136,
+            "discordant_deals": 42130,
+            "net_wins": 5534,
+            "paired_normal_95_ci_percentage_points": [
+              2.052916420745248,
+              2.374283579254752
+            ],
+            "standard_error_percentage_points": 0.08198292444259353
+          },
+          "steps": 20807480,
+          "win_rate": 0.157584,
+          "win_rate_wilson_95_ci": [
+            0.1561610350140636,
+            0.15901748783995234
+          ],
+          "wins": 39396,
+          "wins_file": "variant-study-outcomes/draw3_unlimited.visible.wins.u8.gz",
+          "wins_sha256": "0122ecee16a9217bbfbb5116d38f7598c3f2423bcd1bb76b412bb764fa84bf1f"
+        }
+      }
+    },
+    "vegas": {
+      "config": {
+        "allow_tableau_stack_splitting": false,
+        "draw_count": 1,
+        "k": 2,
+        "max_recycles": 0,
+        "n": 13,
+        "t": 7
+      },
+      "evaluations": {
+        "full": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2293433,
+          "foundation_cards_squared": 40789639,
+          "foundations_file": "variant-study-outcomes/vegas.full.foundations.u8.gz",
+          "foundations_sha256": "f0c63cf1899d72ca606457675235b9c58e45cf842ff94125711a856ad5638648",
+          "mean_foundation_cards": 9.173732,
+          "mean_foundation_cards_95_ci": [
+            9.138889944199441,
+            9.208574055800558
+          ],
+          "mean_net_dollars": -6.131340000000002,
+          "mean_net_dollars_95_ci": [
+            -6.305550279002794,
+            -5.957129720997216
+          ],
+          "mean_steps": 52.560684,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 6408,
+            "c_baseline_wins_candidate_loses": 574,
+            "deals": 250000,
+            "delta_percentage_points": 2.3336,
+            "discordant_deals": 6982,
+            "net_wins": 5834,
+            "paired_normal_95_ci_percentage_points": [
+              2.268733268016546,
+              2.398466731983454
+            ],
+            "standard_error_percentage_points": 0.033095879564682976
+          },
+          "steps": 13140171,
+          "win_rate": 0.03044,
+          "win_rate_wilson_95_ci": [
+            0.029773758887801486,
+            0.03112067125369809
+          ],
+          "wins": 7610,
+          "wins_file": "variant-study-outcomes/vegas.full.wins.u8.gz",
+          "wins_sha256": "76a8c30bc3e635742edc986828e19fd79a6970ff91f49fc11251e7c55c2aaae4"
+        },
+        "portfolio": {
+          "attempts_per_deal": 6,
+          "deals": 250000,
+          "foundation_cards": 2512452,
+          "foundation_cards_squared": 48952002,
+          "foundations_file": "variant-study-outcomes/vegas.portfolio.foundations.u8.gz",
+          "foundations_sha256": "073ea1805d898ea4a92e928e5f33e70279ba23e485293fded81838ec7d0d4053",
+          "mean_foundation_cards": 10.049808,
+          "mean_foundation_cards_95_ci": [
+            10.011638843772575,
+            10.087977156227426
+          ],
+          "mean_net_dollars": -1.7509599999999992,
+          "mean_net_dollars_95_ci": [
+            -1.941805781137127,
+            -1.5601142188628714
+          ],
+          "members": [
+            "portfolio_0",
+            "portfolio_1",
+            "portfolio_2",
+            "portfolio_3",
+            "portfolio_4",
+            "portfolio_5"
+          ],
+          "paired_vs_selected_full": {
+            "b_candidate_wins_baseline_loses": 2130,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 0.852,
+            "discordant_deals": 2130,
+            "net_wins": 2130,
+            "paired_normal_95_ci_percentage_points": [
+              0.8159720241368259,
+              0.8880279758631741
+            ],
+            "standard_error_percentage_points": 0.018381958111148008
+          },
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 7964,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 3.1856000000000004,
+            "discordant_deals": 7964,
+            "net_wins": 7964,
+            "paired_normal_95_ci_percentage_points": [
+              3.1167595521259073,
+              3.2544404478740936
+            ],
+            "standard_error_percentage_points": 0.03512332288608241
+          },
+          "win_rate": 0.03896,
+          "win_rate_wilson_95_ci": [
+            0.03820855217302844,
+            0.039725616138661164
+          ],
+          "wins": 9740,
+          "wins_file": "variant-study-outcomes/vegas.portfolio.wins.u8.gz",
+          "wins_sha256": "afdabba4a838b7ef3ade5daa742a67305732d4604f318cc013f8991ffe3d981d"
+        },
+        "portfolio_0": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2293433,
+          "foundation_cards_squared": 40789639,
+          "foundations_file": "variant-study-outcomes/vegas.portfolio_0.foundations.u8.gz",
+          "foundations_sha256": "f0c63cf1899d72ca606457675235b9c58e45cf842ff94125711a856ad5638648",
+          "mean_foundation_cards": 9.173732,
+          "mean_foundation_cards_95_ci": [
+            9.138889944199441,
+            9.208574055800558
+          ],
+          "mean_net_dollars": -6.131340000000002,
+          "mean_net_dollars_95_ci": [
+            -6.305550279002794,
+            -5.957129720997216
+          ],
+          "mean_steps": 52.560684,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 6408,
+            "c_baseline_wins_candidate_loses": 574,
+            "deals": 250000,
+            "delta_percentage_points": 2.3336,
+            "discordant_deals": 6982,
+            "net_wins": 5834,
+            "paired_normal_95_ci_percentage_points": [
+              2.268733268016546,
+              2.398466731983454
+            ],
+            "standard_error_percentage_points": 0.033095879564682976
+          },
+          "steps": 13140171,
+          "win_rate": 0.03044,
+          "win_rate_wilson_95_ci": [
+            0.029773758887801486,
+            0.03112067125369809
+          ],
+          "wins": 7610,
+          "wins_file": "variant-study-outcomes/vegas.portfolio_0.wins.u8.gz",
+          "wins_sha256": "76a8c30bc3e635742edc986828e19fd79a6970ff91f49fc11251e7c55c2aaae4"
+        },
+        "portfolio_1": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2293150,
+          "foundation_cards_squared": 40735222,
+          "foundations_file": "variant-study-outcomes/vegas.portfolio_1.foundations.u8.gz",
+          "foundations_sha256": "ebc1e7f40c5fe01979b3ddb7efc857f2cc61a5ad7571d1a5ee6cbfd9381ec518",
+          "mean_foundation_cards": 9.1726,
+          "mean_foundation_cards_95_ci": [
+            9.137801390877197,
+            9.207398609122802
+          ],
+          "mean_net_dollars": -6.1370000000000005,
+          "mean_net_dollars_95_ci": [
+            -6.310993045614012,
+            -5.963006954385989
+          ],
+          "mean_steps": 52.543192,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 6379,
+            "c_baseline_wins_candidate_loses": 579,
+            "deals": 250000,
+            "delta_percentage_points": 2.32,
+            "discordant_deals": 6958,
+            "net_wins": 5800,
+            "paired_normal_95_ci_percentage_points": [
+              2.255239562971855,
+              2.3847604370281448
+            ],
+            "standard_error_percentage_points": 0.03304164644808125
+          },
+          "steps": 13135798,
+          "win_rate": 0.030304,
+          "win_rate_wilson_95_ci": [
+            0.029639219781708106,
+            0.030983214539234454
+          ],
+          "wins": 7576,
+          "wins_file": "variant-study-outcomes/vegas.portfolio_1.wins.u8.gz",
+          "wins_sha256": "fd7be27be423783c58ec65061ff2c751105b87e11c68d1bbadf5bad930878e18"
+        },
+        "portfolio_2": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2293605,
+          "foundation_cards_squared": 40772893,
+          "foundations_file": "variant-study-outcomes/vegas.portfolio_2.foundations.u8.gz",
+          "foundations_sha256": "d8d890e8d32d3439b58d74c2168c7ffb044c8d6fb04efee48c6a8dbd6d3e7a88",
+          "mean_foundation_cards": 9.17442,
+          "mean_foundation_cards_95_ci": [
+            9.139595503357707,
+            9.209244496642292
+          ],
+          "mean_net_dollars": -6.127900000000004,
+          "mean_net_dollars_95_ci": [
+            -6.302022483211459,
+            -5.953777516788541
+          ],
+          "mean_steps": 52.545492,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 6392,
+            "c_baseline_wins_candidate_loses": 575,
+            "deals": 250000,
+            "delta_percentage_points": 2.3268,
+            "discordant_deals": 6967,
+            "net_wins": 5817,
+            "paired_normal_95_ci_percentage_points": [
+              2.2620006144209137,
+              2.3915993855790862
+            ],
+            "standard_error_percentage_points": 0.03306151852289909
+          },
+          "steps": 13136373,
+          "win_rate": 0.030372,
+          "win_rate_wilson_95_ci": [
+            0.029706488886521824,
+            0.031051943344699247
+          ],
+          "wins": 7593,
+          "wins_file": "variant-study-outcomes/vegas.portfolio_2.wins.u8.gz",
+          "wins_sha256": "a193254c9ce87737bd8677082a68a723fd10f3c9bcf8cbcbd8d854d68560c31f"
+        },
+        "portfolio_3": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 1739682,
+          "foundation_cards_squared": 19448686,
+          "foundations_file": "variant-study-outcomes/vegas.portfolio_3.foundations.u8.gz",
+          "foundations_sha256": "d6787b9ed90e8d521aaa69fa78bd91e00422966d028f0ddb7c26dedb8d4f07f7",
+          "mean_foundation_cards": 6.958728,
+          "mean_foundation_cards_95_ci": [
+            6.93748356511532,
+            6.9799724348846794
+          ],
+          "mean_net_dollars": -17.206360000000004,
+          "mean_net_dollars_95_ci": [
+            -17.312582174423397,
+            -17.100137825576603
+          ],
+          "mean_steps": 45.983124,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 0,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 0.0,
+            "discordant_deals": 0,
+            "net_wins": 0,
+            "paired_normal_95_ci_percentage_points": [
+              0.0,
+              0.0
+            ],
+            "standard_error_percentage_points": 0.0
+          },
+          "steps": 11495781,
+          "win_rate": 0.007104,
+          "win_rate_wilson_95_ci": [
+            0.006782272680106074,
+            0.007440874604638323
+          ],
+          "wins": 1776,
+          "wins_file": "variant-study-outcomes/vegas.portfolio_3.wins.u8.gz",
+          "wins_sha256": "f28ff8b5aa4b6833b11814c2d10c4dfaa75586d7ba4da25f656ee0d28d7a33fd"
+        },
+        "portfolio_4": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2248127,
+          "foundation_cards_squared": 38072723,
+          "foundations_file": "variant-study-outcomes/vegas.portfolio_4.foundations.u8.gz",
+          "foundations_sha256": "becf04c469af9afbf28f5e8136577039bb570d49c687673c07f9026d7cf02905",
+          "mean_foundation_cards": 8.992508,
+          "mean_foundation_cards_95_ci": [
+            8.959378554761804,
+            9.025637445238198
+          ],
+          "mean_net_dollars": -7.037459999999996,
+          "mean_net_dollars_95_ci": [
+            -7.20310722619098,
+            -6.871812773809012
+          ],
+          "mean_steps": 52.132508,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 5516,
+            "c_baseline_wins_candidate_loses": 717,
+            "deals": 250000,
+            "delta_percentage_points": 1.9196000000000002,
+            "discordant_deals": 6233,
+            "net_wins": 4799,
+            "paired_normal_95_ci_percentage_points": [
+              1.8581639435105095,
+              1.9810360564894909
+            ],
+            "standard_error_percentage_points": 0.03134550276132128
+          },
+          "steps": 13033127,
+          "win_rate": 0.0263,
+          "win_rate_wilson_95_ci": [
+            0.025679951013715566,
+            0.02693460635494521
+          ],
+          "wins": 6575,
+          "wins_file": "variant-study-outcomes/vegas.portfolio_4.wins.u8.gz",
+          "wins_sha256": "9af924363a0ba2e979ea327c7768dab974bc87092705a14a7f88b675f1a4116c"
+        },
+        "portfolio_5": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2243336,
+          "foundation_cards_squared": 37786226,
+          "foundations_file": "variant-study-outcomes/vegas.portfolio_5.foundations.u8.gz",
+          "foundations_sha256": "35eb03f18e5a3123f1bea43ebb9cf084419c980512266657696bfc936974e537",
+          "mean_foundation_cards": 8.973344,
+          "mean_foundation_cards_95_ci": [
+            8.94040100382535,
+            9.006286996174651
+          ],
+          "mean_net_dollars": -7.133279999999999,
+          "mean_net_dollars_95_ci": [
+            -7.2979949808732485,
+            -6.968565019126743
+          ],
+          "mean_steps": 51.891148,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 5430,
+            "c_baseline_wins_candidate_loses": 749,
+            "deals": 250000,
+            "delta_percentage_points": 1.8724,
+            "discordant_deals": 6179,
+            "net_wins": 4681,
+            "paired_normal_95_ci_percentage_points": [
+              1.8112121822022882,
+              1.933587817797712
+            ],
+            "standard_error_percentage_points": 0.031218848040246452
+          },
+          "steps": 12972787,
+          "win_rate": 0.025828,
+          "win_rate_wilson_95_ci": [
+            0.025213461515748197,
+            0.0264571103580382
+          ],
+          "wins": 6457,
+          "wins_file": "variant-study-outcomes/vegas.portfolio_5.wins.u8.gz",
+          "wins_sha256": "c3c32f60f3d6e9bb3a9c6bb58674e58612df27d857c3d98c651e41bc04a55f30"
+        },
+        "profit": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2313703,
+          "foundation_cards_squared": 40349069,
+          "foundations_file": "variant-study-outcomes/vegas.profit.foundations.u8.gz",
+          "foundations_sha256": "f1aa20c414e6d7d94e6f035e7f2da3e95b8db09f0b19b257654800988aacf4f5",
+          "mean_foundation_cards": 9.254812,
+          "mean_foundation_cards_95_ci": [
+            9.220695603827993,
+            9.288928396172006
+          ],
+          "mean_net_dollars": -5.725940000000001,
+          "mean_net_dollars_95_ci": [
+            -5.896521980860037,
+            -5.555358019139973
+          ],
+          "mean_steps": 52.537884,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 5998,
+            "c_baseline_wins_candidate_loses": 640,
+            "deals": 250000,
+            "delta_percentage_points": 2.1431999999999998,
+            "discordant_deals": 6638,
+            "net_wins": 5358,
+            "paired_normal_95_ci_percentage_points": [
+              2.0798805196073467,
+              2.2065194803926533
+            ],
+            "standard_error_percentage_points": 0.03230645098180857
+          },
+          "steps": 13134471,
+          "win_rate": 0.028536,
+          "win_rate_wilson_95_ci": [
+            0.02789054764358519,
+            0.029195941010116053
+          ],
+          "wins": 7134,
+          "wins_file": "variant-study-outcomes/vegas.profit.wins.u8.gz",
+          "wins_sha256": "04a74642281d26bd637aa9f05f1683f70810480131abc5fd5f2cf78729de5eff"
+        },
+        "simple_eight": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2243336,
+          "foundation_cards_squared": 37786226,
+          "foundations_file": "variant-study-outcomes/vegas.simple_eight.foundations.u8.gz",
+          "foundations_sha256": "35eb03f18e5a3123f1bea43ebb9cf084419c980512266657696bfc936974e537",
+          "mean_foundation_cards": 8.973344,
+          "mean_foundation_cards_95_ci": [
+            8.94040100382535,
+            9.006286996174651
+          ],
+          "mean_net_dollars": -7.133279999999999,
+          "mean_net_dollars_95_ci": [
+            -7.2979949808732485,
+            -6.968565019126743
+          ],
+          "mean_steps": 51.891148,
+          "paired_vs_simple_baseline": {
+            "b_candidate_wins_baseline_loses": 0,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 0.0,
+            "discordant_deals": 0,
+            "net_wins": 0,
+            "paired_normal_95_ci_percentage_points": [
+              0.0,
+              0.0
+            ],
+            "standard_error_percentage_points": 0.0
+          },
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 5430,
+            "c_baseline_wins_candidate_loses": 749,
+            "deals": 250000,
+            "delta_percentage_points": 1.8724,
+            "discordant_deals": 6179,
+            "net_wins": 4681,
+            "paired_normal_95_ci_percentage_points": [
+              1.8112121822022882,
+              1.933587817797712
+            ],
+            "standard_error_percentage_points": 0.031218848040246452
+          },
+          "steps": 12972787,
+          "win_rate": 0.025828,
+          "win_rate_wilson_95_ci": [
+            0.025213461515748197,
+            0.0264571103580382
+          ],
+          "wins": 6457,
+          "wins_file": "variant-study-outcomes/vegas.simple_eight.wins.u8.gz",
+          "wins_sha256": "c3c32f60f3d6e9bb3a9c6bb58674e58612df27d857c3d98c651e41bc04a55f30"
+        },
+        "simple_eight_baseline": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2243359,
+          "foundation_cards_squared": 37787053,
+          "foundations_file": "variant-study-outcomes/vegas.simple_eight_baseline.foundations.u8.gz",
+          "foundations_sha256": "0bafd4e315459e61b0e89186cd93f1c4b4204e449334ded17c1dacf1e31c01ee",
+          "mean_foundation_cards": 8.973436,
+          "mean_foundation_cards_95_ci": [
+            8.940492617392938,
+            9.006379382607062
+          ],
+          "mean_net_dollars": -7.132820000000002,
+          "mean_net_dollars_95_ci": [
+            -7.297536913035316,
+            -6.968103086964689
+          ],
+          "mean_steps": 51.889828,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 5430,
+            "c_baseline_wins_candidate_loses": 749,
+            "deals": 250000,
+            "delta_percentage_points": 1.8724,
+            "discordant_deals": 6179,
+            "net_wins": 4681,
+            "paired_normal_95_ci_percentage_points": [
+              1.8112121822022882,
+              1.933587817797712
+            ],
+            "standard_error_percentage_points": 0.031218848040246452
+          },
+          "steps": 12972457,
+          "win_rate": 0.025828,
+          "win_rate_wilson_95_ci": [
+            0.025213461515748197,
+            0.0264571103580382
+          ],
+          "wins": 6457,
+          "wins_file": "variant-study-outcomes/vegas.simple_eight_baseline.wins.u8.gz",
+          "wins_sha256": "c3c32f60f3d6e9bb3a9c6bb58674e58612df27d857c3d98c651e41bc04a55f30"
+        },
+        "stage8_baseline": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 1739682,
+          "foundation_cards_squared": 19448686,
+          "foundations_file": "variant-study-outcomes/vegas.stage8_baseline.foundations.u8.gz",
+          "foundations_sha256": "d6787b9ed90e8d521aaa69fa78bd91e00422966d028f0ddb7c26dedb8d4f07f7",
+          "mean_foundation_cards": 6.958728,
+          "mean_foundation_cards_95_ci": [
+            6.93748356511532,
+            6.9799724348846794
+          ],
+          "mean_net_dollars": -17.206360000000004,
+          "mean_net_dollars_95_ci": [
+            -17.312582174423397,
+            -17.100137825576603
+          ],
+          "mean_steps": 45.983124,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 0,
+            "c_baseline_wins_candidate_loses": 0,
+            "deals": 250000,
+            "delta_percentage_points": 0.0,
+            "discordant_deals": 0,
+            "net_wins": 0,
+            "paired_normal_95_ci_percentage_points": [
+              0.0,
+              0.0
+            ],
+            "standard_error_percentage_points": 0.0
+          },
+          "steps": 11495781,
+          "win_rate": 0.007104,
+          "win_rate_wilson_95_ci": [
+            0.006782272680106074,
+            0.007440874604638323
+          ],
+          "wins": 1776,
+          "wins_file": "variant-study-outcomes/vegas.stage8_baseline.wins.u8.gz",
+          "wins_sha256": "f28ff8b5aa4b6833b11814c2d10c4dfaa75586d7ba4da25f656ee0d28d7a33fd"
+        },
+        "visible": {
+          "cutoffs": 0,
+          "deals": 250000,
+          "foundation_cards": 2248127,
+          "foundation_cards_squared": 38072723,
+          "foundations_file": "variant-study-outcomes/vegas.visible.foundations.u8.gz",
+          "foundations_sha256": "becf04c469af9afbf28f5e8136577039bb570d49c687673c07f9026d7cf02905",
+          "mean_foundation_cards": 8.992508,
+          "mean_foundation_cards_95_ci": [
+            8.959378554761804,
+            9.025637445238198
+          ],
+          "mean_net_dollars": -7.037459999999996,
+          "mean_net_dollars_95_ci": [
+            -7.20310722619098,
+            -6.871812773809012
+          ],
+          "mean_steps": 52.132508,
+          "paired_vs_stage8": {
+            "b_candidate_wins_baseline_loses": 5516,
+            "c_baseline_wins_candidate_loses": 717,
+            "deals": 250000,
+            "delta_percentage_points": 1.9196000000000002,
+            "discordant_deals": 6233,
+            "net_wins": 4799,
+            "paired_normal_95_ci_percentage_points": [
+              1.8581639435105095,
+              1.9810360564894909
+            ],
+            "standard_error_percentage_points": 0.03134550276132128
+          },
+          "steps": 13033127,
+          "win_rate": 0.0263,
+          "win_rate_wilson_95_ci": [
+            0.025679951013715566,
+            0.02693460635494521
+          ],
+          "wins": 6575,
+          "wins_file": "variant-study-outcomes/vegas.visible.wins.u8.gz",
+          "wins_sha256": "9af924363a0ba2e979ea327c7768dab974bc87092705a14a7f88b675f1a4116c"
+        }
+      }
+    }
+  }
+}

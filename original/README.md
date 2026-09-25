@@ -4,6 +4,13 @@ This is a small, dependency-free Python foundation for solitaire experiments.
 It implements a Klondike-style game engine plus a stochastic player with 42
 tunable move-scoring parameters.
 
+The [expanded strategy guide](strategy-guide.md) compares saved models for
+draw-one and draw-three with limited or unlimited recycles, plus draw-one Vegas
+with one pass and no splitting of face-up tableau runs. Run a chosen model with
+`python3 -m solitaire.play_variant draw3_unlimited --policy full --seed 7`.
+The historical standard remains draw one with three recycles. Rule-specific
+weights are stored separately and loaded by `solitaire.variants`.
+
 Game shape is controlled by:
 
 1. `n`: cards per suit.

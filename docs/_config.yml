@@ -1,6 +1,6 @@
 title: Solitaire Research
 description: Computational experiments, interpretable strategies, and mathematical questions about Klondike solitaire.
-url: https://peterefrancis.github.io
+url: https://peterefrancis.com
 baseurl: /solitaire-research
 repository_url: https://github.com/PeterEFrancis/solitaire-research
 source_guide_url: https://github.com/PeterEFrancis/solitaire-research/blob/main/original/strategy-guide.md

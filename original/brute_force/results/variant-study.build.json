@@ -1,0 +1,18 @@
+{
+  "source_sha256": "56a9340f784397f425ee024d34ceff8a8bc879f0d1e6d76573b16d012025383a",
+  "binary_sha256": "203166bcb800ba12968ee2d5b0928b2ad5817b34621ee3e4246a48da281c2152",
+  "compiler_version": "Apple clang version 17.0.0 (clang-1700.0.13.3)\nTarget: x86_64-apple-darwin24.4.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin",
+  "flags": [
+    "-std=c++17",
+    "-O3",
+    "-DNDEBUG",
+    "-pthread",
+    "-isysroot",
+    "/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk",
+    "-isystem",
+    "/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1"
+  ],
+  "platform": "macOS-15.4-x86_64-i386-64bit-Mach-O",
+  "source": "original/brute_force/native_solver.cpp",
+  "binary": "original/brute_force/native_solver.variants"
+}

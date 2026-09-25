@@ -25,3 +25,10 @@ jobs:
         run: python3 -m unittest discover
       - name: Check published guide is synchronized
         run: python3 scripts/build_pages.py --check
+      - name: Verify saved research results
+        working-directory: original
+        run: python3 -m brute_force.verify_variant_study
+      - name: Check guide matches the numerical evidence
+        run: |
+          python3 scripts/update_strategy_guide.py --output /tmp/strategy-guide.md
+          cmp original/strategy-guide.md /tmp/strategy-guide.md
