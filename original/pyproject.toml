@@ -1,0 +1,9 @@
+[project]
+name = "solitaire-ai"
+version = "0.1.0"
+description = "Klondike-style solitaire engine with a trainable linear player."
+requires-python = ">=3.9"
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

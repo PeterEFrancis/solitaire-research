@@ -1,0 +1,10 @@
+n,k,t,tableau_cards,stock_cards,classified_cases,solvable,unsolvable,solvability_rate,stock_treatment,status
+1,2,1,1,1,1,1,0,1.000000000000,unordered_quotient,complete
+2,2,2,3,1,12,12,0,1.000000000000,unordered_quotient,complete
+3,2,2,3,3,60,60,0,1.000000000000,unordered_quotient,complete
+4,2,2,3,5,168,168,0,1.000000000000,unordered_quotient,complete
+5,2,3,6,4,75600,75420,180,0.997619047619,unordered_quotient,complete
+6,2,3,6,6,332640,332100,540,0.998376623377,unordered_quotient,complete
+7,2,3,6,8,43589145600,43538342400,50803200,0.998834498834,fully_ordered,complete
+8,2,4,10,6,14529715200,,,,unordered_quotient,estimated_53_hours_not_started
+13,2,5,15,11,1000000,943698,56302,0.943698000000,fully_ordered_monte_carlo,monte_carlo_95ci_0.943244514_to_0.944148077

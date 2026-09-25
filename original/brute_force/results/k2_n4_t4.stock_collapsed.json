@@ -1,0 +1,68 @@
+{
+  "bitset": {
+    "bit_order": "deal i is bit (i % 8), least-significant bit first",
+    "bits": 3632428800,
+    "compressed_bytes": 8517753,
+    "compressed_sha256": "23defdfb6fca8a7150ba043da9c9e1fed0637ebff3669aa2e5cb31da69f7ba88",
+    "file": "k2_n4_t4.stock_collapsed.solvable.bits.gz",
+    "sha256": "1bb03f5ff62aea3f0c77589df1eb62b772f1291b180fea80196710b21b2c8a0a",
+    "uncompressed_bytes": 454053600
+  },
+  "canonical_deals": 3632428800,
+  "canonical_tableau_patterns": 90300,
+  "config": {
+    "draw_count": 1,
+    "k": 2,
+    "max_recycles": 3,
+    "n": 4,
+    "t": 4
+  },
+  "deal_order": {
+    "card_id": "suit * n + (rank - 1)",
+    "enumeration": "canonical tableau suit patterns in lexicographic order, followed by partial rank-permutation Cartesian products by suit",
+    "enumeration_id": "tableau-pattern-partial-rank-v1",
+    "sequence": "tableau deal order, then remaining card ids sorted as stock"
+  },
+  "equivalence": {
+    "combined_orbit_size": 5760,
+    "stock_cards": 6,
+    "stock_order_basis": "Every reserve win prescribes an order for removing the six stock cards. Every relative draw order can emit that prescribed order within four passes using the waste stack.",
+    "stock_order_orbit_size": 720,
+    "stock_order_proof": {
+      "file": "brute_force/prove_stock_order.py",
+      "max_passes_required": 4,
+      "pass_histogram": {
+        "1": 132,
+        "2": 424,
+        "3": 160,
+        "4": 4
+      },
+      "passes_available": 4,
+      "permutations_checked": 720
+    },
+    "suit_color_orbit_size": 8
+  },
+  "generated_at": "2026-07-14T15:56:52.641294+00:00",
+  "raw_deals": 20922789888000,
+  "schema_version": 1,
+  "solvability_rate": 0.9853901615359949,
+  "solvable_canonical_deals": 3579359602,
+  "solvable_raw_deals": 20617111307520,
+  "solver": {
+    "classification": "exact state graph with unordered-reserve stock",
+    "engine": "brute_force/native_solver.cpp",
+    "expanded_positions": 72264410042,
+    "safe_foundation_moves_forced": true,
+    "tableau_pile_symmetry_in_state_cache": true
+  },
+  "status": "exhaustive",
+  "unsolvable_canonical_deals": 53069198,
+  "unsolvable_raw_deals": 305678580480,
+  "validation": {
+    "n3_full_deals_checked": 59875200,
+    "n3_reference_sha256": "d9a420124a5387b9f23304bea527b161bd54cabb717f2646f02087479f94fa9e",
+    "n4_ordinary_vs_reserve_block_deals": 4649472,
+    "n4_stock_order_comparisons": 72000000,
+    "n4_tableaus_all_stock_orders_checked": 100000
+  }
+}

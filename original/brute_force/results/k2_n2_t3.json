@@ -1,0 +1,44 @@
+{
+  "bitset": {
+    "bit_order": "deal i is bit (i % 8), least-significant bit first",
+    "bits": 5040,
+    "compressed_bytes": 59,
+    "compressed_sha256": "dfce3cd33b02b824710623fe845e38e1947b3c409523f70bfc214e446bb7e648",
+    "file": "k2_n2_t3.solvable.bits.gz",
+    "sha256": "9cbcc7f7e979f0cfe6a1318abe4ffd0fb982afcf44d3ed040de4cfe71302dd97",
+    "uncompressed_bytes": 630
+  },
+  "canonical_deals": 5040,
+  "config": {
+    "draw_count": 1,
+    "k": 2,
+    "max_recycles": 3,
+    "n": 2,
+    "t": 3
+  },
+  "deal_order": {
+    "card_id": "suit * n + (rank - 1)",
+    "enumeration": "lexicographic permutations filtered to the lexicographic minimum under suit/color symmetry",
+    "sequence": "tableau deal order, then stock draw order"
+  },
+  "elapsed_seconds": 1.1770056660000001,
+  "generated_at": "2026-07-14T04:03:44.328065+00:00",
+  "raw_deals": 40320,
+  "schema_version": 1,
+  "solvability_rate": 0.9928571428571429,
+  "solvable_canonical_deals": 5004,
+  "solvable_raw_deals": 40032,
+  "solver": {
+    "expanded_positions": 26226,
+    "solvable_cache_hits": 0,
+    "solvable_positions_cached": 25230,
+    "unsolvable_cache_hits": 0,
+    "unsolvable_positions_cached": 936
+  },
+  "symmetry": {
+    "description": "Permute suits within each color and optionally exchange the colors",
+    "orbit_size": 8
+  },
+  "unsolvable_canonical_deals": 36,
+  "unsolvable_raw_deals": 288
+}

@@ -1,0 +1,18 @@
+{
+  "n": 8,
+  "k": 2,
+  "t": 4,
+  "tableau_cards": 10,
+  "stock_cards": 6,
+  "reduced_exact_cases": 14529715200,
+  "benchmark_seed": 20260716,
+  "benchmark_cases": 1000000,
+  "benchmark_solvable": 978739,
+  "benchmark_rate": 0.978739,
+  "elapsed_seconds": 13.1989,
+  "cases_per_second": 75763.9,
+  "projected_full_seconds": 191776.2312,
+  "projected_full_hours": 53.2712,
+  "projected_bitset_bytes": 1816214400,
+  "status": "benchmark_only_not_an_exact_solvability_result"
+}

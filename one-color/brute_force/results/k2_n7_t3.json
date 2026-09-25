@@ -1,0 +1,31 @@
+{
+  "n": 7,
+  "k": 2,
+  "t": 3,
+  "tableau_cards": 6,
+  "stock_cards": 8,
+  "stock_passes": 4,
+  "canonical_tableau_deals": 1081080,
+  "stock_permutations_per_tableau": 40320,
+  "canonical_ordered_deals": 43589145600,
+  "solvable_ordered_deals": 43538342400,
+  "unsolvable_ordered_deals": 50803200,
+  "solvability_fraction": "857/858",
+  "solvability_rate": 0.9988344988344988,
+  "reserve_solvable_tableaus": 1079820,
+  "reserve_unsolvable_tableaus": 1260,
+  "stock_order_sensitive_tableaus": 0,
+  "ordered_exact_fallback_checks": 2370596,
+  "ordered_exact_fallback_wins": 2370596,
+  "result_file": {
+    "name": "k2_n7_t3.ordered-counts.u16",
+    "format": "one little-endian uint16 solvable-stock-order count per canonical tableau deal",
+    "bytes": 2162160,
+    "sha256": "37e0393c2aa4db36ea7e8a4cdec37e78dd48aa429d2d8c4dd6629860d4016119"
+  },
+  "completion_file": {
+    "name": "k2_n7_t3.patterns.complete",
+    "bytes": 32,
+    "sha256": "72cd6e8422c407fb6d098690f1130b7ded7ec2f7f5e1d30bd9d521f015363793"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "frozen_at": "2026-09-25T16:44:39.407106+00:00",
+  "selection_rule": "Highest validation win count within each predefined complexity group; archived17 is a fixed reference.",
+  "training_seed": 2026092511,
+  "training_deals": 25000,
+  "training_candidates": 27,
+  "validation_seed": 2026092512,
+  "validation_deals": 200000,
+  "validation_candidates": 8,
+  "selected_candidates": {
+    "archived_17": "archived_17",
+    "simple_five": "five_quarter_stock1half",
+    "simple_eight": "eight_integer_waste2",
+    "visible_only": "visible_23_stage8"
+  },
+  "confirmation_seed": 2026092598,
+  "confirmation_deals": 250000,
+  "confirmation_max_steps": 500,
+  "policies_sha256": "200cb67adc659f60ae5fc56739642c4b9358a79f986415903f2bbd0b5bd022e6",
+  "information_model": "All scoring weights on unknown-identity and buried-waste-history features are zero. Evaluator retains complete position history for cycle avoidance.",
+  "human_performance_caveat": "These are computer-executed scorecards, not measured rates from human subjects.",
+  "no_further_selection": "Report every frozen policy on this final sample. Do not tune or select on final results."
+}

@@ -1,0 +1,49 @@
+{
+  "method": "uniform pseudorandom Monte Carlo over fully ordered deals with exact classification of every sampled deal",
+  "n": 13,
+  "k": 2,
+  "t": 5,
+  "tableau_cards": 15,
+  "stock_cards": 11,
+  "stock_passes": 4,
+  "seed": 20260718,
+  "threads": 8,
+  "sample_size": 1000000,
+  "solvable": 943698,
+  "unsolvable": 56302,
+  "estimated_solvability": 0.943698,
+  "estimated_solvability_percent": 94.3698,
+  "standard_error": 0.00023050398,
+  "wilson_95": {
+    "lower": 0.943244513712,
+    "upper": 0.944148077405,
+    "lower_percent": 94.3244513712,
+    "upper_percent": 94.4148077405
+  },
+  "classification": {
+    "reserve_solvable": 943698,
+    "reserve_unsolvable": 56302,
+    "replay_certified_wins": 920143,
+    "full_ordered_searches": 23555,
+    "full_ordered_search_wins": 23555,
+    "observed_stock_order_sensitive_losses": 0
+  },
+  "performance": {
+    "expanded_positions": 1365009703,
+    "normalized_foundation_moves": 384013916,
+    "elapsed_seconds": 1951.49,
+    "deals_per_second": 512.43
+  },
+  "command": "./brute_force/native_solver --n 13 --threads 8 --stock-mode ordered --benchmark-deals 1000000 --benchmark-seed 20260718",
+  "solver_source_sha256": "dbf031ff83c9741c180d199dda0d7f172e433f215627eda776335a037b3b9cd8",
+  "solver_binary_sha256": "e874063e17cd48d132a9dc179ca470028c313677f3cd7dd408fc403d683a7324",
+  "validation": {
+    "n7_ordered_sample_size": 100000,
+    "n7_exact_only_wins": 99868,
+    "n7_hybrid_wins": 99868,
+    "target_pilot_size": 1000,
+    "target_exact_only_wins": 937,
+    "target_hybrid_wins": 937
+  },
+  "note": "Each sampled deal has an exact outcome. The confidence interval measures only Monte Carlo uncertainty in the population win-rate estimate."
+}

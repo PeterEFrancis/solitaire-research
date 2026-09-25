@@ -1,0 +1,21 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+# Local executables and resumable scratch files. Packaged research data is kept.
+**/native_solver
+**/native_solver.local
+**/native_solver.variants
+*.partial
+*.patterns.complete
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+_site/
+.jekyll-cache/

@@ -1,0 +1,60 @@
+{
+  "absolute_bounds": {
+    "blocker_event_count": 440,
+    "blocker_pair_sum": 7.191424188279904e-05,
+    "blocker_single_sum": 0.01188237965078581,
+    "loss_lower": 0.011810465408903011,
+    "loss_lower_fraction": "516163096789/43703874396000",
+    "lower": 1.2851610749996352e-35,
+    "lower_fraction": "1/77811258016843059832113070080000000",
+    "lower_method": "counted direct-to-foundation deal family",
+    "upper": 0.988189534591097,
+    "upper_method": "second-order Bonferroni count of permanently blocked rank-2-through-Queen tableau cards"
+  },
+  "config": {
+    "draw_count": 1,
+    "k": 2,
+    "max_recycles": 3,
+    "n": 13,
+    "t": 7
+  },
+  "constructive_sample": {
+    "elapsed_seconds": 507.797,
+    "exact_budget_exhaustions": 6890,
+    "exact_fallbacks": 10362,
+    "exact_node_limit_per_model_failure": 100000,
+    "expanded_positions": 745318450,
+    "games": 20000,
+    "joint_confidence": 0.999999,
+    "method": "inverted one-sided Bernoulli KL-Chernoff bound for a fixed constructive solver on independent uniformly shuffled deals",
+    "model_max_steps": 500,
+    "model_weights": [
+      8.0,
+      5.0,
+      1.0,
+      -1.1,
+      -0.9920599631572785,
+      0.0,
+      1.0,
+      1.0,
+      2.0,
+      -2.0,
+      -0.03,
+      0.0,
+      0.0,
+      0.0,
+      0.75,
+      1.0,
+      2.0
+    ],
+    "model_wins": 9638,
+    "observed_rate": 0.6506,
+    "seed": 2026071506,
+    "solvability_lower_bound": 0.6327456382895958,
+    "tail_alpha": 1e-06,
+    "threads": 8,
+    "wins": 13012
+  },
+  "quantity": "solvability probability of a uniformly random deal",
+  "schema_version": 1
+}

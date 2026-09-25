@@ -1,0 +1,655 @@
+{
+  "baseline": {
+    "deals": 500000,
+    "model_steps": 60492764,
+    "seed": 940001,
+    "win_rate": 0.542038,
+    "wins": 271019
+  },
+  "config": {
+    "k": 2,
+    "n": 13,
+    "t": 7
+  },
+  "features": [
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 62042278,
+        "seed": 940001,
+        "win_rate": 0.342116,
+        "wins": 171058
+      },
+      "importance_rank": 1,
+      "model_index": 5,
+      "name": "stock_action",
+      "weight": -0.9608099631572785,
+      "win_rate_loss_percentage_points": 19.9922,
+      "wins_lost": 99961
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 62288150,
+        "seed": 940001,
+        "win_rate": 0.370256,
+        "wins": 185128
+      },
+      "importance_rank": 2,
+      "model_index": 9,
+      "name": "waste_to_tableau",
+      "weight": 0.9375,
+      "win_rate_loss_percentage_points": 17.1782,
+      "wins_lost": 85891
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 61903541,
+        "seed": 940001,
+        "win_rate": 0.458246,
+        "wins": 229123
+      },
+      "importance_rank": 3,
+      "model_index": 2,
+      "name": "reveal_hidden",
+      "weight": 4.875,
+      "win_rate_loss_percentage_points": 8.3792,
+      "wins_lost": 41896
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 73661896,
+        "seed": 940001,
+        "win_rate": 0.48766,
+        "wins": 243830
+      },
+      "importance_rank": 4,
+      "model_index": 4,
+      "name": "tableau_build",
+      "weight": -1.13125,
+      "win_rate_loss_percentage_points": 5.4378,
+      "wins_lost": 27189
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 61023481,
+        "seed": 940001,
+        "win_rate": 0.51015,
+        "wins": 255075
+      },
+      "importance_rank": 5,
+      "model_index": 28,
+      "name": "next_reveal_moves",
+      "weight": 2.3125,
+      "win_rate_loss_percentage_points": 3.1888,
+      "wins_lost": 15944
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60983730,
+        "seed": 940001,
+        "win_rate": 0.510572,
+        "wins": 255286
+      },
+      "importance_rank": 6,
+      "model_index": 23,
+      "name": "productive_stack_length",
+      "weight": 0.6937500000000001,
+      "win_rate_loss_percentage_points": 3.1466,
+      "wins_lost": 15733
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60311038,
+        "seed": 940001,
+        "win_rate": 0.515836,
+        "wins": 257918
+      },
+      "importance_rank": 7,
+      "model_index": 39,
+      "name": "waste_play_recycle_pressure",
+      "weight": 0.296875,
+      "win_rate_loss_percentage_points": 2.6202,
+      "wins_lost": 13101
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 61205635,
+        "seed": 940001,
+        "win_rate": 0.52647,
+        "wins": 263235
+      },
+      "importance_rank": 8,
+      "model_index": 27,
+      "name": "next_foundation_moves",
+      "weight": 0.903125,
+      "win_rate_loss_percentage_points": 1.5568,
+      "wins_lost": 7784
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 62208172,
+        "seed": 940001,
+        "win_rate": 0.528266,
+        "wins": 264133
+      },
+      "importance_rank": 9,
+      "model_index": 25,
+      "name": "waste_unlocks_playable",
+      "weight": 0.8125,
+      "win_rate_loss_percentage_points": 1.3772,
+      "wins_lost": 6886
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 58240832,
+        "seed": 940001,
+        "win_rate": 0.530562,
+        "wins": 265281
+      },
+      "importance_rank": 10,
+      "model_index": 31,
+      "name": "draw_stock_remaining",
+      "weight": 0.0375,
+      "win_rate_loss_percentage_points": 1.1476,
+      "wins_lost": 5738
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60494926,
+        "seed": 940001,
+        "win_rate": 0.535634,
+        "wins": 267817
+      },
+      "importance_rank": 11,
+      "model_index": 7,
+      "name": "reveal_depth",
+      "weight": 0.96875,
+      "win_rate_loss_percentage_points": 0.6404,
+      "wins_lost": 3202
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60231425,
+        "seed": 940001,
+        "win_rate": 0.536328,
+        "wins": 268164
+      },
+      "importance_rank": 12,
+      "model_index": 24,
+      "name": "draw_playable",
+      "weight": 2.0,
+      "win_rate_loss_percentage_points": 0.571,
+      "wins_lost": 2855
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 59536227,
+        "seed": 940001,
+        "win_rate": 0.537408,
+        "wins": 268704
+      },
+      "importance_rank": 13,
+      "model_index": 10,
+      "name": "recycle",
+      "weight": -1.8125,
+      "win_rate_loss_percentage_points": 0.463,
+      "wins_lost": 2315
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 62764684,
+        "seed": 940001,
+        "win_rate": 0.537858,
+        "wins": 268929
+      },
+      "importance_rank": 14,
+      "model_index": 1,
+      "name": "safe_foundation",
+      "weight": 9.9375,
+      "win_rate_loss_percentage_points": 0.418,
+      "wins_lost": 2090
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60116651,
+        "seed": 940001,
+        "win_rate": 0.538196,
+        "wins": 269098
+      },
+      "importance_rank": 15,
+      "model_index": 29,
+      "name": "foundation_support_demand",
+      "weight": -0.78125,
+      "win_rate_loss_percentage_points": 0.3842,
+      "wins_lost": 1921
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 59976163,
+        "seed": 940001,
+        "win_rate": 0.539284,
+        "wins": 269642
+      },
+      "importance_rank": 16,
+      "model_index": 11,
+      "name": "destination_hidden",
+      "weight": -0.06124999999999999,
+      "win_rate_loss_percentage_points": 0.2754,
+      "wins_lost": 1377
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60153790,
+        "seed": 940001,
+        "win_rate": 0.539724,
+        "wins": 269862
+      },
+      "importance_rank": 17,
+      "model_index": 15,
+      "name": "source_hidden",
+      "weight": 0.375,
+      "win_rate_loss_percentage_points": 0.2314,
+      "wins_lost": 1157
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60676962,
+        "seed": 940001,
+        "win_rate": 0.540248,
+        "wins": 270124
+      },
+      "importance_rank": 18,
+      "model_index": 17,
+      "name": "first_empty_with_king",
+      "weight": 1.40625,
+      "win_rate_loss_percentage_points": 0.179,
+      "wins_lost": 895
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 59954524,
+        "seed": 940001,
+        "win_rate": 0.540452,
+        "wins": 270226
+      },
+      "importance_rank": 19,
+      "model_index": 30,
+      "name": "recycle_pressure",
+      "weight": -0.40625,
+      "win_rate_loss_percentage_points": 0.1586,
+      "wins_lost": 793
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 59770999,
+        "seed": 940001,
+        "win_rate": 0.540926,
+        "wins": 270463
+      },
+      "importance_rank": 20,
+      "model_index": 38,
+      "name": "draw_buries_playable_waste",
+      "weight": 0.125,
+      "win_rate_loss_percentage_points": 0.1112,
+      "wins_lost": 556
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60573747,
+        "seed": 940001,
+        "win_rate": 0.540952,
+        "wins": 270476
+      },
+      "importance_rank": 21,
+      "model_index": 16,
+      "name": "creates_first_empty",
+      "weight": 0.875,
+      "win_rate_loss_percentage_points": 0.1086,
+      "wins_lost": 543
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60188954,
+        "seed": 940001,
+        "win_rate": 0.54098,
+        "wins": 270490
+      },
+      "importance_rank": 22,
+      "model_index": 12,
+      "name": "destination_run",
+      "weight": -0.037500000000000006,
+      "win_rate_loss_percentage_points": 0.1058,
+      "wins_lost": 529
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60276186,
+        "seed": 940001,
+        "win_rate": 0.541084,
+        "wins": 270542
+      },
+      "importance_rank": 23,
+      "model_index": 42,
+      "name": "unsafe_foundation_distance",
+      "weight": -0.09375000000000001,
+      "win_rate_loss_percentage_points": 0.0954,
+      "wins_lost": 477
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60282875,
+        "seed": 940001,
+        "win_rate": 0.541118,
+        "wins": 270559
+      },
+      "importance_rank": 24,
+      "model_index": 20,
+      "name": "tableau_to_foundation",
+      "weight": -0.76875,
+      "win_rate_loss_percentage_points": 0.092,
+      "wins_lost": 460
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60472436,
+        "seed": 940001,
+        "win_rate": 0.541306,
+        "wins": 270653
+      },
+      "importance_rank": 25,
+      "model_index": 8,
+      "name": "empty_source",
+      "weight": -0.25,
+      "win_rate_loss_percentage_points": 0.0732,
+      "wins_lost": 366
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60462621,
+        "seed": 940001,
+        "win_rate": 0.541446,
+        "wins": 270723
+      },
+      "importance_rank": 26,
+      "model_index": 13,
+      "name": "blocks_foundation",
+      "weight": -0.71875,
+      "win_rate_loss_percentage_points": 0.0592,
+      "wins_lost": 296
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60422312,
+        "seed": 940001,
+        "win_rate": 0.541526,
+        "wins": 270763
+      },
+      "importance_rank": 27,
+      "model_index": 34,
+      "name": "draw_foundation_ready",
+      "weight": -1.5,
+      "win_rate_loss_percentage_points": 0.0512,
+      "wins_lost": 256
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60125636,
+        "seed": 940001,
+        "win_rate": 0.541564,
+        "wins": 270782
+      },
+      "importance_rank": 28,
+      "model_index": 36,
+      "name": "waste_unlocks_foundation_ready",
+      "weight": -1.84375,
+      "win_rate_loss_percentage_points": 0.0474,
+      "wins_lost": 237
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60489870,
+        "seed": 940001,
+        "win_rate": 0.541846,
+        "wins": 270923
+      },
+      "importance_rank": 29,
+      "model_index": 32,
+      "name": "revealed_card_tableau_moves",
+      "weight": 0.8125,
+      "win_rate_loss_percentage_points": 0.0192,
+      "wins_lost": 96
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60523176,
+        "seed": 940001,
+        "win_rate": 0.541852,
+        "wins": 270926
+      },
+      "importance_rank": 30,
+      "model_index": 19,
+      "name": "revealed_card_foundation_ready",
+      "weight": 1.25,
+      "win_rate_loss_percentage_points": 0.0186,
+      "wins_lost": 93
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60416557,
+        "seed": 940001,
+        "win_rate": 0.54187,
+        "wins": 270935
+      },
+      "importance_rank": 31,
+      "model_index": 40,
+      "name": "next_empty_source_moves",
+      "weight": -0.125,
+      "win_rate_loss_percentage_points": 0.0168,
+      "wins_lost": 84
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60495483,
+        "seed": 940001,
+        "win_rate": 0.541922,
+        "wins": 270961
+      },
+      "importance_rank": 32,
+      "model_index": 33,
+      "name": "revealed_card_foundation_distance",
+      "weight": 0.03125,
+      "win_rate_loss_percentage_points": 0.0116,
+      "wins_lost": 58
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60482731,
+        "seed": 940001,
+        "win_rate": 0.54193,
+        "wins": 270965
+      },
+      "importance_rank": 33,
+      "model_index": 18,
+      "name": "revealed_card_low_rank",
+      "weight": -0.05000000000000001,
+      "win_rate_loss_percentage_points": 0.0108,
+      "wins_lost": 54
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60553366,
+        "seed": 940001,
+        "win_rate": 0.541946,
+        "wins": 270973
+      },
+      "importance_rank": 34,
+      "model_index": 37,
+      "name": "waste_unlocks_tableau_moves",
+      "weight": 0.125,
+      "win_rate_loss_percentage_points": 0.0092,
+      "wins_lost": 46
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60532699,
+        "seed": 940001,
+        "win_rate": 0.542036,
+        "wins": 271018
+      },
+      "importance_rank": 35,
+      "model_index": 6,
+      "name": "foundation_move",
+      "weight": 0.03125,
+      "win_rate_loss_percentage_points": 0.0002,
+      "wins_lost": 1
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60462986,
+        "seed": 940001,
+        "win_rate": 0.542048,
+        "wins": 271024
+      },
+      "importance_rank": 36,
+      "model_index": 14,
+      "name": "foundation_rank",
+      "weight": -0.00625,
+      "win_rate_loss_percentage_points": -0.001,
+      "wins_lost": -5
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60509139,
+        "seed": 940001,
+        "win_rate": 0.542056,
+        "wins": 271028
+      },
+      "importance_rank": 37,
+      "model_index": 21,
+      "name": "tableau_to_tableau",
+      "weight": -0.015625,
+      "win_rate_loss_percentage_points": -0.0018,
+      "wins_lost": -9
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60506304,
+        "seed": 940001,
+        "win_rate": 0.542178,
+        "wins": 271089
+      },
+      "importance_rank": 38,
+      "model_index": 35,
+      "name": "draw_tableau_moves",
+      "weight": 0.125,
+      "win_rate_loss_percentage_points": -0.014,
+      "wins_lost": -70
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60467267,
+        "seed": 940001,
+        "win_rate": 0.542194,
+        "wins": 271097
+      },
+      "importance_rank": 39,
+      "model_index": 41,
+      "name": "foundation_lag",
+      "weight": -0.037500000000000006,
+      "win_rate_loss_percentage_points": -0.0156,
+      "wins_lost": -78
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60504563,
+        "seed": 940001,
+        "win_rate": 0.542364,
+        "wins": 271182
+      },
+      "importance_rank": 40,
+      "model_index": 26,
+      "name": "empty_king_queen_access",
+      "weight": 0.65625,
+      "win_rate_loss_percentage_points": -0.0326,
+      "wins_lost": -163
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 60557226,
+        "seed": 940001,
+        "win_rate": 0.542882,
+        "wins": 271441
+      },
+      "importance_rank": 41,
+      "model_index": 3,
+      "name": "empty_king",
+      "weight": 0.3125,
+      "win_rate_loss_percentage_points": -0.0844,
+      "wins_lost": -422
+    },
+    {
+      "ablated": {
+        "deals": 500000,
+        "model_steps": 62838764,
+        "seed": 940001,
+        "win_rate": 0.543014,
+        "wins": 271507
+      },
+      "importance_rank": 42,
+      "model_index": 22,
+      "name": "non_reveal_tableau_move",
+      "weight": -0.96875,
+      "win_rate_loss_percentage_points": -0.0976,
+      "wins_lost": -488
+    }
+  ],
+  "method": "set one selected weight to zero at a time and compare wins on the same deals; larger positive wins_lost means greater empirical contribution in the fitted model",
+  "model_source": "brute_force/results/k2_n13_t7.tuning-stage7.json",
+  "options": {
+    "deals": 500000,
+    "max_steps": 500,
+    "seed": 940001,
+    "threads": 8
+  },
+  "schema_version": 1
+}

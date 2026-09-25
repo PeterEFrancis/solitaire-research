@@ -1,0 +1,4 @@
+# To do
+
+- solvability
+- way to determine if a deal is unsolvable

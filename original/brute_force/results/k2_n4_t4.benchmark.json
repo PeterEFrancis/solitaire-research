@@ -1,0 +1,77 @@
+{
+  "all_deals_status": "completed",
+  "automorphism_reduction": {
+    "canonical_deals": 2615348736000,
+    "canonical_suit_patterns": 7882875,
+    "orbit_size": 8,
+    "raw_deals": 20922789888000,
+    "rank_assignments_per_pattern": 331776
+  },
+  "benchmark": {
+    "deals": 1000000,
+    "exact_only": {
+      "deals_per_second": 125534.0,
+      "elapsed_seconds": 7.96595,
+      "expanded_positions": 66923220,
+      "solvable_deals": 985209
+    },
+    "model_only": {
+      "deals_per_second": 459934.0,
+      "elapsed_seconds": 2.17422,
+      "model_steps": 29446170,
+      "solvable_deals": 952272
+    },
+    "model_then_exact": {
+      "deals_per_second": 137132.0,
+      "elapsed_seconds": 7.29222,
+      "exact_fallbacks": 47728,
+      "expanded_positions": 35940804,
+      "model_steps": 29446170,
+      "model_wins": 952272,
+      "solvable_deals": 985209
+    },
+    "solver_optimizations": [
+      "force provably safe foundation moves",
+      "canonicalize tableau pile order in the state cache",
+      "remove equivalent empty-column successors",
+      "skip whole face-up king-pile moves to empty columns"
+    ],
+    "seed": 20260714,
+    "threads": 8
+  },
+  "config": {
+    "draw_count": 1,
+    "k": 2,
+    "max_recycles": 3,
+    "n": 4,
+    "t": 4
+  },
+  "projection": {
+    "direct_exact_only_machine_years": 0.6601829019283829,
+    "direct_model_then_exact_machine_years": 0.6043476388492665,
+    "raw_bitset_bytes": 326918592000,
+    "raw_bitset_gibibytes": 304.4666647911072
+  },
+  "schema_version": 1,
+  "stock_collapsed_run": {
+    "canonical_tableau_deals": 3632428800,
+    "canonical_tableau_patterns": 90300,
+    "combined_orbit_size": 5760,
+    "compressed_bitset_bytes": 8517753,
+    "elapsed_minutes_approx": 93,
+    "expanded_positions": 72264410042,
+    "metadata": "k2_n4_t4.stock_collapsed.json",
+    "solvability_rate": 0.9853901615359949,
+    "solvable_tableau_deals": 3579359602,
+    "status": "exhaustive",
+    "stock_order_orbit_size": 720,
+    "unsolvable_tableau_deals": 53069198
+  },
+  "tuning": {
+    "accepted_training_episodes": 20000,
+    "full_parameter_count": 17,
+    "optimizer": "adam",
+    "rejected_refinement_episodes": 30000,
+    "source": "solitaire/parameters.json"
+  }
+}

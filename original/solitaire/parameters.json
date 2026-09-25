@@ -1,0 +1,236 @@
+{
+  "records": [
+    {
+      "k": 2,
+      "metrics": {
+        "average_progress": 0.9768,
+        "average_steps": 28.4,
+        "games": 5000,
+        "greedy": true,
+        "max_steps": 300,
+        "seed": 4242,
+        "win_rate": 0.9564,
+        "wins": 4782
+      },
+      "n": 3,
+      "parameters": {
+        "empty_king": 0.0,
+        "reveal_hidden": 5.0,
+        "safe_foundation": 8.0,
+        "stock_action": 0.0,
+        "tableau_build": -2.0
+      },
+      "t": 3,
+      "updated_at": "2026-07-13T00:00:00+00:00"
+    },
+    {
+      "k": 2,
+      "metrics": {
+        "average_steps": 125.801844,
+        "engine": "native",
+        "games": 1000000,
+        "greedy": true,
+        "max_steps": 500,
+        "seed": 2026092599,
+        "wilson_95_ci": [
+          0.541982478610331,
+          0.5439351913404779
+        ],
+        "win_rate": 0.542959,
+        "wins": 542959
+      },
+      "n": 13,
+      "parameters": {
+        "blocks_foundation": -0.71875,
+        "creates_first_empty": 0.875,
+        "destination_hidden": -0.06124999999999999,
+        "destination_run": -0.037500000000000006,
+        "draw_buries_playable_waste": 0.125,
+        "draw_foundation_ready": -1.5,
+        "draw_playable": 2.0,
+        "draw_stock_remaining": 0.0375,
+        "draw_tableau_moves": 0.0,
+        "empty_king": 0.0,
+        "empty_king_queen_access": 0.0,
+        "empty_source": -0.25,
+        "first_empty_with_king": 1.40625,
+        "foundation_lag": 0.0,
+        "foundation_move": 0.03125,
+        "foundation_rank": 0.0,
+        "foundation_support_demand": -0.78125,
+        "next_empty_source_moves": -0.125,
+        "next_foundation_moves": 0.903125,
+        "next_reveal_moves": 2.3125,
+        "non_reveal_tableau_move": 0.0,
+        "productive_stack_length": 0.6937500000000001,
+        "recycle": -1.8125,
+        "recycle_pressure": -0.40625,
+        "reveal_depth": 0.96875,
+        "reveal_hidden": 4.875,
+        "revealed_card_foundation_distance": 0.03125,
+        "revealed_card_foundation_ready": 1.25,
+        "revealed_card_low_rank": -0.05000000000000001,
+        "revealed_card_tableau_moves": 0.8125,
+        "safe_foundation": 9.9375,
+        "source_hidden": 0.375,
+        "stock_action": -0.9608099631572785,
+        "tableau_build": -1.13125,
+        "tableau_to_foundation": -0.76875,
+        "tableau_to_tableau": 0.0,
+        "unsafe_foundation_distance": -0.09375000000000001,
+        "waste_play_recycle_pressure": 0.296875,
+        "waste_to_tableau": 0.9375,
+        "waste_unlocks_foundation_ready": -1.84375,
+        "waste_unlocks_playable": 0.8125,
+        "waste_unlocks_tableau_moves": 0.125
+      },
+      "previous_policy": {
+        "metrics": {
+          "average_steps": 120.947843,
+          "engine": "native",
+          "games": 1000000,
+          "greedy": true,
+          "max_steps": 500,
+          "seed": 930001,
+          "win_rate": 0.541265,
+          "wins": 541265
+        },
+        "result": "brute_force/results/k2_n13_t7.tuning-stage7.json",
+        "test_comparisons": {
+          "against_17_parameter_policy": {
+            "baseline_average_steps": 129.140299,
+            "baseline_win_rate": 0.479592,
+            "baseline_wins": 479592,
+            "deals": 1000000,
+            "gain_percentage_points": 4.6548,
+            "seed": 750001,
+            "selected_average_steps": 117.908241,
+            "selected_win_rate": 0.52614,
+            "selected_wins": 526140
+          },
+          "against_previous_31_parameter_policy": {
+            "baseline_average_steps": 117.876703,
+            "baseline_win_rate": 0.524798,
+            "baseline_wins": 524798,
+            "deals": 1000000,
+            "gain_percentage_points": 0.7699,
+            "seed": 840001,
+            "selected_average_steps": 117.700597,
+            "selected_win_rate": 0.532497,
+            "selected_wins": 532497
+          },
+          "against_stage4_31_parameter_policy": {
+            "baseline_average_steps": 117.71103,
+            "baseline_win_rate": 0.532941,
+            "baseline_wins": 532941,
+            "deals": 1000000,
+            "gain_percentage_points": 0.8324,
+            "relative_gain_percent": 1.5618989719312268,
+            "seed": 930001,
+            "selected_average_steps": 120.947843,
+            "selected_win_rate": 0.541265,
+            "selected_wins": 541265
+          }
+        },
+        "tuning": {
+          "feature_count": 42,
+          "method": "common-random coordinate ascent",
+          "new_feature_result": "brute_force/results/k2_n13_t7.tuning-stage6-new-features.json",
+          "previous_result": "brute_force/results/k2_n13_t7.tuning-stage6-new-features.json",
+          "result": "brute_force/results/k2_n13_t7.tuning-stage7.json",
+          "training_deals": 250000,
+          "training_seed": 900001,
+          "validation_deals": 500000,
+          "validation_seed": 910001,
+          "validation_win_rate": 0.541322
+        }
+      },
+      "rules": {
+        "allow_foundation_to_tableau": false,
+        "allow_tableau_stack_splitting": true,
+        "draw_count": 1,
+        "max_recycles": 3
+      },
+      "t": 7,
+      "test_comparisons": {
+        "against_stage7": {
+          "b_candidate_wins_baseline_loses": 18625,
+          "baseline_win_rate": 0.539896,
+          "baseline_wins": 539896,
+          "c_baseline_wins_candidate_loses": 15562,
+          "deals": 1000000,
+          "delta_percentage_points": 0.3063,
+          "discordant_deals": 34187,
+          "net_wins": 3063,
+          "paired_normal_95_ci_percentage_points": [
+            0.2700657741554343,
+            0.3425342258445657
+          ],
+          "seed": 2026092599,
+          "selected_win_rate": 0.542959,
+          "selected_wins": 542959,
+          "standard_error_percentage_points": 0.01848718962714452
+        }
+      },
+      "tuning": {
+        "active_feature_count": 35,
+        "feature_count": 42,
+        "method": "Zero/half-weight candidate screening on common training deals; independent validation selection; frozen matched confirmation",
+        "previous_result": "brute_force/results/k2_n13_t7.tuning-stage7.json",
+        "result": "brute_force/results/k2_n13_t7.tuning-stage8.json",
+        "screen_result": "brute_force/results/k2_n13_t7.tuning-stage8-screen.json",
+        "training_deals": 75000,
+        "training_seed": 2026092501,
+        "validation_deals": 200000,
+        "validation_seed": 2026092502,
+        "validation_win_rate": 0.543145
+      },
+      "updated_at": "2026-09-25T16:38:20.839961+00:00"
+    },
+    {
+      "k": 2,
+      "metrics": {
+        "average_progress": 0.969875,
+        "average_steps": 84.1588,
+        "games": 5000,
+        "greedy": true,
+        "max_steps": 300,
+        "seed": 44003,
+        "win_rate": 0.9552,
+        "wins": 4776
+      },
+      "n": 4,
+      "native_benchmark": {
+        "average_steps": 83.621621,
+        "games": 1000000,
+        "greedy": true,
+        "max_steps": 300,
+        "seed": 20260714,
+        "win_rate": 0.952268,
+        "wins": 952268
+      },
+      "parameters": {
+        "blocks_foundation": 0.137402118160686,
+        "creates_first_empty": 1.0280564066869964,
+        "destination_hidden": -0.06887841479579193,
+        "destination_run": 0.04678845358001803,
+        "empty_king": 1.0715637483026381,
+        "empty_source": 1.0122255109713585,
+        "first_empty_with_king": 2.0187127117822232,
+        "foundation_move": -0.07867712926652164,
+        "foundation_rank": -0.10838485806665588,
+        "recycle": -2.043119906477297,
+        "reveal_depth": 1.0502653673004092,
+        "reveal_hidden": 5.079509858778847,
+        "safe_foundation": 8.042521340737478,
+        "source_hidden": 0.6370608072236218,
+        "stock_action": -1.0301777716066625,
+        "tableau_build": -1.0315555151035165,
+        "waste_to_tableau": 2.2163598526425887
+      },
+      "t": 4,
+      "updated_at": "2026-07-14T13:36:30.884766+00:00"
+    }
+  ],
+  "version": 1
+}
