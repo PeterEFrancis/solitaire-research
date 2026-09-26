@@ -133,9 +133,13 @@ Training used 5,000 common deals (seed 2026092601), rule-sensitive starting poin
 
 All selections were frozen before the 250,000-deal confirmation (seed 2026092699). Every frozen policy was reported. The test selected no weights or bank members. This search was not exhaustive. Unlimited-pass models fixed consumed-pass-pressure coefficients to zero.
 
-The following counts reached the 1,000-move cap without winning. Single-policy entries count deals out of 250,000; the portfolio column counts capped attempts across its entire bank, so the same deal can appear more than once.
+### Runs stopped by the move limit
 
-| Variant | Stage 8 | Full | Visible | Eight-feature | Portfolio capped / total attempts |
+**No tested run was stopped by the 1,000-move limit.** The table counts runs that reached this limit without winning. A zero means no run was cut short by the move budget; it is not a win count, loss count, or count of unsolvable deals. A run can also stop when no eligible continuation remains after move pruning and repeated-position avoidance. That is a failure of this policy's trajectory, not a proof that the deal cannot be won. Increasing the move limit alone cannot extend a trajectory that has already stopped this way.
+
+Single-policy entries count deals out of 250,000; the portfolio column counts attempts across its entire bank, so the same deal can appear more than once. The separately tested Vegas payout-focused policy had 0 runs stopped by the move limit.
+
+| Variant | Stage 8: hit limit | Full: hit limit | Visible: hit limit | Eight-feature: hit limit | Portfolio: hit limit / total attempts |
 |:--|:--|:--|:--|:--|:--|
 | Draw one / four passes | 0 | 0 | 0 | 0 | 0 / 1,250,000 |
 | Draw one / unlimited | 0 | 0 | 0 | 0 | 0 / 1,500,000 |

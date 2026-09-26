@@ -317,6 +317,13 @@ def expanded_report(records, prefix, earnings=None):
     frozen = records["selected-policies"]["variants"]
     variants = records["confirmation"]["variants"]
     deals = options["test_deals"]
+    any_cutoffs = any(row["cutoffs"] > 0 for variant in variants.values()
+                      for row in variant["evaluations"].values() if "cutoffs" in row)
+    cutoff_summary = (
+        f"**Some tested runs reached the {options['max_steps']:,}-move limit without winning.**"
+        if any_cutoffs else
+        f"**No tested run was stopped by the {options['max_steps']:,}-move limit.**"
+    )
     rule_rows, result_rows, gain_rows, cutoff_rows, coefficient_rows = [], [], [], [], []
     for profile, (label, draw, recycles, split) in PROFILES.items():
         selected, evaluations = frozen[profile], variants[profile]["evaluations"]
@@ -448,9 +455,16 @@ def expanded_report(records, prefix, earnings=None):
             f"All selections were frozen before the {deals:,}-deal confirmation (seed {seeds['test']}). Every frozen policy was reported. "
             "The test selected no weights or bank members. This search was not exhaustive. Unlimited-pass models fixed consumed-pass-pressure "
             "coefficients to zero.\n\n"
-            f"The following counts reached the {options['max_steps']:,}-move cap without winning. Single-policy entries count deals out of "
-            f"{deals:,}; the portfolio column counts capped attempts across its entire bank, so the same deal can appear more than once."
-        ) + "\n\n" + table(("Variant", "Stage 8", "Full", "Visible", "Eight-feature", "Portfolio capped / total attempts"), cutoff_rows),
+            "### Runs stopped by the move limit\n\n"
+        ) + cutoff_summary + " " + (
+            "The table counts runs that reached this limit without winning. A zero means no run was cut short by the move budget; "
+            "it is not a win count, loss count, or count of unsolvable deals. A run can also stop when no eligible continuation remains "
+            "after move pruning and repeated-position avoidance. That is a failure of this policy's trajectory, not a proof that the "
+            "deal cannot be won. Increasing the move limit alone cannot extend a trajectory that has already stopped this way.\n\n"
+            f"Single-policy entries count deals out of {deals:,}; the portfolio column counts attempts across its entire bank, so the "
+            "same deal can appear more than once. "
+            f"The separately tested Vegas payout-focused policy had {vegas['profit']['cutoffs']:,} runs stopped by the move limit."
+        ) + "\n\n" + table(("Variant", "Stage 8: hit limit", "Full: hit limit", "Visible: hit limit", "Eight-feature: hit limit", "Portfolio: hit limit / total attempts"), cutoff_rows),
         "## Evidence and reproduction\n\n" + (
             f"The [frozen protocol](brute_force/results/{prefix}.protocol.json), "
             f"[training and validation record](brute_force/results/{prefix}.training.json), "
