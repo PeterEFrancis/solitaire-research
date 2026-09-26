@@ -2,7 +2,7 @@
 layout: default
 title: "Solitaire Research: how rules change strategy"
 source_path: "original/strategy-guide.md"
-source_sha256: 0f15d7e58f4f00f2472ed990d9000dce9a55766b7d67447b1571b2b5215e5b0d
+source_sha256: 728715efbfb44f6ba1a6fa037704b993126b95cf0bb5b55c2895fe8287764209
 toc:
   - title: "The five games"
     id: "the-five-games"
@@ -12,8 +12,8 @@ toc:
     id: "a-scorecard-for-each-rule"
   - title: "Turning the scores into play"
     id: "turning-the-scores-into-play"
-  - title: "The Vegas objective: cards returned, not only complete wins"
-    id: "the-vegas-objective-cards-returned-not-only-complete-wins"
+  - title: "Vegas: what do you earn per $52 deal?"
+    id: "vegas-earnings"
   - title: "Search, confirmation, and computation limits"
     id: "search-confirmation-and-computation-limits"
   - title: "Evidence and reproduction"
@@ -107,20 +107,51 @@ Unlimited draw-one allows returning later, changing waste urgency compared with 
 
 Some buried draw-three packet cards were never exposed on top. Their identities are not automatically valid memory features. Visible and eight-feature policies therefore omit all three waste-history features in every variant. Full policies can inspect hidden identities through successor scoring; their and the portfolio's rates are not established human-performance rates.
 
-## The Vegas objective: cards returned, not only complete wins {#the-vegas-objective-cards-returned-not-only-complete-wins}
+## Vegas: what do you earn per $52 deal? {#vegas-earnings}
 
-This advisor-inspired experiment pays **$5 per foundation card, minus $52 for the deck**. Turning a card face up earns nothing. These explicitly defined rules are not a claim about all casinos. Optimizing complete wins can select a different policy from optimizing foundation cards.
+The advisor-inspired Vegas game uses draw one, one pass, and whole visible-run transfers. Pay **$52 for the deck and receive $5 per foundation card**: net earnings are **5 × foundation cards − 52**. Turning a card face up earns nothing. These are the rules of this experiment, not a claim about every casino.
 
-| Policy | Win rate | Mean foundation cards | Mean net return | 95% interval for mean return |
-|:--|:--|:--|:--|:--|
-| Stage 8 | 0.7104% | 6.9587 | −$17.21 | −$17.31 to −$17.10 |
-| Win-focused full | 3.0440% | 9.1737 | −$6.13 | −$6.31 to −$5.96 |
-| Visible | 2.6300% | 8.9925 | −$7.04 | −$7.20 to −$6.87 |
-| Eight-feature | 2.5828% | 8.9733 | −$7.13 | −$7.30 to −$6.97 |
-| Foundation-focused | 2.8536% | 9.2548 | −$5.73 | −$5.90 to −$5.56 |
-| Restart portfolio | 3.8960% | 10.0498 | −$1.75 | −$1.94 to −$1.56 |
+The main earnings policy is the **payout-focused policy**, selected before confirmation to maximize foundation cards, with 35 nonzero weights. On 250,000 fresh confirmation deals, its **mean net return was −$5.73 per deal; the median was −$17.00.** It made a profit on 25.7260% of deals and a loss on 74.2740%. It lost the entire $52 stake on 0.4700% and completed all 52 foundation cards on 2.8536%. This fixed policy can inspect the full deal; these are computer results, not measured human earnings.
 
-The separately selected foundation-focused policy has 35 nonzero weights and was optimized for foundation count, breaking ties by wins and moves. Return intervals use a normal approximation and the recorded foundation totals and squared totals. They describe the fixed policy and shuffle model, without guaranteeing profit. Portfolio returns use full-information planning across multiple attempts.
+**Exactly breaking even is impossible:** ten foundation cards return $50, a $2 loss; eleven return $55, a $3 profit. Possible net returns run from −$52 to +$208 in $5 steps.
+
+The 5th, 25th, 50th, 75th, and 95th percentiles of individual net returns were −$42.00, −$27.00, −$17.00, +$3.00, +$53.00, respectively. The mean's 95% confidence interval is −$5.90 to −$5.56. This normal-approximation interval describes uncertainty in the **average**, not a range containing 95% of individual deal outcomes. The return distribution is uneven: frequent losses coexist with a smaller chance of much larger positive payouts.
+
+![Distribution of net earnings from the payout-focused Vegas policy: losses are common, with a smaller positive-return tail extending to a $208 net win.](https://raw.githubusercontent.com/PeterEFrancis/solitaire-research/main/original/brute_force/results/vegas-earnings.png)
+
+*Net earnings for the frozen payout-focused policy on 250,000 confirmation deals. The chart and table summarize the saved outcomes; no new deals or policy fitting were used.*
+
+| Foundation cards | Net earnings | Deals | Probability |
+|:--|:--|:--|:--|
+| 0 | −$52.00 | 1,175 | 0.4700% |
+| 1–5 | −$47.00 to −$27.00 | 81,094 | 32.4376% |
+| 6–10 | −$22.00 to −$2.00 | 103,416 | 41.3664% |
+| 11–15 | +$3.00 to +$23.00 | 39,377 | 15.7508% |
+| 16–25 | +$28.00 to +$73.00 | 16,086 | 6.4344% |
+| 26–51 | +$78.00 to +$203.00 | 1,718 | 0.6872% |
+| 52 | +$208.00 | 7,134 | 2.8536% |
+
+The six existing policies show why complete-win rate and earnings are different objectives. “Visible” and “Eight-feature” use audited current-position information; the others can use the full deal. All single-policy rows are one fixed trajectory per deal.
+
+| Policy | Information | Mean net | Median net | Profit probability | Full-win rate |
+|:--|:--|:--|:--|:--|:--|
+| Payout-focused | Full deal | −$5.73 | −$17.00 | 25.7260% | 2.8536% |
+| Win-focused full | Full deal | −$6.13 | −$17.00 | 24.6720% | 3.0440% |
+| Visible | Current visible position | −$7.04 | −$17.00 | 24.4732% | 2.6300% |
+| Eight-feature | Current visible position | −$7.13 | −$17.00 | 24.4824% | 2.5828% |
+| Stage 8 | Full deal | −$17.21 | −$22.00 | 14.6232% | 0.7104% |
+| Restart portfolio | Full deal; 6 attempts | −$1.75 | −$12.00 | 29.1112% | 3.8960% |
+
+The payout-focused policy earned +$0.41 more per deal on average than the win-focused full policy, despite completing fewer games. The portfolio is hypothetical planning with 6 attempts on the **same known deal**, reporting the best foundation outcome. Its displayed return charges one $52 stake for that selected trajectory; it is **not 6 independently paid plays**, nor an ordinary single-pass strategy.
+
+The [complete 53-point earnings distributions](https://github.com/PeterEFrancis/solitaire-research/blob/main/original/brute_force/results/vegas-earnings.json) contain every foundation count, net return, probability, quantile, and source hash for all six policies. The [earnings analyzer](https://github.com/PeterEFrancis/solitaire-research/blob/main/original/brute_force/vegas_earnings.py) reconstructs them from the frozen confirmation outcomes. This is a new summary of existing test data; it changes no policy and makes no new selection. From the repository root, verify it with:
+
+```bash
+cd original
+python3 -m brute_force.vegas_earnings --check
+```
+
+To regenerate the chart with the [plotting script](https://github.com/PeterEFrancis/solitaire-research/blob/main/scripts/plot_vegas_earnings.py), run `python3 scripts/plot_vegas_earnings.py` from the repository root with the optional Matplotlib dependency installed.
 
 ## Search, confirmation, and computation limits {#search-confirmation-and-computation-limits}
 

@@ -233,7 +233,85 @@ def table(headers, rows):
                      + ["| " + " | ".join(map(str, row)) + " |" for row in rows])
 
 
-def expanded_report(records, prefix):
+def vegas_earnings_section(earnings, frozen):
+    policies = earnings["policies"]
+    main = policies["profit"]
+    events = main["events"]
+    quantiles = main["quantiles_net_dollars"]
+    attempts = len(frozen["vegas"]["portfolio"])
+    labels = (
+        ("profit", "Payout-focused", "Full deal"),
+        ("full", "Win-focused full", "Full deal"),
+        ("visible", "Visible", "Current visible position"),
+        ("simple_eight", "Eight-feature", "Current visible position"),
+        ("stage8_baseline", "Stage 8", "Full deal"),
+        ("portfolio", "Restart portfolio", f"Full deal; {attempts} attempts"),
+    )
+    comparisons = []
+    for name, label, information in labels:
+        policy = policies[name]
+        comparisons.append((label, information, money(policy["mean_net_dollars"]),
+                            money(policy["median_net_dollars"]), pct(policy["events"]["profit"]["probability"]),
+                            pct(policy["events"]["full_win"]["probability"])))
+    groups = []
+    for group in main["bins"]:
+        low, high = group["foundation_cards_min"], group["foundation_cards_max"]
+        cards = str(low) if low == high else f"{low}–{high}"
+        net = money(5 * low - 52)
+        if low != high:
+            net += " to " + money(5 * high - 52)
+        groups.append((cards, net, f"{group['count']:,}", pct(group["probability"])))
+    objective_comparison = ""
+    if (main["mean_net_dollars"] > policies["full"]["mean_net_dollars"]
+            and events["full_win"]["probability"] < policies["full"]["events"]["full_win"]["probability"]):
+        objective_comparison = (
+            "The payout-focused policy earned " + money(main["mean_net_dollars"] - policies["full"]["mean_net_dollars"])
+            + " more per deal on average than the win-focused full policy, despite completing fewer games. "
+        )
+    return "## Vegas: what do you earn per $52 deal? {#vegas-earnings}\n\n" + (
+        "The advisor-inspired Vegas game uses draw one, one pass, and whole visible-run transfers. Pay **$52 for the deck and receive "
+        "$5 per foundation card**: net earnings are **5 × foundation cards − 52**. Turning a card face up earns nothing. These are the "
+        "rules of this experiment, not a claim about every casino.\n\n"
+        f"The main earnings policy is the **payout-focused policy**, selected before confirmation to maximize foundation cards, with "
+        f"{active(frozen['vegas']['policies']['profit'])} nonzero weights. On {main['sample_size']:,} fresh confirmation deals, its "
+        f"**mean net return was {money(main['mean_net_dollars'])} per deal; the median was {money(main['median_net_dollars'])}.** "
+        f"It made a profit on {pct(events['profit']['probability'])} of deals and a loss on {pct(events['loss']['probability'])}. "
+        f"It lost the entire $52 stake on {pct(events['full_loss']['probability'])} and completed all 52 foundation cards on "
+        f"{pct(events['full_win']['probability'])}. This fixed policy can inspect the full deal; these are computer results, not measured "
+        "human earnings.\n\n"
+        "**Exactly breaking even is impossible:** ten foundation cards return $50, a $2 loss; eleven return $55, a $3 profit. "
+        "Possible net returns run from −$52 to +$208 in $5 steps.\n\n"
+        "The 5th, 25th, 50th, 75th, and 95th percentiles of individual net returns were "
+        + ", ".join(money(quantiles[key]) for key in ("q05", "q25", "q50", "q75", "q95")) + ", respectively. "
+        "The mean's 95% confidence interval is "
+        + " to ".join(money(value) for value in main["mean_net_dollars_95_ci"])
+        + ". This normal-approximation interval describes uncertainty in the **average**, not a range containing 95% of individual "
+        "deal outcomes. The return distribution is uneven: frequent losses coexist with a smaller chance of much larger positive payouts."
+    ) + "\n\n" + (
+        "![Distribution of net earnings from the payout-focused Vegas policy: losses are common, with a smaller positive-return tail "
+        "extending to a $208 net win.](brute_force/results/vegas-earnings.png)\n\n"
+        f"*Net earnings for the frozen payout-focused policy on {main['sample_size']:,} confirmation deals. The chart and table summarize "
+        "the saved outcomes; no new deals or policy fitting were used.*"
+    ) + "\n\n" + table(("Foundation cards", "Net earnings", "Deals", "Probability"), groups) + "\n\n" + (
+        "The six existing policies show why complete-win rate and earnings are different objectives. “Visible” and “Eight-feature” use "
+        "audited current-position information; the others can use the full deal. All single-policy rows are one fixed trajectory per deal."
+    ) + "\n\n" + table(("Policy", "Information", "Mean net", "Median net", "Profit probability", "Full-win rate"), comparisons) + "\n\n" + (
+        objective_comparison +
+        f"The portfolio is hypothetical planning with {attempts} attempts on the **same known deal**, reporting the best foundation outcome. "
+        f"Its displayed return charges one $52 stake for that selected trajectory; it is **not {attempts} independently paid plays**, nor an "
+        "ordinary single-pass strategy.\n\n"
+        "The [complete 53-point earnings distributions](brute_force/results/vegas-earnings.json) contain every foundation count, "
+        "net return, probability, quantile, and source hash for all six policies. The "
+        "[earnings analyzer](brute_force/vegas_earnings.py) reconstructs them from the frozen confirmation outcomes. This is a new "
+        "summary of existing test data; it changes no policy and makes no new selection. From the repository root, verify it with:\n\n"
+        "```bash\ncd original\npython3 -m brute_force.vegas_earnings --check\n```\n\n"
+        "To regenerate the chart with the [plotting script](../scripts/plot_vegas_earnings.py), "
+        "run `python3 scripts/plot_vegas_earnings.py` from the repository root "
+        "with the optional Matplotlib dependency installed."
+    )
+
+
+def expanded_report(records, prefix, earnings=None):
     protocol = records["protocol"]
     options, seeds = protocol["options"], protocol["seeds"]
     frozen = records["selected-policies"]["variants"]
@@ -351,7 +429,7 @@ def expanded_report(records, prefix):
             "Visible and eight-feature policies therefore omit all three waste-history features in every variant. Full policies can inspect "
             "hidden identities through successor scoring; their and the portfolio's rates are not established human-performance rates."
         ),
-        "## The Vegas objective: cards returned, not only complete wins\n\n" + (
+        vegas_earnings_section(earnings, frozen) if earnings is not None else "## The Vegas objective: cards returned, not only complete wins\n\n" + (
             "This advisor-inspired experiment pays **$5 per foundation card, minus $52 for the deck**. Turning a card face up earns nothing. "
             "These explicitly defined rules are not a claim about all casinos. Optimizing complete wins can select a different policy from "
             "optimizing foundation cards."
@@ -421,6 +499,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--prefix", default="variant-study", help="Result filename prefix")
     parser.add_argument("--output", type=Path, default=GUIDE, help="Destination; defaults to the canonical guide")
+    parser.add_argument("--check", action="store_true", help="Check the destination matches current evidence without writing it")
     args = parser.parse_args()
     if Path(args.prefix).name != args.prefix:
         parser.error("--prefix must be a filename prefix")
@@ -428,11 +507,21 @@ def main():
         parser.error("Use --output for a smoke/custom study; it must not overwrite the canonical guide")
     try:
         records = load_study(args.prefix)
-        report = expanded_report(records, args.prefix)
+        earnings = None
+        if args.prefix == "variant-study":
+            from brute_force.vegas_earnings import build_report
+            earnings = json.loads((RESULTS / "vegas-earnings.json").read_text(encoding="utf-8"))
+            require(earnings == build_report(), "Vegas earnings report is stale or inconsistent with its outcomes")
+        report = expanded_report(records, args.prefix, earnings)
         output = document(GUIDE.read_text(encoding="utf-8"), report)
         require(document(output, report) == output, "Report generation is not idempotent")
     except (ValueError, KeyError, TypeError, FileNotFoundError) as error:
         parser.exit(1, f"Cannot generate report: {error}\n")
+    if args.check:
+        if not args.output.is_file() or args.output.read_text(encoding="utf-8") != output:
+            parser.exit(1, f"Report is stale: {args.output}\n")
+        print(f"Report matches numerical evidence: {args.output}")
+        return
     args.output.parent.mkdir(parents=True, exist_ok=True)
     temporary = args.output.with_suffix(args.output.suffix + ".tmp")
     temporary.write_text(output, encoding="utf-8")

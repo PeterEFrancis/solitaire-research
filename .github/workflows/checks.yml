@@ -28,7 +28,8 @@ jobs:
       - name: Verify saved research results
         working-directory: original
         run: python3 -m brute_force.verify_variant_study
+      - name: Verify Vegas earnings distribution
+        working-directory: original
+        run: python3 -m brute_force.vegas_earnings --check
       - name: Check guide matches the numerical evidence
-        run: |
-          python3 scripts/update_strategy_guide.py --output /tmp/strategy-guide.md
-          cmp original/strategy-guide.md /tmp/strategy-guide.md
+        run: python3 scripts/update_strategy_guide.py --check

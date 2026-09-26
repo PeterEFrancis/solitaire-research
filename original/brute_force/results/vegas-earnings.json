@@ -1,0 +1,3037 @@
+{
+  "config": {
+    "allow_tableau_stack_splitting": false,
+    "draw_count": 1,
+    "k": 2,
+    "max_recycles": 0,
+    "n": 13,
+    "t": 7
+  },
+  "evaluation_options": {
+    "deals": 250000,
+    "max_steps": 1000,
+    "seed": 2026092699,
+    "threads": 4
+  },
+  "policies": {
+    "full": {
+      "attempts_per_deal": 1,
+      "bins": [
+        {
+          "count": 1247,
+          "foundation_cards_max": 0,
+          "foundation_cards_min": 0,
+          "label": "0",
+          "net_dollars_max": -52,
+          "net_dollars_min": -52,
+          "probability": 0.004988
+        },
+        {
+          "count": 84389,
+          "foundation_cards_max": 5,
+          "foundation_cards_min": 1,
+          "label": "1\u20135",
+          "net_dollars_max": -27,
+          "net_dollars_min": -47,
+          "probability": 0.337556
+        },
+        {
+          "count": 102684,
+          "foundation_cards_max": 10,
+          "foundation_cards_min": 6,
+          "label": "6\u201310",
+          "net_dollars_max": -2,
+          "net_dollars_min": -22,
+          "probability": 0.410736
+        },
+        {
+          "count": 37469,
+          "foundation_cards_max": 15,
+          "foundation_cards_min": 11,
+          "label": "11\u201315",
+          "net_dollars_max": 23,
+          "net_dollars_min": 3,
+          "probability": 0.149876
+        },
+        {
+          "count": 15031,
+          "foundation_cards_max": 25,
+          "foundation_cards_min": 16,
+          "label": "16\u201325",
+          "net_dollars_max": 73,
+          "net_dollars_min": 28,
+          "probability": 0.060124
+        },
+        {
+          "count": 1570,
+          "foundation_cards_max": 51,
+          "foundation_cards_min": 26,
+          "label": "26\u201351",
+          "net_dollars_max": 203,
+          "net_dollars_min": 78,
+          "probability": 0.00628
+        },
+        {
+          "count": 7610,
+          "foundation_cards_max": 52,
+          "foundation_cards_min": 52,
+          "label": "52",
+          "net_dollars_max": 208,
+          "net_dollars_min": 208,
+          "probability": 0.03044
+        }
+      ],
+      "events": {
+        "full_loss": {
+          "count": 1247,
+          "probability": 0.004988,
+          "wilson_95_ci": [
+            0.00471934692267548,
+            0.005271865389284635
+          ]
+        },
+        "full_win": {
+          "count": 7610,
+          "probability": 0.03044,
+          "wilson_95_ci": [
+            0.029773758887801486,
+            0.03112067125369809
+          ]
+        },
+        "loss": {
+          "count": 188320,
+          "probability": 0.75328,
+          "wilson_95_ci": [
+            0.7515862265188007,
+            0.7549659898832799
+          ]
+        },
+        "profit": {
+          "count": 61680,
+          "probability": 0.24672,
+          "wilson_95_ci": [
+            0.24503401011672002,
+            0.24841377348119928
+          ]
+        }
+      },
+      "information_group": "full_information",
+      "interpretation": "Net return from one fixed policy on each sampled deal; computer outcomes are not measured human performance.",
+      "label": "Win-tuned full-information policy",
+      "mean_net_dollars": -6.13134,
+      "mean_net_dollars_95_ci": [
+        -6.305547077848036,
+        -5.957132922151963
+      ],
+      "median_net_dollars": -17,
+      "pmf": [
+        {
+          "count": 1247,
+          "cumulative_probability": 0.004988,
+          "foundation_cards": 0,
+          "net_dollars": -52,
+          "probability": 0.004988
+        },
+        {
+          "count": 4499,
+          "cumulative_probability": 0.022984,
+          "foundation_cards": 1,
+          "net_dollars": -47,
+          "probability": 0.017996
+        },
+        {
+          "count": 11173,
+          "cumulative_probability": 0.067676,
+          "foundation_cards": 2,
+          "net_dollars": -42,
+          "probability": 0.044692
+        },
+        {
+          "count": 17979,
+          "cumulative_probability": 0.139592,
+          "foundation_cards": 3,
+          "net_dollars": -37,
+          "probability": 0.071916
+        },
+        {
+          "count": 23985,
+          "cumulative_probability": 0.235532,
+          "foundation_cards": 4,
+          "net_dollars": -32,
+          "probability": 0.09594
+        },
+        {
+          "count": 26753,
+          "cumulative_probability": 0.342544,
+          "foundation_cards": 5,
+          "net_dollars": -27,
+          "probability": 0.107012
+        },
+        {
+          "count": 26149,
+          "cumulative_probability": 0.44714,
+          "foundation_cards": 6,
+          "net_dollars": -22,
+          "probability": 0.104596
+        },
+        {
+          "count": 24159,
+          "cumulative_probability": 0.543776,
+          "foundation_cards": 7,
+          "net_dollars": -17,
+          "probability": 0.096636
+        },
+        {
+          "count": 20944,
+          "cumulative_probability": 0.627552,
+          "foundation_cards": 8,
+          "net_dollars": -12,
+          "probability": 0.083776
+        },
+        {
+          "count": 17305,
+          "cumulative_probability": 0.696772,
+          "foundation_cards": 9,
+          "net_dollars": -7,
+          "probability": 0.06922
+        },
+        {
+          "count": 14127,
+          "cumulative_probability": 0.75328,
+          "foundation_cards": 10,
+          "net_dollars": -2,
+          "probability": 0.056508
+        },
+        {
+          "count": 11309,
+          "cumulative_probability": 0.798516,
+          "foundation_cards": 11,
+          "net_dollars": 3,
+          "probability": 0.045236
+        },
+        {
+          "count": 9126,
+          "cumulative_probability": 0.83502,
+          "foundation_cards": 12,
+          "net_dollars": 8,
+          "probability": 0.036504
+        },
+        {
+          "count": 7282,
+          "cumulative_probability": 0.864148,
+          "foundation_cards": 13,
+          "net_dollars": 13,
+          "probability": 0.029128
+        },
+        {
+          "count": 5500,
+          "cumulative_probability": 0.886148,
+          "foundation_cards": 14,
+          "net_dollars": 18,
+          "probability": 0.022
+        },
+        {
+          "count": 4252,
+          "cumulative_probability": 0.903156,
+          "foundation_cards": 15,
+          "net_dollars": 23,
+          "probability": 0.017008
+        },
+        {
+          "count": 3470,
+          "cumulative_probability": 0.917036,
+          "foundation_cards": 16,
+          "net_dollars": 28,
+          "probability": 0.01388
+        },
+        {
+          "count": 2766,
+          "cumulative_probability": 0.9281,
+          "foundation_cards": 17,
+          "net_dollars": 33,
+          "probability": 0.011064
+        },
+        {
+          "count": 2221,
+          "cumulative_probability": 0.936984,
+          "foundation_cards": 18,
+          "net_dollars": 38,
+          "probability": 0.008884
+        },
+        {
+          "count": 1662,
+          "cumulative_probability": 0.943632,
+          "foundation_cards": 19,
+          "net_dollars": 43,
+          "probability": 0.006648
+        },
+        {
+          "count": 1352,
+          "cumulative_probability": 0.94904,
+          "foundation_cards": 20,
+          "net_dollars": 48,
+          "probability": 0.005408
+        },
+        {
+          "count": 1090,
+          "cumulative_probability": 0.9534,
+          "foundation_cards": 21,
+          "net_dollars": 53,
+          "probability": 0.00436
+        },
+        {
+          "count": 821,
+          "cumulative_probability": 0.956684,
+          "foundation_cards": 22,
+          "net_dollars": 58,
+          "probability": 0.003284
+        },
+        {
+          "count": 628,
+          "cumulative_probability": 0.959196,
+          "foundation_cards": 23,
+          "net_dollars": 63,
+          "probability": 0.002512
+        },
+        {
+          "count": 554,
+          "cumulative_probability": 0.961412,
+          "foundation_cards": 24,
+          "net_dollars": 68,
+          "probability": 0.002216
+        },
+        {
+          "count": 467,
+          "cumulative_probability": 0.96328,
+          "foundation_cards": 25,
+          "net_dollars": 73,
+          "probability": 0.001868
+        },
+        {
+          "count": 344,
+          "cumulative_probability": 0.964656,
+          "foundation_cards": 26,
+          "net_dollars": 78,
+          "probability": 0.001376
+        },
+        {
+          "count": 264,
+          "cumulative_probability": 0.965712,
+          "foundation_cards": 27,
+          "net_dollars": 83,
+          "probability": 0.001056
+        },
+        {
+          "count": 241,
+          "cumulative_probability": 0.966676,
+          "foundation_cards": 28,
+          "net_dollars": 88,
+          "probability": 0.000964
+        },
+        {
+          "count": 177,
+          "cumulative_probability": 0.967384,
+          "foundation_cards": 29,
+          "net_dollars": 93,
+          "probability": 0.000708
+        },
+        {
+          "count": 118,
+          "cumulative_probability": 0.967856,
+          "foundation_cards": 30,
+          "net_dollars": 98,
+          "probability": 0.000472
+        },
+        {
+          "count": 94,
+          "cumulative_probability": 0.968232,
+          "foundation_cards": 31,
+          "net_dollars": 103,
+          "probability": 0.000376
+        },
+        {
+          "count": 85,
+          "cumulative_probability": 0.968572,
+          "foundation_cards": 32,
+          "net_dollars": 108,
+          "probability": 0.00034
+        },
+        {
+          "count": 80,
+          "cumulative_probability": 0.968892,
+          "foundation_cards": 33,
+          "net_dollars": 113,
+          "probability": 0.00032
+        },
+        {
+          "count": 49,
+          "cumulative_probability": 0.969088,
+          "foundation_cards": 34,
+          "net_dollars": 118,
+          "probability": 0.000196
+        },
+        {
+          "count": 29,
+          "cumulative_probability": 0.969204,
+          "foundation_cards": 35,
+          "net_dollars": 123,
+          "probability": 0.000116
+        },
+        {
+          "count": 28,
+          "cumulative_probability": 0.969316,
+          "foundation_cards": 36,
+          "net_dollars": 128,
+          "probability": 0.000112
+        },
+        {
+          "count": 22,
+          "cumulative_probability": 0.969404,
+          "foundation_cards": 37,
+          "net_dollars": 133,
+          "probability": 8.8e-05
+        },
+        {
+          "count": 22,
+          "cumulative_probability": 0.969492,
+          "foundation_cards": 38,
+          "net_dollars": 138,
+          "probability": 8.8e-05
+        },
+        {
+          "count": 7,
+          "cumulative_probability": 0.96952,
+          "foundation_cards": 39,
+          "net_dollars": 143,
+          "probability": 2.8e-05
+        },
+        {
+          "count": 6,
+          "cumulative_probability": 0.969544,
+          "foundation_cards": 40,
+          "net_dollars": 148,
+          "probability": 2.4e-05
+        },
+        {
+          "count": 2,
+          "cumulative_probability": 0.969552,
+          "foundation_cards": 41,
+          "net_dollars": 153,
+          "probability": 8e-06
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.969556,
+          "foundation_cards": 42,
+          "net_dollars": 158,
+          "probability": 4e-06
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.969556,
+          "foundation_cards": 43,
+          "net_dollars": 163,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.969556,
+          "foundation_cards": 44,
+          "net_dollars": 168,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.969556,
+          "foundation_cards": 45,
+          "net_dollars": 173,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.969556,
+          "foundation_cards": 46,
+          "net_dollars": 178,
+          "probability": 0.0
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.96956,
+          "foundation_cards": 47,
+          "net_dollars": 183,
+          "probability": 4e-06
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.96956,
+          "foundation_cards": 48,
+          "net_dollars": 188,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.96956,
+          "foundation_cards": 49,
+          "net_dollars": 193,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.96956,
+          "foundation_cards": 50,
+          "net_dollars": 198,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.96956,
+          "foundation_cards": 51,
+          "net_dollars": 203,
+          "probability": 0.0
+        },
+        {
+          "count": 7610,
+          "cumulative_probability": 1.0,
+          "foundation_cards": 52,
+          "net_dollars": 208,
+          "probability": 0.03044
+        }
+      ],
+      "policy_type": "single_policy",
+      "provenance": {
+        "compressed_outcomes_sha256": "ee1956b362489ada7905fbd2892cd7999e12a801404abb0e903b6a27e0ed8073",
+        "foundations_file": "variant-study-outcomes/vegas.full.foundations.u8.gz",
+        "raw_outcomes_sha256": "f0c63cf1899d72ca606457675235b9c58e45cf842ff94125711a856ad5638648"
+      },
+      "quantiles_net_dollars": {
+        "q05": -42,
+        "q25": -27,
+        "q50": -17,
+        "q75": -2,
+        "q95": 53
+      },
+      "sample_size": 250000,
+      "sd_net_dollars": 44.44139770479457
+    },
+    "portfolio": {
+      "attempts_per_deal": 6,
+      "bins": [
+        {
+          "count": 1109,
+          "foundation_cards_max": 0,
+          "foundation_cards_min": 0,
+          "label": "0",
+          "net_dollars_max": -52,
+          "net_dollars_min": -52,
+          "probability": 0.004436
+        },
+        {
+          "count": 74052,
+          "foundation_cards_max": 5,
+          "foundation_cards_min": 1,
+          "label": "1\u20135",
+          "net_dollars_max": -27,
+          "net_dollars_min": -47,
+          "probability": 0.296208
+        },
+        {
+          "count": 102061,
+          "foundation_cards_max": 10,
+          "foundation_cards_min": 6,
+          "label": "6\u201310",
+          "net_dollars_max": -2,
+          "net_dollars_min": -22,
+          "probability": 0.408244
+        },
+        {
+          "count": 42516,
+          "foundation_cards_max": 15,
+          "foundation_cards_min": 11,
+          "label": "11\u201315",
+          "net_dollars_max": 23,
+          "net_dollars_min": 3,
+          "probability": 0.170064
+        },
+        {
+          "count": 18509,
+          "foundation_cards_max": 25,
+          "foundation_cards_min": 16,
+          "label": "16\u201325",
+          "net_dollars_max": 73,
+          "net_dollars_min": 28,
+          "probability": 0.074036
+        },
+        {
+          "count": 2013,
+          "foundation_cards_max": 51,
+          "foundation_cards_min": 26,
+          "label": "26\u201351",
+          "net_dollars_max": 203,
+          "net_dollars_min": 78,
+          "probability": 0.008052
+        },
+        {
+          "count": 9740,
+          "foundation_cards_max": 52,
+          "foundation_cards_min": 52,
+          "label": "52",
+          "net_dollars_max": 208,
+          "net_dollars_min": 208,
+          "probability": 0.03896
+        }
+      ],
+      "events": {
+        "full_loss": {
+          "count": 1109,
+          "probability": 0.004436,
+          "wilson_95_ci": [
+            0.004183004939344239,
+            0.004704224336237369
+          ]
+        },
+        "full_win": {
+          "count": 9740,
+          "probability": 0.03896,
+          "wilson_95_ci": [
+            0.03820855217302844,
+            0.039725616138661164
+          ]
+        },
+        "loss": {
+          "count": 177222,
+          "probability": 0.708888,
+          "wilson_95_ci": [
+            0.7071040757008067,
+            0.7106655049206312
+          ]
+        },
+        "profit": {
+          "count": 72778,
+          "probability": 0.291112,
+          "wilson_95_ci": [
+            0.28933449507936865,
+            0.29289592429919326
+          ]
+        }
+      },
+      "information_group": "full_information",
+      "interpretation": "Full-information per-deal maximum foundation count across frozen restarts. The $52 cost is applied once to the best trajectory; this is not an ordinary paid-play policy or the earnings from separately paid attempts.",
+      "label": "Full-information restart portfolio",
+      "mean_net_dollars": -1.75096,
+      "mean_net_dollars_95_ci": [
+        -1.9418022743011105,
+        -1.5601177256988896
+      ],
+      "median_net_dollars": -12,
+      "pmf": [
+        {
+          "count": 1109,
+          "cumulative_probability": 0.004436,
+          "foundation_cards": 0,
+          "net_dollars": -52,
+          "probability": 0.004436
+        },
+        {
+          "count": 3920,
+          "cumulative_probability": 0.020116,
+          "foundation_cards": 1,
+          "net_dollars": -47,
+          "probability": 0.01568
+        },
+        {
+          "count": 9513,
+          "cumulative_probability": 0.058168,
+          "foundation_cards": 2,
+          "net_dollars": -42,
+          "probability": 0.038052
+        },
+        {
+          "count": 15560,
+          "cumulative_probability": 0.120408,
+          "foundation_cards": 3,
+          "net_dollars": -37,
+          "probability": 0.06224
+        },
+        {
+          "count": 20949,
+          "cumulative_probability": 0.204204,
+          "foundation_cards": 4,
+          "net_dollars": -32,
+          "probability": 0.083796
+        },
+        {
+          "count": 24110,
+          "cumulative_probability": 0.300644,
+          "foundation_cards": 5,
+          "net_dollars": -27,
+          "probability": 0.09644
+        },
+        {
+          "count": 24622,
+          "cumulative_probability": 0.399132,
+          "foundation_cards": 6,
+          "net_dollars": -22,
+          "probability": 0.098488
+        },
+        {
+          "count": 23425,
+          "cumulative_probability": 0.492832,
+          "foundation_cards": 7,
+          "net_dollars": -17,
+          "probability": 0.0937
+        },
+        {
+          "count": 20978,
+          "cumulative_probability": 0.576744,
+          "foundation_cards": 8,
+          "net_dollars": -12,
+          "probability": 0.083912
+        },
+        {
+          "count": 17949,
+          "cumulative_probability": 0.64854,
+          "foundation_cards": 9,
+          "net_dollars": -7,
+          "probability": 0.071796
+        },
+        {
+          "count": 15087,
+          "cumulative_probability": 0.708888,
+          "foundation_cards": 10,
+          "net_dollars": -2,
+          "probability": 0.060348
+        },
+        {
+          "count": 12378,
+          "cumulative_probability": 0.7584,
+          "foundation_cards": 11,
+          "net_dollars": 3,
+          "probability": 0.049512
+        },
+        {
+          "count": 10250,
+          "cumulative_probability": 0.7994,
+          "foundation_cards": 12,
+          "net_dollars": 8,
+          "probability": 0.041
+        },
+        {
+          "count": 8474,
+          "cumulative_probability": 0.833296,
+          "foundation_cards": 13,
+          "net_dollars": 13,
+          "probability": 0.033896
+        },
+        {
+          "count": 6396,
+          "cumulative_probability": 0.85888,
+          "foundation_cards": 14,
+          "net_dollars": 18,
+          "probability": 0.025584
+        },
+        {
+          "count": 5018,
+          "cumulative_probability": 0.878952,
+          "foundation_cards": 15,
+          "net_dollars": 23,
+          "probability": 0.020072
+        },
+        {
+          "count": 4170,
+          "cumulative_probability": 0.895632,
+          "foundation_cards": 16,
+          "net_dollars": 28,
+          "probability": 0.01668
+        },
+        {
+          "count": 3432,
+          "cumulative_probability": 0.90936,
+          "foundation_cards": 17,
+          "net_dollars": 33,
+          "probability": 0.013728
+        },
+        {
+          "count": 2721,
+          "cumulative_probability": 0.920244,
+          "foundation_cards": 18,
+          "net_dollars": 38,
+          "probability": 0.010884
+        },
+        {
+          "count": 2071,
+          "cumulative_probability": 0.928528,
+          "foundation_cards": 19,
+          "net_dollars": 43,
+          "probability": 0.008284
+        },
+        {
+          "count": 1638,
+          "cumulative_probability": 0.93508,
+          "foundation_cards": 20,
+          "net_dollars": 48,
+          "probability": 0.006552
+        },
+        {
+          "count": 1368,
+          "cumulative_probability": 0.940552,
+          "foundation_cards": 21,
+          "net_dollars": 53,
+          "probability": 0.005472
+        },
+        {
+          "count": 1048,
+          "cumulative_probability": 0.944744,
+          "foundation_cards": 22,
+          "net_dollars": 58,
+          "probability": 0.004192
+        },
+        {
+          "count": 792,
+          "cumulative_probability": 0.947912,
+          "foundation_cards": 23,
+          "net_dollars": 63,
+          "probability": 0.003168
+        },
+        {
+          "count": 682,
+          "cumulative_probability": 0.95064,
+          "foundation_cards": 24,
+          "net_dollars": 68,
+          "probability": 0.002728
+        },
+        {
+          "count": 587,
+          "cumulative_probability": 0.952988,
+          "foundation_cards": 25,
+          "net_dollars": 73,
+          "probability": 0.002348
+        },
+        {
+          "count": 412,
+          "cumulative_probability": 0.954636,
+          "foundation_cards": 26,
+          "net_dollars": 78,
+          "probability": 0.001648
+        },
+        {
+          "count": 366,
+          "cumulative_probability": 0.9561,
+          "foundation_cards": 27,
+          "net_dollars": 83,
+          "probability": 0.001464
+        },
+        {
+          "count": 328,
+          "cumulative_probability": 0.957412,
+          "foundation_cards": 28,
+          "net_dollars": 88,
+          "probability": 0.001312
+        },
+        {
+          "count": 223,
+          "cumulative_probability": 0.958304,
+          "foundation_cards": 29,
+          "net_dollars": 93,
+          "probability": 0.000892
+        },
+        {
+          "count": 149,
+          "cumulative_probability": 0.9589,
+          "foundation_cards": 30,
+          "net_dollars": 98,
+          "probability": 0.000596
+        },
+        {
+          "count": 112,
+          "cumulative_probability": 0.959348,
+          "foundation_cards": 31,
+          "net_dollars": 103,
+          "probability": 0.000448
+        },
+        {
+          "count": 102,
+          "cumulative_probability": 0.959756,
+          "foundation_cards": 32,
+          "net_dollars": 108,
+          "probability": 0.000408
+        },
+        {
+          "count": 101,
+          "cumulative_probability": 0.96016,
+          "foundation_cards": 33,
+          "net_dollars": 113,
+          "probability": 0.000404
+        },
+        {
+          "count": 67,
+          "cumulative_probability": 0.960428,
+          "foundation_cards": 34,
+          "net_dollars": 118,
+          "probability": 0.000268
+        },
+        {
+          "count": 36,
+          "cumulative_probability": 0.960572,
+          "foundation_cards": 35,
+          "net_dollars": 123,
+          "probability": 0.000144
+        },
+        {
+          "count": 36,
+          "cumulative_probability": 0.960716,
+          "foundation_cards": 36,
+          "net_dollars": 128,
+          "probability": 0.000144
+        },
+        {
+          "count": 28,
+          "cumulative_probability": 0.960828,
+          "foundation_cards": 37,
+          "net_dollars": 133,
+          "probability": 0.000112
+        },
+        {
+          "count": 27,
+          "cumulative_probability": 0.960936,
+          "foundation_cards": 38,
+          "net_dollars": 138,
+          "probability": 0.000108
+        },
+        {
+          "count": 9,
+          "cumulative_probability": 0.960972,
+          "foundation_cards": 39,
+          "net_dollars": 143,
+          "probability": 3.6e-05
+        },
+        {
+          "count": 9,
+          "cumulative_probability": 0.961008,
+          "foundation_cards": 40,
+          "net_dollars": 148,
+          "probability": 3.6e-05
+        },
+        {
+          "count": 5,
+          "cumulative_probability": 0.961028,
+          "foundation_cards": 41,
+          "net_dollars": 153,
+          "probability": 2e-05
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.961032,
+          "foundation_cards": 42,
+          "net_dollars": 158,
+          "probability": 4e-06
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.961032,
+          "foundation_cards": 43,
+          "net_dollars": 163,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.961032,
+          "foundation_cards": 44,
+          "net_dollars": 168,
+          "probability": 0.0
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.961036,
+          "foundation_cards": 45,
+          "net_dollars": 173,
+          "probability": 4e-06
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.961036,
+          "foundation_cards": 46,
+          "net_dollars": 178,
+          "probability": 0.0
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.96104,
+          "foundation_cards": 47,
+          "net_dollars": 183,
+          "probability": 4e-06
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.96104,
+          "foundation_cards": 48,
+          "net_dollars": 188,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.96104,
+          "foundation_cards": 49,
+          "net_dollars": 193,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.96104,
+          "foundation_cards": 50,
+          "net_dollars": 198,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.96104,
+          "foundation_cards": 51,
+          "net_dollars": 203,
+          "probability": 0.0
+        },
+        {
+          "count": 9740,
+          "cumulative_probability": 1.0,
+          "foundation_cards": 52,
+          "net_dollars": 208,
+          "probability": 0.03896
+        }
+      ],
+      "policy_type": "full_information_restart_portfolio",
+      "provenance": {
+        "compressed_outcomes_sha256": "d0dee78ee57963b92a3a15efed40216e4a079155746760bdf7497160564bc24b",
+        "foundations_file": "variant-study-outcomes/vegas.portfolio.foundations.u8.gz",
+        "raw_outcomes_sha256": "073ea1805d898ea4a92e928e5f33e70279ba23e485293fded81838ec7d0d4053"
+      },
+      "quantiles_net_dollars": {
+        "q05": -42,
+        "q25": -27,
+        "q50": -12,
+        "q75": 3,
+        "q95": 68
+      },
+      "sample_size": 250000,
+      "sd_net_dollars": 48.68514824926633
+    },
+    "profit": {
+      "attempts_per_deal": 1,
+      "bins": [
+        {
+          "count": 1175,
+          "foundation_cards_max": 0,
+          "foundation_cards_min": 0,
+          "label": "0",
+          "net_dollars_max": -52,
+          "net_dollars_min": -52,
+          "probability": 0.0047
+        },
+        {
+          "count": 81094,
+          "foundation_cards_max": 5,
+          "foundation_cards_min": 1,
+          "label": "1\u20135",
+          "net_dollars_max": -27,
+          "net_dollars_min": -47,
+          "probability": 0.324376
+        },
+        {
+          "count": 103416,
+          "foundation_cards_max": 10,
+          "foundation_cards_min": 6,
+          "label": "6\u201310",
+          "net_dollars_max": -2,
+          "net_dollars_min": -22,
+          "probability": 0.413664
+        },
+        {
+          "count": 39377,
+          "foundation_cards_max": 15,
+          "foundation_cards_min": 11,
+          "label": "11\u201315",
+          "net_dollars_max": 23,
+          "net_dollars_min": 3,
+          "probability": 0.157508
+        },
+        {
+          "count": 16086,
+          "foundation_cards_max": 25,
+          "foundation_cards_min": 16,
+          "label": "16\u201325",
+          "net_dollars_max": 73,
+          "net_dollars_min": 28,
+          "probability": 0.064344
+        },
+        {
+          "count": 1718,
+          "foundation_cards_max": 51,
+          "foundation_cards_min": 26,
+          "label": "26\u201351",
+          "net_dollars_max": 203,
+          "net_dollars_min": 78,
+          "probability": 0.006872
+        },
+        {
+          "count": 7134,
+          "foundation_cards_max": 52,
+          "foundation_cards_min": 52,
+          "label": "52",
+          "net_dollars_max": 208,
+          "net_dollars_min": 208,
+          "probability": 0.028536
+        }
+      ],
+      "events": {
+        "full_loss": {
+          "count": 1175,
+          "probability": 0.0047,
+          "wilson_95_ci": [
+            0.004439400195575543,
+            0.004975820966969699
+          ]
+        },
+        "full_win": {
+          "count": 7134,
+          "probability": 0.028536,
+          "wilson_95_ci": [
+            0.02789054764358519,
+            0.029195941010116053
+          ]
+        },
+        "loss": {
+          "count": 185685,
+          "probability": 0.74274,
+          "wilson_95_ci": [
+            0.741022785109674,
+            0.7444497551992373
+          ]
+        },
+        "profit": {
+          "count": 64315,
+          "probability": 0.25726,
+          "wilson_95_ci": [
+            0.2555502448007627,
+            0.2589772148903259
+          ]
+        }
+      },
+      "information_group": "full_information",
+      "interpretation": "Net return from one fixed policy on each sampled deal; computer outcomes are not measured human performance.",
+      "label": "Profit-tuned full-information policy",
+      "mean_net_dollars": -5.72594,
+      "mean_net_dollars_95_ci": [
+        -5.896518846376102,
+        -5.555361153623897
+      ],
+      "median_net_dollars": -17,
+      "pmf": [
+        {
+          "count": 1175,
+          "cumulative_probability": 0.0047,
+          "foundation_cards": 0,
+          "net_dollars": -52,
+          "probability": 0.0047
+        },
+        {
+          "count": 4197,
+          "cumulative_probability": 0.021488,
+          "foundation_cards": 1,
+          "net_dollars": -47,
+          "probability": 0.016788
+        },
+        {
+          "count": 10538,
+          "cumulative_probability": 0.06364,
+          "foundation_cards": 2,
+          "net_dollars": -42,
+          "probability": 0.042152
+        },
+        {
+          "count": 17176,
+          "cumulative_probability": 0.132344,
+          "foundation_cards": 3,
+          "net_dollars": -37,
+          "probability": 0.068704
+        },
+        {
+          "count": 23109,
+          "cumulative_probability": 0.22478,
+          "foundation_cards": 4,
+          "net_dollars": -32,
+          "probability": 0.092436
+        },
+        {
+          "count": 26074,
+          "cumulative_probability": 0.329076,
+          "foundation_cards": 5,
+          "net_dollars": -27,
+          "probability": 0.104296
+        },
+        {
+          "count": 25891,
+          "cumulative_probability": 0.43264,
+          "foundation_cards": 6,
+          "net_dollars": -22,
+          "probability": 0.103564
+        },
+        {
+          "count": 24062,
+          "cumulative_probability": 0.528888,
+          "foundation_cards": 7,
+          "net_dollars": -17,
+          "probability": 0.096248
+        },
+        {
+          "count": 21196,
+          "cumulative_probability": 0.613672,
+          "foundation_cards": 8,
+          "net_dollars": -12,
+          "probability": 0.084784
+        },
+        {
+          "count": 17728,
+          "cumulative_probability": 0.684584,
+          "foundation_cards": 9,
+          "net_dollars": -7,
+          "probability": 0.070912
+        },
+        {
+          "count": 14539,
+          "cumulative_probability": 0.74274,
+          "foundation_cards": 10,
+          "net_dollars": -2,
+          "probability": 0.058156
+        },
+        {
+          "count": 11763,
+          "cumulative_probability": 0.789792,
+          "foundation_cards": 11,
+          "net_dollars": 3,
+          "probability": 0.047052
+        },
+        {
+          "count": 9552,
+          "cumulative_probability": 0.828,
+          "foundation_cards": 12,
+          "net_dollars": 8,
+          "probability": 0.038208
+        },
+        {
+          "count": 7721,
+          "cumulative_probability": 0.858884,
+          "foundation_cards": 13,
+          "net_dollars": 13,
+          "probability": 0.030884
+        },
+        {
+          "count": 5787,
+          "cumulative_probability": 0.882032,
+          "foundation_cards": 14,
+          "net_dollars": 18,
+          "probability": 0.023148
+        },
+        {
+          "count": 4554,
+          "cumulative_probability": 0.900248,
+          "foundation_cards": 15,
+          "net_dollars": 23,
+          "probability": 0.018216
+        },
+        {
+          "count": 3723,
+          "cumulative_probability": 0.91514,
+          "foundation_cards": 16,
+          "net_dollars": 28,
+          "probability": 0.014892
+        },
+        {
+          "count": 3017,
+          "cumulative_probability": 0.927208,
+          "foundation_cards": 17,
+          "net_dollars": 33,
+          "probability": 0.012068
+        },
+        {
+          "count": 2345,
+          "cumulative_probability": 0.936588,
+          "foundation_cards": 18,
+          "net_dollars": 38,
+          "probability": 0.00938
+        },
+        {
+          "count": 1771,
+          "cumulative_probability": 0.943672,
+          "foundation_cards": 19,
+          "net_dollars": 43,
+          "probability": 0.007084
+        },
+        {
+          "count": 1474,
+          "cumulative_probability": 0.949568,
+          "foundation_cards": 20,
+          "net_dollars": 48,
+          "probability": 0.005896
+        },
+        {
+          "count": 1156,
+          "cumulative_probability": 0.954192,
+          "foundation_cards": 21,
+          "net_dollars": 53,
+          "probability": 0.004624
+        },
+        {
+          "count": 856,
+          "cumulative_probability": 0.957616,
+          "foundation_cards": 22,
+          "net_dollars": 58,
+          "probability": 0.003424
+        },
+        {
+          "count": 673,
+          "cumulative_probability": 0.960308,
+          "foundation_cards": 23,
+          "net_dollars": 63,
+          "probability": 0.002692
+        },
+        {
+          "count": 583,
+          "cumulative_probability": 0.96264,
+          "foundation_cards": 24,
+          "net_dollars": 68,
+          "probability": 0.002332
+        },
+        {
+          "count": 488,
+          "cumulative_probability": 0.964592,
+          "foundation_cards": 25,
+          "net_dollars": 73,
+          "probability": 0.001952
+        },
+        {
+          "count": 368,
+          "cumulative_probability": 0.966064,
+          "foundation_cards": 26,
+          "net_dollars": 78,
+          "probability": 0.001472
+        },
+        {
+          "count": 306,
+          "cumulative_probability": 0.967288,
+          "foundation_cards": 27,
+          "net_dollars": 83,
+          "probability": 0.001224
+        },
+        {
+          "count": 244,
+          "cumulative_probability": 0.968264,
+          "foundation_cards": 28,
+          "net_dollars": 88,
+          "probability": 0.000976
+        },
+        {
+          "count": 200,
+          "cumulative_probability": 0.969064,
+          "foundation_cards": 29,
+          "net_dollars": 93,
+          "probability": 0.0008
+        },
+        {
+          "count": 131,
+          "cumulative_probability": 0.969588,
+          "foundation_cards": 30,
+          "net_dollars": 98,
+          "probability": 0.000524
+        },
+        {
+          "count": 107,
+          "cumulative_probability": 0.970016,
+          "foundation_cards": 31,
+          "net_dollars": 103,
+          "probability": 0.000428
+        },
+        {
+          "count": 97,
+          "cumulative_probability": 0.970404,
+          "foundation_cards": 32,
+          "net_dollars": 108,
+          "probability": 0.000388
+        },
+        {
+          "count": 77,
+          "cumulative_probability": 0.970712,
+          "foundation_cards": 33,
+          "net_dollars": 113,
+          "probability": 0.000308
+        },
+        {
+          "count": 63,
+          "cumulative_probability": 0.970964,
+          "foundation_cards": 34,
+          "net_dollars": 118,
+          "probability": 0.000252
+        },
+        {
+          "count": 28,
+          "cumulative_probability": 0.971076,
+          "foundation_cards": 35,
+          "net_dollars": 123,
+          "probability": 0.000112
+        },
+        {
+          "count": 25,
+          "cumulative_probability": 0.971176,
+          "foundation_cards": 36,
+          "net_dollars": 128,
+          "probability": 0.0001
+        },
+        {
+          "count": 22,
+          "cumulative_probability": 0.971264,
+          "foundation_cards": 37,
+          "net_dollars": 133,
+          "probability": 8.8e-05
+        },
+        {
+          "count": 27,
+          "cumulative_probability": 0.971372,
+          "foundation_cards": 38,
+          "net_dollars": 138,
+          "probability": 0.000108
+        },
+        {
+          "count": 8,
+          "cumulative_probability": 0.971404,
+          "foundation_cards": 39,
+          "net_dollars": 143,
+          "probability": 3.2e-05
+        },
+        {
+          "count": 8,
+          "cumulative_probability": 0.971436,
+          "foundation_cards": 40,
+          "net_dollars": 148,
+          "probability": 3.2e-05
+        },
+        {
+          "count": 4,
+          "cumulative_probability": 0.971452,
+          "foundation_cards": 41,
+          "net_dollars": 153,
+          "probability": 1.6e-05
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.971456,
+          "foundation_cards": 42,
+          "net_dollars": 158,
+          "probability": 4e-06
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.971456,
+          "foundation_cards": 43,
+          "net_dollars": 163,
+          "probability": 0.0
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.97146,
+          "foundation_cards": 44,
+          "net_dollars": 168,
+          "probability": 4e-06
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.97146,
+          "foundation_cards": 45,
+          "net_dollars": 173,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.97146,
+          "foundation_cards": 46,
+          "net_dollars": 178,
+          "probability": 0.0
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.971464,
+          "foundation_cards": 47,
+          "net_dollars": 183,
+          "probability": 4e-06
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.971464,
+          "foundation_cards": 48,
+          "net_dollars": 188,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.971464,
+          "foundation_cards": 49,
+          "net_dollars": 193,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.971464,
+          "foundation_cards": 50,
+          "net_dollars": 198,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.971464,
+          "foundation_cards": 51,
+          "net_dollars": 203,
+          "probability": 0.0
+        },
+        {
+          "count": 7134,
+          "cumulative_probability": 1.0,
+          "foundation_cards": 52,
+          "net_dollars": 208,
+          "probability": 0.028536
+        }
+      ],
+      "policy_type": "single_policy",
+      "provenance": {
+        "compressed_outcomes_sha256": "870ca129351c00829b53605116f7e1f1061a21166cb066dc6c13924a5cdb9da7",
+        "foundations_file": "variant-study-outcomes/vegas.profit.foundations.u8.gz",
+        "raw_outcomes_sha256": "f1aa20c414e6d7d94e6f035e7f2da3e95b8db09f0b19b257654800988aacf4f5"
+      },
+      "quantiles_net_dollars": {
+        "q05": -42,
+        "q25": -27,
+        "q50": -17,
+        "q75": 3,
+        "q95": 53
+      },
+      "sample_size": 250000,
+      "sd_net_dollars": 43.51581144388534
+    },
+    "simple_eight": {
+      "attempts_per_deal": 1,
+      "bins": [
+        {
+          "count": 1288,
+          "foundation_cards_max": 0,
+          "foundation_cards_min": 0,
+          "label": "0",
+          "net_dollars_max": -52,
+          "net_dollars_min": -52,
+          "probability": 0.005152
+        },
+        {
+          "count": 84695,
+          "foundation_cards_max": 5,
+          "foundation_cards_min": 1,
+          "label": "1\u20135",
+          "net_dollars_max": -27,
+          "net_dollars_min": -47,
+          "probability": 0.33878
+        },
+        {
+          "count": 102811,
+          "foundation_cards_max": 10,
+          "foundation_cards_min": 6,
+          "label": "6\u201310",
+          "net_dollars_max": -2,
+          "net_dollars_min": -22,
+          "probability": 0.411244
+        },
+        {
+          "count": 38106,
+          "foundation_cards_max": 15,
+          "foundation_cards_min": 11,
+          "label": "11\u201315",
+          "net_dollars_max": 23,
+          "net_dollars_min": 3,
+          "probability": 0.152424
+        },
+        {
+          "count": 15080,
+          "foundation_cards_max": 25,
+          "foundation_cards_min": 16,
+          "label": "16\u201325",
+          "net_dollars_max": 73,
+          "net_dollars_min": 28,
+          "probability": 0.06032
+        },
+        {
+          "count": 1563,
+          "foundation_cards_max": 51,
+          "foundation_cards_min": 26,
+          "label": "26\u201351",
+          "net_dollars_max": 203,
+          "net_dollars_min": 78,
+          "probability": 0.006252
+        },
+        {
+          "count": 6457,
+          "foundation_cards_max": 52,
+          "foundation_cards_min": 52,
+          "label": "52",
+          "net_dollars_max": 208,
+          "net_dollars_min": 208,
+          "probability": 0.025828
+        }
+      ],
+      "events": {
+        "full_loss": {
+          "count": 1288,
+          "probability": 0.005152,
+          "wilson_95_ci": [
+            0.00487886615803516,
+            0.0054403411140084255
+          ]
+        },
+        "full_win": {
+          "count": 6457,
+          "probability": 0.025828,
+          "wilson_95_ci": [
+            0.025213461515748197,
+            0.0264571103580382
+          ]
+        },
+        "loss": {
+          "count": 188794,
+          "probability": 0.755176,
+          "wilson_95_ci": [
+            0.7534865858494199,
+            0.7568575722863086
+          ]
+        },
+        "profit": {
+          "count": 61206,
+          "probability": 0.244824,
+          "wilson_95_ci": [
+            0.2431424277136914,
+            0.24651341415058006
+          ]
+        }
+      },
+      "information_group": "visible_information",
+      "interpretation": "Net return from one fixed policy on each sampled deal; computer outcomes are not measured human performance.",
+      "label": "Eight-feature visible policy",
+      "mean_net_dollars": -7.13328,
+      "mean_net_dollars_95_ci": [
+        -7.297991954196826,
+        -6.968568045803174
+      ],
+      "median_net_dollars": -17,
+      "pmf": [
+        {
+          "count": 1288,
+          "cumulative_probability": 0.005152,
+          "foundation_cards": 0,
+          "net_dollars": -52,
+          "probability": 0.005152
+        },
+        {
+          "count": 4632,
+          "cumulative_probability": 0.02368,
+          "foundation_cards": 1,
+          "net_dollars": -47,
+          "probability": 0.018528
+        },
+        {
+          "count": 11319,
+          "cumulative_probability": 0.068956,
+          "foundation_cards": 2,
+          "net_dollars": -42,
+          "probability": 0.045276
+        },
+        {
+          "count": 18085,
+          "cumulative_probability": 0.141296,
+          "foundation_cards": 3,
+          "net_dollars": -37,
+          "probability": 0.07234
+        },
+        {
+          "count": 23943,
+          "cumulative_probability": 0.237068,
+          "foundation_cards": 4,
+          "net_dollars": -32,
+          "probability": 0.095772
+        },
+        {
+          "count": 26716,
+          "cumulative_probability": 0.343932,
+          "foundation_cards": 5,
+          "net_dollars": -27,
+          "probability": 0.106864
+        },
+        {
+          "count": 26147,
+          "cumulative_probability": 0.44852,
+          "foundation_cards": 6,
+          "net_dollars": -22,
+          "probability": 0.104588
+        },
+        {
+          "count": 24211,
+          "cumulative_probability": 0.545364,
+          "foundation_cards": 7,
+          "net_dollars": -17,
+          "probability": 0.096844
+        },
+        {
+          "count": 21069,
+          "cumulative_probability": 0.62964,
+          "foundation_cards": 8,
+          "net_dollars": -12,
+          "probability": 0.084276
+        },
+        {
+          "count": 17336,
+          "cumulative_probability": 0.698984,
+          "foundation_cards": 9,
+          "net_dollars": -7,
+          "probability": 0.069344
+        },
+        {
+          "count": 14048,
+          "cumulative_probability": 0.755176,
+          "foundation_cards": 10,
+          "net_dollars": -2,
+          "probability": 0.056192
+        },
+        {
+          "count": 11447,
+          "cumulative_probability": 0.800964,
+          "foundation_cards": 11,
+          "net_dollars": 3,
+          "probability": 0.045788
+        },
+        {
+          "count": 9326,
+          "cumulative_probability": 0.838268,
+          "foundation_cards": 12,
+          "net_dollars": 8,
+          "probability": 0.037304
+        },
+        {
+          "count": 7425,
+          "cumulative_probability": 0.867968,
+          "foundation_cards": 13,
+          "net_dollars": 13,
+          "probability": 0.0297
+        },
+        {
+          "count": 5528,
+          "cumulative_probability": 0.89008,
+          "foundation_cards": 14,
+          "net_dollars": 18,
+          "probability": 0.022112
+        },
+        {
+          "count": 4380,
+          "cumulative_probability": 0.9076,
+          "foundation_cards": 15,
+          "net_dollars": 23,
+          "probability": 0.01752
+        },
+        {
+          "count": 3609,
+          "cumulative_probability": 0.922036,
+          "foundation_cards": 16,
+          "net_dollars": 28,
+          "probability": 0.014436
+        },
+        {
+          "count": 2693,
+          "cumulative_probability": 0.932808,
+          "foundation_cards": 17,
+          "net_dollars": 33,
+          "probability": 0.010772
+        },
+        {
+          "count": 2188,
+          "cumulative_probability": 0.94156,
+          "foundation_cards": 18,
+          "net_dollars": 38,
+          "probability": 0.008752
+        },
+        {
+          "count": 1676,
+          "cumulative_probability": 0.948264,
+          "foundation_cards": 19,
+          "net_dollars": 43,
+          "probability": 0.006704
+        },
+        {
+          "count": 1323,
+          "cumulative_probability": 0.953556,
+          "foundation_cards": 20,
+          "net_dollars": 48,
+          "probability": 0.005292
+        },
+        {
+          "count": 1095,
+          "cumulative_probability": 0.957936,
+          "foundation_cards": 21,
+          "net_dollars": 53,
+          "probability": 0.00438
+        },
+        {
+          "count": 841,
+          "cumulative_probability": 0.9613,
+          "foundation_cards": 22,
+          "net_dollars": 58,
+          "probability": 0.003364
+        },
+        {
+          "count": 630,
+          "cumulative_probability": 0.96382,
+          "foundation_cards": 23,
+          "net_dollars": 63,
+          "probability": 0.00252
+        },
+        {
+          "count": 549,
+          "cumulative_probability": 0.966016,
+          "foundation_cards": 24,
+          "net_dollars": 68,
+          "probability": 0.002196
+        },
+        {
+          "count": 476,
+          "cumulative_probability": 0.96792,
+          "foundation_cards": 25,
+          "net_dollars": 73,
+          "probability": 0.001904
+        },
+        {
+          "count": 318,
+          "cumulative_probability": 0.969192,
+          "foundation_cards": 26,
+          "net_dollars": 78,
+          "probability": 0.001272
+        },
+        {
+          "count": 293,
+          "cumulative_probability": 0.970364,
+          "foundation_cards": 27,
+          "net_dollars": 83,
+          "probability": 0.001172
+        },
+        {
+          "count": 237,
+          "cumulative_probability": 0.971312,
+          "foundation_cards": 28,
+          "net_dollars": 88,
+          "probability": 0.000948
+        },
+        {
+          "count": 193,
+          "cumulative_probability": 0.972084,
+          "foundation_cards": 29,
+          "net_dollars": 93,
+          "probability": 0.000772
+        },
+        {
+          "count": 110,
+          "cumulative_probability": 0.972524,
+          "foundation_cards": 30,
+          "net_dollars": 98,
+          "probability": 0.00044
+        },
+        {
+          "count": 84,
+          "cumulative_probability": 0.97286,
+          "foundation_cards": 31,
+          "net_dollars": 103,
+          "probability": 0.000336
+        },
+        {
+          "count": 93,
+          "cumulative_probability": 0.973232,
+          "foundation_cards": 32,
+          "net_dollars": 108,
+          "probability": 0.000372
+        },
+        {
+          "count": 73,
+          "cumulative_probability": 0.973524,
+          "foundation_cards": 33,
+          "net_dollars": 113,
+          "probability": 0.000292
+        },
+        {
+          "count": 49,
+          "cumulative_probability": 0.97372,
+          "foundation_cards": 34,
+          "net_dollars": 118,
+          "probability": 0.000196
+        },
+        {
+          "count": 24,
+          "cumulative_probability": 0.973816,
+          "foundation_cards": 35,
+          "net_dollars": 123,
+          "probability": 9.6e-05
+        },
+        {
+          "count": 29,
+          "cumulative_probability": 0.973932,
+          "foundation_cards": 36,
+          "net_dollars": 128,
+          "probability": 0.000116
+        },
+        {
+          "count": 21,
+          "cumulative_probability": 0.974016,
+          "foundation_cards": 37,
+          "net_dollars": 133,
+          "probability": 8.4e-05
+        },
+        {
+          "count": 20,
+          "cumulative_probability": 0.974096,
+          "foundation_cards": 38,
+          "net_dollars": 138,
+          "probability": 8e-05
+        },
+        {
+          "count": 6,
+          "cumulative_probability": 0.97412,
+          "foundation_cards": 39,
+          "net_dollars": 143,
+          "probability": 2.4e-05
+        },
+        {
+          "count": 6,
+          "cumulative_probability": 0.974144,
+          "foundation_cards": 40,
+          "net_dollars": 148,
+          "probability": 2.4e-05
+        },
+        {
+          "count": 4,
+          "cumulative_probability": 0.97416,
+          "foundation_cards": 41,
+          "net_dollars": 153,
+          "probability": 1.6e-05
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.974164,
+          "foundation_cards": 42,
+          "net_dollars": 158,
+          "probability": 4e-06
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.974168,
+          "foundation_cards": 43,
+          "net_dollars": 163,
+          "probability": 4e-06
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.974168,
+          "foundation_cards": 44,
+          "net_dollars": 168,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.974168,
+          "foundation_cards": 45,
+          "net_dollars": 173,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.974168,
+          "foundation_cards": 46,
+          "net_dollars": 178,
+          "probability": 0.0
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.974172,
+          "foundation_cards": 47,
+          "net_dollars": 183,
+          "probability": 4e-06
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.974172,
+          "foundation_cards": 48,
+          "net_dollars": 188,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.974172,
+          "foundation_cards": 49,
+          "net_dollars": 193,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.974172,
+          "foundation_cards": 50,
+          "net_dollars": 198,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.974172,
+          "foundation_cards": 51,
+          "net_dollars": 203,
+          "probability": 0.0
+        },
+        {
+          "count": 6457,
+          "cumulative_probability": 1.0,
+          "foundation_cards": 52,
+          "net_dollars": 208,
+          "probability": 0.025828
+        }
+      ],
+      "policy_type": "single_policy",
+      "provenance": {
+        "compressed_outcomes_sha256": "9c36209cb9047921d20fa3d2afa5393ef75f8f9810afa32147c96b2898f9d267",
+        "foundations_file": "variant-study-outcomes/vegas.simple_eight.foundations.u8.gz",
+        "raw_outcomes_sha256": "35eb03f18e5a3123f1bea43ebb9cf084419c980512266657696bfc936974e537"
+      },
+      "quantiles_net_dollars": {
+        "q05": -42,
+        "q25": -27,
+        "q50": -17,
+        "q75": -2,
+        "q95": 48
+      },
+      "sample_size": 250000,
+      "sd_net_dollars": 42.019127773788874
+    },
+    "stage8_baseline": {
+      "attempts_per_deal": 1,
+      "bins": [
+        {
+          "count": 1534,
+          "foundation_cards_max": 0,
+          "foundation_cards_min": 0,
+          "label": "0",
+          "net_dollars_max": -52,
+          "net_dollars_min": -52,
+          "probability": 0.006136
+        },
+        {
+          "count": 109893,
+          "foundation_cards_max": 5,
+          "foundation_cards_min": 1,
+          "label": "1\u20135",
+          "net_dollars_max": -27,
+          "net_dollars_min": -47,
+          "probability": 0.439572
+        },
+        {
+          "count": 102015,
+          "foundation_cards_max": 10,
+          "foundation_cards_min": 6,
+          "label": "6\u201310",
+          "net_dollars_max": -2,
+          "net_dollars_min": -22,
+          "probability": 0.40806
+        },
+        {
+          "count": 27190,
+          "foundation_cards_max": 15,
+          "foundation_cards_min": 11,
+          "label": "11\u201315",
+          "net_dollars_max": 23,
+          "net_dollars_min": 3,
+          "probability": 0.10876
+        },
+        {
+          "count": 7157,
+          "foundation_cards_max": 25,
+          "foundation_cards_min": 16,
+          "label": "16\u201325",
+          "net_dollars_max": 73,
+          "net_dollars_min": 28,
+          "probability": 0.028628
+        },
+        {
+          "count": 435,
+          "foundation_cards_max": 51,
+          "foundation_cards_min": 26,
+          "label": "26\u201351",
+          "net_dollars_max": 203,
+          "net_dollars_min": 78,
+          "probability": 0.00174
+        },
+        {
+          "count": 1776,
+          "foundation_cards_max": 52,
+          "foundation_cards_min": 52,
+          "label": "52",
+          "net_dollars_max": 208,
+          "net_dollars_min": 208,
+          "probability": 0.007104
+        }
+      ],
+      "events": {
+        "full_loss": {
+          "count": 1534,
+          "probability": 0.006136,
+          "wilson_95_ci": [
+            0.005837382083122852,
+            0.006449794949421553
+          ]
+        },
+        "full_win": {
+          "count": 1776,
+          "probability": 0.007104,
+          "wilson_95_ci": [
+            0.006782272680106074,
+            0.007440874604638323
+          ]
+        },
+        "loss": {
+          "count": 213442,
+          "probability": 0.853768,
+          "wilson_95_ci": [
+            0.8523775020570209,
+            0.8551476262283993
+          ]
+        },
+        "profit": {
+          "count": 36558,
+          "probability": 0.146232,
+          "wilson_95_ci": [
+            0.14485237377160062,
+            0.14762249794297902
+          ]
+        }
+      },
+      "information_group": "full_information",
+      "interpretation": "Net return from one fixed policy on each sampled deal; computer outcomes are not measured human performance.",
+      "label": "Stage-8 baseline",
+      "mean_net_dollars": -17.20636,
+      "mean_net_dollars_95_ci": [
+        -17.312580222566016,
+        -17.100139777433984
+      ],
+      "median_net_dollars": -22,
+      "pmf": [
+        {
+          "count": 1534,
+          "cumulative_probability": 0.006136,
+          "foundation_cards": 0,
+          "net_dollars": -52,
+          "probability": 0.006136
+        },
+        {
+          "count": 6553,
+          "cumulative_probability": 0.032348,
+          "foundation_cards": 1,
+          "net_dollars": -47,
+          "probability": 0.026212
+        },
+        {
+          "count": 15943,
+          "cumulative_probability": 0.09612,
+          "foundation_cards": 2,
+          "net_dollars": -42,
+          "probability": 0.063772
+        },
+        {
+          "count": 25174,
+          "cumulative_probability": 0.196816,
+          "foundation_cards": 3,
+          "net_dollars": -37,
+          "probability": 0.100696
+        },
+        {
+          "count": 30592,
+          "cumulative_probability": 0.319184,
+          "foundation_cards": 4,
+          "net_dollars": -32,
+          "probability": 0.122368
+        },
+        {
+          "count": 31631,
+          "cumulative_probability": 0.445708,
+          "foundation_cards": 5,
+          "net_dollars": -27,
+          "probability": 0.126524
+        },
+        {
+          "count": 29243,
+          "cumulative_probability": 0.56268,
+          "foundation_cards": 6,
+          "net_dollars": -22,
+          "probability": 0.116972
+        },
+        {
+          "count": 25181,
+          "cumulative_probability": 0.663404,
+          "foundation_cards": 7,
+          "net_dollars": -17,
+          "probability": 0.100724
+        },
+        {
+          "count": 20026,
+          "cumulative_probability": 0.743508,
+          "foundation_cards": 8,
+          "net_dollars": -12,
+          "probability": 0.080104
+        },
+        {
+          "count": 15516,
+          "cumulative_probability": 0.805572,
+          "foundation_cards": 9,
+          "net_dollars": -7,
+          "probability": 0.062064
+        },
+        {
+          "count": 12049,
+          "cumulative_probability": 0.853768,
+          "foundation_cards": 10,
+          "net_dollars": -2,
+          "probability": 0.048196
+        },
+        {
+          "count": 9150,
+          "cumulative_probability": 0.890368,
+          "foundation_cards": 11,
+          "net_dollars": 3,
+          "probability": 0.0366
+        },
+        {
+          "count": 6849,
+          "cumulative_probability": 0.917764,
+          "foundation_cards": 12,
+          "net_dollars": 8,
+          "probability": 0.027396
+        },
+        {
+          "count": 5078,
+          "cumulative_probability": 0.938076,
+          "foundation_cards": 13,
+          "net_dollars": 13,
+          "probability": 0.020312
+        },
+        {
+          "count": 3556,
+          "cumulative_probability": 0.9523,
+          "foundation_cards": 14,
+          "net_dollars": 18,
+          "probability": 0.014224
+        },
+        {
+          "count": 2557,
+          "cumulative_probability": 0.962528,
+          "foundation_cards": 15,
+          "net_dollars": 23,
+          "probability": 0.010228
+        },
+        {
+          "count": 1956,
+          "cumulative_probability": 0.970352,
+          "foundation_cards": 16,
+          "net_dollars": 28,
+          "probability": 0.007824
+        },
+        {
+          "count": 1485,
+          "cumulative_probability": 0.976292,
+          "foundation_cards": 17,
+          "net_dollars": 33,
+          "probability": 0.00594
+        },
+        {
+          "count": 1094,
+          "cumulative_probability": 0.980668,
+          "foundation_cards": 18,
+          "net_dollars": 38,
+          "probability": 0.004376
+        },
+        {
+          "count": 749,
+          "cumulative_probability": 0.983664,
+          "foundation_cards": 19,
+          "net_dollars": 43,
+          "probability": 0.002996
+        },
+        {
+          "count": 552,
+          "cumulative_probability": 0.985872,
+          "foundation_cards": 20,
+          "net_dollars": 48,
+          "probability": 0.002208
+        },
+        {
+          "count": 455,
+          "cumulative_probability": 0.987692,
+          "foundation_cards": 21,
+          "net_dollars": 53,
+          "probability": 0.00182
+        },
+        {
+          "count": 307,
+          "cumulative_probability": 0.98892,
+          "foundation_cards": 22,
+          "net_dollars": 58,
+          "probability": 0.001228
+        },
+        {
+          "count": 239,
+          "cumulative_probability": 0.989876,
+          "foundation_cards": 23,
+          "net_dollars": 63,
+          "probability": 0.000956
+        },
+        {
+          "count": 183,
+          "cumulative_probability": 0.990608,
+          "foundation_cards": 24,
+          "net_dollars": 68,
+          "probability": 0.000732
+        },
+        {
+          "count": 137,
+          "cumulative_probability": 0.991156,
+          "foundation_cards": 25,
+          "net_dollars": 73,
+          "probability": 0.000548
+        },
+        {
+          "count": 102,
+          "cumulative_probability": 0.991564,
+          "foundation_cards": 26,
+          "net_dollars": 78,
+          "probability": 0.000408
+        },
+        {
+          "count": 73,
+          "cumulative_probability": 0.991856,
+          "foundation_cards": 27,
+          "net_dollars": 83,
+          "probability": 0.000292
+        },
+        {
+          "count": 66,
+          "cumulative_probability": 0.99212,
+          "foundation_cards": 28,
+          "net_dollars": 88,
+          "probability": 0.000264
+        },
+        {
+          "count": 52,
+          "cumulative_probability": 0.992328,
+          "foundation_cards": 29,
+          "net_dollars": 93,
+          "probability": 0.000208
+        },
+        {
+          "count": 29,
+          "cumulative_probability": 0.992444,
+          "foundation_cards": 30,
+          "net_dollars": 98,
+          "probability": 0.000116
+        },
+        {
+          "count": 25,
+          "cumulative_probability": 0.992544,
+          "foundation_cards": 31,
+          "net_dollars": 103,
+          "probability": 0.0001
+        },
+        {
+          "count": 17,
+          "cumulative_probability": 0.992612,
+          "foundation_cards": 32,
+          "net_dollars": 108,
+          "probability": 6.8e-05
+        },
+        {
+          "count": 26,
+          "cumulative_probability": 0.992716,
+          "foundation_cards": 33,
+          "net_dollars": 113,
+          "probability": 0.000104
+        },
+        {
+          "count": 10,
+          "cumulative_probability": 0.992756,
+          "foundation_cards": 34,
+          "net_dollars": 118,
+          "probability": 4e-05
+        },
+        {
+          "count": 8,
+          "cumulative_probability": 0.992788,
+          "foundation_cards": 35,
+          "net_dollars": 123,
+          "probability": 3.2e-05
+        },
+        {
+          "count": 11,
+          "cumulative_probability": 0.992832,
+          "foundation_cards": 36,
+          "net_dollars": 128,
+          "probability": 4.4e-05
+        },
+        {
+          "count": 6,
+          "cumulative_probability": 0.992856,
+          "foundation_cards": 37,
+          "net_dollars": 133,
+          "probability": 2.4e-05
+        },
+        {
+          "count": 4,
+          "cumulative_probability": 0.992872,
+          "foundation_cards": 38,
+          "net_dollars": 138,
+          "probability": 1.6e-05
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.992876,
+          "foundation_cards": 39,
+          "net_dollars": 143,
+          "probability": 4e-06
+        },
+        {
+          "count": 3,
+          "cumulative_probability": 0.992888,
+          "foundation_cards": 40,
+          "net_dollars": 148,
+          "probability": 1.2e-05
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.992892,
+          "foundation_cards": 41,
+          "net_dollars": 153,
+          "probability": 4e-06
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.992892,
+          "foundation_cards": 42,
+          "net_dollars": 158,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.992892,
+          "foundation_cards": 43,
+          "net_dollars": 163,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.992892,
+          "foundation_cards": 44,
+          "net_dollars": 168,
+          "probability": 0.0
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.992896,
+          "foundation_cards": 45,
+          "net_dollars": 173,
+          "probability": 4e-06
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.992896,
+          "foundation_cards": 46,
+          "net_dollars": 178,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.992896,
+          "foundation_cards": 47,
+          "net_dollars": 183,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.992896,
+          "foundation_cards": 48,
+          "net_dollars": 188,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.992896,
+          "foundation_cards": 49,
+          "net_dollars": 193,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.992896,
+          "foundation_cards": 50,
+          "net_dollars": 198,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.992896,
+          "foundation_cards": 51,
+          "net_dollars": 203,
+          "probability": 0.0
+        },
+        {
+          "count": 1776,
+          "cumulative_probability": 1.0,
+          "foundation_cards": 52,
+          "net_dollars": 208,
+          "probability": 0.007104
+        }
+      ],
+      "policy_type": "single_policy",
+      "provenance": {
+        "compressed_outcomes_sha256": "281c04be4a224329c3f21b08647970b9a2259d5ac32228481404ec2a278c4515",
+        "foundations_file": "variant-study-outcomes/vegas.stage8_baseline.foundations.u8.gz",
+        "raw_outcomes_sha256": "d6787b9ed90e8d521aaa69fa78bd91e00422966d028f0ddb7c26dedb8d4f07f7"
+      },
+      "quantiles_net_dollars": {
+        "q05": -42,
+        "q25": -32,
+        "q50": -22,
+        "q75": -7,
+        "q95": 18
+      },
+      "sample_size": 250000,
+      "sd_net_dollars": 27.097493475356917
+    },
+    "visible": {
+      "attempts_per_deal": 1,
+      "bins": [
+        {
+          "count": 1301,
+          "foundation_cards_max": 0,
+          "foundation_cards_min": 0,
+          "label": "0",
+          "net_dollars_max": -52,
+          "net_dollars_min": -52,
+          "probability": 0.005204
+        },
+        {
+          "count": 84580,
+          "foundation_cards_max": 5,
+          "foundation_cards_min": 1,
+          "label": "1\u20135",
+          "net_dollars_max": -27,
+          "net_dollars_min": -47,
+          "probability": 0.33832
+        },
+        {
+          "count": 102936,
+          "foundation_cards_max": 10,
+          "foundation_cards_min": 6,
+          "label": "6\u201310",
+          "net_dollars_max": -2,
+          "net_dollars_min": -22,
+          "probability": 0.411744
+        },
+        {
+          "count": 38005,
+          "foundation_cards_max": 15,
+          "foundation_cards_min": 11,
+          "label": "11\u201315",
+          "net_dollars_max": 23,
+          "net_dollars_min": 3,
+          "probability": 0.15202
+        },
+        {
+          "count": 15054,
+          "foundation_cards_max": 25,
+          "foundation_cards_min": 16,
+          "label": "16\u201325",
+          "net_dollars_max": 73,
+          "net_dollars_min": 28,
+          "probability": 0.060216
+        },
+        {
+          "count": 1549,
+          "foundation_cards_max": 51,
+          "foundation_cards_min": 26,
+          "label": "26\u201351",
+          "net_dollars_max": 203,
+          "net_dollars_min": 78,
+          "probability": 0.006196
+        },
+        {
+          "count": 6575,
+          "foundation_cards_max": 52,
+          "foundation_cards_min": 52,
+          "label": "52",
+          "net_dollars_max": 208,
+          "net_dollars_min": 208,
+          "probability": 0.0263
+        }
+      ],
+      "events": {
+        "full_loss": {
+          "count": 1301,
+          "probability": 0.005204,
+          "wilson_95_ci": [
+            0.00492946057503303,
+            0.005493745098988241
+          ]
+        },
+        "full_win": {
+          "count": 6575,
+          "probability": 0.0263,
+          "wilson_95_ci": [
+            0.025679951013715566,
+            0.02693460635494521
+          ]
+        },
+        "loss": {
+          "count": 188817,
+          "probability": 0.755268,
+          "wilson_95_ci": [
+            0.7535787985025924,
+            0.7569493568058661
+          ]
+        },
+        "profit": {
+          "count": 61183,
+          "probability": 0.244732,
+          "wilson_95_ci": [
+            0.24305064319413391,
+            0.24642120149740773
+          ]
+        }
+      },
+      "information_group": "visible_information",
+      "interpretation": "Net return from one fixed policy on each sampled deal; computer outcomes are not measured human performance.",
+      "label": "Visible-information policy",
+      "mean_net_dollars": -7.03746,
+      "mean_net_dollars_95_ci": [
+        -7.203104182384337,
+        -6.871815817615664
+      ],
+      "median_net_dollars": -17,
+      "pmf": [
+        {
+          "count": 1301,
+          "cumulative_probability": 0.005204,
+          "foundation_cards": 0,
+          "net_dollars": -52,
+          "probability": 0.005204
+        },
+        {
+          "count": 4607,
+          "cumulative_probability": 0.023632,
+          "foundation_cards": 1,
+          "net_dollars": -47,
+          "probability": 0.018428
+        },
+        {
+          "count": 11247,
+          "cumulative_probability": 0.06862,
+          "foundation_cards": 2,
+          "net_dollars": -42,
+          "probability": 0.044988
+        },
+        {
+          "count": 18042,
+          "cumulative_probability": 0.140788,
+          "foundation_cards": 3,
+          "net_dollars": -37,
+          "probability": 0.072168
+        },
+        {
+          "count": 24016,
+          "cumulative_probability": 0.236852,
+          "foundation_cards": 4,
+          "net_dollars": -32,
+          "probability": 0.096064
+        },
+        {
+          "count": 26668,
+          "cumulative_probability": 0.343524,
+          "foundation_cards": 5,
+          "net_dollars": -27,
+          "probability": 0.106672
+        },
+        {
+          "count": 26165,
+          "cumulative_probability": 0.448184,
+          "foundation_cards": 6,
+          "net_dollars": -22,
+          "probability": 0.10466
+        },
+        {
+          "count": 24152,
+          "cumulative_probability": 0.544792,
+          "foundation_cards": 7,
+          "net_dollars": -17,
+          "probability": 0.096608
+        },
+        {
+          "count": 21074,
+          "cumulative_probability": 0.629088,
+          "foundation_cards": 8,
+          "net_dollars": -12,
+          "probability": 0.084296
+        },
+        {
+          "count": 17361,
+          "cumulative_probability": 0.698532,
+          "foundation_cards": 9,
+          "net_dollars": -7,
+          "probability": 0.069444
+        },
+        {
+          "count": 14184,
+          "cumulative_probability": 0.755268,
+          "foundation_cards": 10,
+          "net_dollars": -2,
+          "probability": 0.056736
+        },
+        {
+          "count": 11362,
+          "cumulative_probability": 0.800716,
+          "foundation_cards": 11,
+          "net_dollars": 3,
+          "probability": 0.045448
+        },
+        {
+          "count": 9385,
+          "cumulative_probability": 0.838256,
+          "foundation_cards": 12,
+          "net_dollars": 8,
+          "probability": 0.03754
+        },
+        {
+          "count": 7385,
+          "cumulative_probability": 0.867796,
+          "foundation_cards": 13,
+          "net_dollars": 13,
+          "probability": 0.02954
+        },
+        {
+          "count": 5543,
+          "cumulative_probability": 0.889968,
+          "foundation_cards": 14,
+          "net_dollars": 18,
+          "probability": 0.022172
+        },
+        {
+          "count": 4330,
+          "cumulative_probability": 0.907288,
+          "foundation_cards": 15,
+          "net_dollars": 23,
+          "probability": 0.01732
+        },
+        {
+          "count": 3529,
+          "cumulative_probability": 0.921404,
+          "foundation_cards": 16,
+          "net_dollars": 28,
+          "probability": 0.014116
+        },
+        {
+          "count": 2793,
+          "cumulative_probability": 0.932576,
+          "foundation_cards": 17,
+          "net_dollars": 33,
+          "probability": 0.011172
+        },
+        {
+          "count": 2209,
+          "cumulative_probability": 0.941412,
+          "foundation_cards": 18,
+          "net_dollars": 38,
+          "probability": 0.008836
+        },
+        {
+          "count": 1687,
+          "cumulative_probability": 0.94816,
+          "foundation_cards": 19,
+          "net_dollars": 43,
+          "probability": 0.006748
+        },
+        {
+          "count": 1367,
+          "cumulative_probability": 0.953628,
+          "foundation_cards": 20,
+          "net_dollars": 48,
+          "probability": 0.005468
+        },
+        {
+          "count": 1066,
+          "cumulative_probability": 0.957892,
+          "foundation_cards": 21,
+          "net_dollars": 53,
+          "probability": 0.004264
+        },
+        {
+          "count": 782,
+          "cumulative_probability": 0.96102,
+          "foundation_cards": 22,
+          "net_dollars": 58,
+          "probability": 0.003128
+        },
+        {
+          "count": 609,
+          "cumulative_probability": 0.963456,
+          "foundation_cards": 23,
+          "net_dollars": 63,
+          "probability": 0.002436
+        },
+        {
+          "count": 560,
+          "cumulative_probability": 0.965696,
+          "foundation_cards": 24,
+          "net_dollars": 68,
+          "probability": 0.00224
+        },
+        {
+          "count": 452,
+          "cumulative_probability": 0.967504,
+          "foundation_cards": 25,
+          "net_dollars": 73,
+          "probability": 0.001808
+        },
+        {
+          "count": 339,
+          "cumulative_probability": 0.96886,
+          "foundation_cards": 26,
+          "net_dollars": 78,
+          "probability": 0.001356
+        },
+        {
+          "count": 265,
+          "cumulative_probability": 0.96992,
+          "foundation_cards": 27,
+          "net_dollars": 83,
+          "probability": 0.00106
+        },
+        {
+          "count": 220,
+          "cumulative_probability": 0.9708,
+          "foundation_cards": 28,
+          "net_dollars": 88,
+          "probability": 0.00088
+        },
+        {
+          "count": 184,
+          "cumulative_probability": 0.971536,
+          "foundation_cards": 29,
+          "net_dollars": 93,
+          "probability": 0.000736
+        },
+        {
+          "count": 118,
+          "cumulative_probability": 0.972008,
+          "foundation_cards": 30,
+          "net_dollars": 98,
+          "probability": 0.000472
+        },
+        {
+          "count": 83,
+          "cumulative_probability": 0.97234,
+          "foundation_cards": 31,
+          "net_dollars": 103,
+          "probability": 0.000332
+        },
+        {
+          "count": 84,
+          "cumulative_probability": 0.972676,
+          "foundation_cards": 32,
+          "net_dollars": 108,
+          "probability": 0.000336
+        },
+        {
+          "count": 80,
+          "cumulative_probability": 0.972996,
+          "foundation_cards": 33,
+          "net_dollars": 113,
+          "probability": 0.00032
+        },
+        {
+          "count": 57,
+          "cumulative_probability": 0.973224,
+          "foundation_cards": 34,
+          "net_dollars": 118,
+          "probability": 0.000228
+        },
+        {
+          "count": 25,
+          "cumulative_probability": 0.973324,
+          "foundation_cards": 35,
+          "net_dollars": 123,
+          "probability": 0.0001
+        },
+        {
+          "count": 29,
+          "cumulative_probability": 0.97344,
+          "foundation_cards": 36,
+          "net_dollars": 128,
+          "probability": 0.000116
+        },
+        {
+          "count": 22,
+          "cumulative_probability": 0.973528,
+          "foundation_cards": 37,
+          "net_dollars": 133,
+          "probability": 8.8e-05
+        },
+        {
+          "count": 21,
+          "cumulative_probability": 0.973612,
+          "foundation_cards": 38,
+          "net_dollars": 138,
+          "probability": 8.4e-05
+        },
+        {
+          "count": 8,
+          "cumulative_probability": 0.973644,
+          "foundation_cards": 39,
+          "net_dollars": 143,
+          "probability": 3.2e-05
+        },
+        {
+          "count": 7,
+          "cumulative_probability": 0.973672,
+          "foundation_cards": 40,
+          "net_dollars": 148,
+          "probability": 2.8e-05
+        },
+        {
+          "count": 4,
+          "cumulative_probability": 0.973688,
+          "foundation_cards": 41,
+          "net_dollars": 153,
+          "probability": 1.6e-05
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.973692,
+          "foundation_cards": 42,
+          "net_dollars": 158,
+          "probability": 4e-06
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.973692,
+          "foundation_cards": 43,
+          "net_dollars": 163,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.973692,
+          "foundation_cards": 44,
+          "net_dollars": 168,
+          "probability": 0.0
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.973696,
+          "foundation_cards": 45,
+          "net_dollars": 173,
+          "probability": 4e-06
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.973696,
+          "foundation_cards": 46,
+          "net_dollars": 178,
+          "probability": 0.0
+        },
+        {
+          "count": 1,
+          "cumulative_probability": 0.9737,
+          "foundation_cards": 47,
+          "net_dollars": 183,
+          "probability": 4e-06
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.9737,
+          "foundation_cards": 48,
+          "net_dollars": 188,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.9737,
+          "foundation_cards": 49,
+          "net_dollars": 193,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.9737,
+          "foundation_cards": 50,
+          "net_dollars": 198,
+          "probability": 0.0
+        },
+        {
+          "count": 0,
+          "cumulative_probability": 0.9737,
+          "foundation_cards": 51,
+          "net_dollars": 203,
+          "probability": 0.0
+        },
+        {
+          "count": 6575,
+          "cumulative_probability": 1.0,
+          "foundation_cards": 52,
+          "net_dollars": 208,
+          "probability": 0.0263
+        }
+      ],
+      "policy_type": "single_policy",
+      "provenance": {
+        "compressed_outcomes_sha256": "517fc9e42b6622bddbc5ce2ebefdc4a93f0421c24ae28fbfe83f45078422624b",
+        "foundations_file": "variant-study-outcomes/vegas.visible.foundations.u8.gz",
+        "raw_outcomes_sha256": "becf04c469af9afbf28f5e8136577039bb570d49c687673c07f9026d7cf02905"
+      },
+      "quantiles_net_dollars": {
+        "q05": -42,
+        "q25": -27,
+        "q50": -17,
+        "q75": -2,
+        "q95": 48
+      },
+      "sample_size": 250000,
+      "sd_net_dollars": 42.25694545688504
+    }
+  },
+  "rules": {
+    "break_even_possible": false,
+    "deck_cost_dollars": 52,
+    "first_profitable_foundation_count": 11,
+    "max_net_dollars": 208,
+    "min_net_dollars": -52,
+    "net_dollars_formula": "5 * foundation_cards - 52",
+    "payout_per_foundation_card_dollars": 5
+  },
+  "schema_version": 1,
+  "source": {
+    "confirmation_file": "variant-study.confirmation.json",
+    "confirmation_sha256": "6b0530a328b06cabee8f54e4c46c23b9a3687f3052ca2b8750655d02c59af3a5",
+    "selected_policies_file": "variant-study.selected-policies.json",
+    "selected_policies_sha256": "724294a5c7ff732f148af23836ad1ee60f470384e3224e3b560784dccbbc6a7d"
+  },
+  "statistics": {
+    "confidence": 0.95,
+    "event_intervals": "Two-sided Wilson score intervals.",
+    "limitations": "Sampling intervals assume IID-uniform deals under the seeded-shuffle interpretation and fixed policies. They are not adjusted for multiple comparisons and do not measure model or human-execution uncertainty.",
+    "mean_interval": "Normal approximation using sample standard deviation divided by sqrt(N); null for N=1.",
+    "median_definition": "Inverse empirical CDF at q=0.5; lower central value when an even sample straddles a gap.",
+    "quantile_definition": "Inverse empirical CDF: smallest observed net return with cumulative probability at least q.",
+    "sd_definition": "Sample standard deviation with denominator N-1; null for N=1."
+  }
+}

@@ -4,6 +4,8 @@ Experiments in Klondike strategy, trained computer players, and exact solvabilit
 
 **[Read the strategy guide](https://peterefrancis.com/solitaire-research/)** — the front page compares draw-one, draw-three, unlimited recycles, and the specified Vegas rules. It separates full-information computer models from observable scorecards and includes saved weights, uncertainty, and reproducible evidence. The canonical [Markdown guide](original/strategy-guide.md) is also available in this repository.
 
+For Vegas, the guide reports the **distribution of net earnings**, using $5 per foundation card less a $52 entry cost. The payout-focused full-information model averaged −$5.73 per deal over 250,000 held-out deals, with a −$17 median and a 25.73% chance of profit. The [complete payout distributions](original/brute_force/results/vegas-earnings.json) cover six frozen policies; these are measured computer outcomes, not established human results.
+
 - [Klondike engine and research](original/README.md)
 - [Exact solvability experiments](original/brute_force/README.md)
 - [One-color solitaire research](one-color/README.md)
@@ -32,5 +34,7 @@ From `original/`, `python3 -m brute_force.variant_study --output-prefix my-varia
 Run `python3 -m unittest discover` separately in `original/` and `one-color/`. Set `NATIVE_SOLVER_TEST_BINARY` to the absolute path of the built native executable to include native transition, scoring, and benchmark checks.
 
 From `original/`, `python3 -m brute_force.verify_variant_study` independently checks saved outcomes, confidence intervals, paired comparisons, portfolio aggregation, and provenance. Rebuilt executables can differ by platform; use its optional `--binary` argument only to verify the exact recorded study executable.
+
+From `original/`, `python3 -m brute_force.vegas_earnings --check` verifies the earnings report against the saved outcomes. Omit `--check` to regenerate its JSON. The chart can be regenerated from the repository root with `python3 scripts/plot_vegas_earnings.py`; only this plotting step requires the optional `matplotlib` package.
 
 The Pages site renders `docs/index.md`, generated from the canonical guide with `python3 scripts/build_pages.py`. GitHub checks that the page remains synchronized.
