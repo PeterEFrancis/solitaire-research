@@ -311,7 +311,113 @@ def vegas_earnings_section(earnings, frozen):
     )
 
 
-def expanded_report(records, prefix, earnings=None):
+def hole_preservation_section(study):
+    protocol, frozen, confirmation = (study[key] for key in ("protocol", "frozen", "confirmation"))
+    labels = {"full": "Full", "visible": "Visible", "simple_eight": "Eight-feature"}
+    rows = []
+    outcomes = {rule: {"improved": [], "reduced": [], "unresolved": []} for rule in ("selected_soft", "strict")}
+    for family, label in labels.items():
+        result = confirmation["families"][family]
+        cells = [label, pct(result["baseline"]["win_rate"]), coefficient(frozen["selected_penalties"][family])]
+        for rule in ("selected_soft", "strict"):
+            candidate = result[rule]
+            pair = candidate["paired_vs_baseline"]
+            interval = pair["bonferroni_familywise_95_ci_percentage_points"]
+            cells.extend((pct(candidate["win_rate"]), signed(pair["delta_percentage_points"]) + " (" + ci(interval) + ")"))
+            conclusion = "improved" if interval[0] > 0 else "reduced" if interval[1] < 0 else "unresolved"
+            outcomes[rule][conclusion].append(label)
+        rows.append(cells)
+    conclusions = []
+    for rule, name in (("selected_soft", "The selected preference"), ("strict", "The strict rule")):
+        result = outcomes[rule]
+        parts = []
+        if result["improved"]:
+            parts.append("increased wins for " + ", ".join(result["improved"]))
+        if result["reduced"]:
+            parts.append("reduced wins for " + ", ".join(result["reduced"]))
+        if result["unresolved"]:
+            parts.append("had an interval including zero for " + ", ".join(result["unresolved"]))
+        conclusions.append(name + " " + "; ".join(parts) + ".")
+    compact = protocol["parameters"]["simple_eight"]
+    penalty = frozen["selected_penalties"]["simple_eight"]
+    compact_before = compact["tableau_build"] + compact["waste_to_tableau"]
+    compact_pair = confirmation["families"]["simple_eight"]["selected_soft"]["paired_vs_baseline"]
+    compact_gains = compact_pair["b_candidate_wins_baseline_loses"]
+    compact_losses = compact_pair["c_baseline_wins_candidate_loses"]
+    compact_counts = (
+        f"The compact preference gained {compact_gains:,} deals and lost {compact_losses:,} relative to baseline"
+        + (", giving no net change in wins." if compact_gains == compact_losses else ".")
+    )
+    if 0 < compact_pair["discordant_deals"] < 10:
+        compact_counts += (
+            f" With only {compact_pair['discordant_deals']} deals whose win/loss outcomes differ, its normal-approximation interval "
+            "is unreliable; these counts do not establish equivalence or identical behavior."
+        )
+    compact_reveal = move_expression(compact["reveal_hidden"] - penalty,
+                                     compact["tableau_build"] + compact["productive_stack_length"], compact["reveal_depth"])
+    if "Eight-feature" in outcomes["selected_soft"]["improved"]:
+        takeaway = "The compact-policy result supports a preference for preserving the last hole, at this tested penalty."
+    elif "Eight-feature" in outcomes["selected_soft"]["reduced"]:
+        takeaway = "For the compact policy, the screen-selected preference reduced wins; this comparison favors keeping its original scorecard."
+    else:
+        takeaway = "For the compact policy, this comparison did not resolve whether the preference helps; its adjusted interval includes zero."
+    cutoffs = "; ".join(
+        f"{label} " + "/".join(str(confirmation["families"][family][rule]["cutoffs"])
+                                for rule in ("baseline", "selected_soft", "strict"))
+        for family, label in labels.items()
+    )
+    summary = ""
+    if len(outcomes["selected_soft"]["unresolved"]) == len(labels) and len(outcomes["strict"]["reduced"]) == len(labels):
+        summary = "**The tested soft preferences showed no clear improvement. A strict ban sharply reduced win rates for all three policies.**\n\n"
+    compact_stock_note = ""
+    if compact_before - penalty > max(compact["stock_action"], compact["stock_action"] + compact["recycle"]):
+        compact_stock_note = " Parking a waste king still outranks both stock actions."
+    return "## Should you preserve the last empty column? {#preserve-a-hole}\n\n" + (
+        summary + "This follow-up tests **draw three with unlimited passes**. A move consumes the last hole exactly when the tableau has "
+        "**one empty column before the move and zero afterward**. A soft preference subtracts a penalty from that move's score; "
+        "the strict rule excludes it. Neither rule rewards creating a hole, penalizes going from two holes to one, or penalizes "
+        "relocating a hole. Every original model weight stays fixed.\n\n"
+        f"For each policy, {protocol['options']['screen_deals']:,} screening deals selected the best **positive** penalty from "
+        + ", ".join(coefficient(value) for value in protocol["penalties"]) + ". Selection used wins, then foundation cards, "
+        "fewer moves, and smaller penalty. Baseline and strict results did not compete in this selection: choosing the best positive "
+        "penalty does not guarantee it beats no penalty. The choices were frozen before "
+        f"{confirmation['deals']:,} fresh confirmation deals, shared across all nine policy/rule combinations. "
+        "These baseline rates use a new sample, so they need not match the five-rule table."
+    ) + "\n\n" + table(("Policy", "Baseline win rate", "Selected penalty", "Soft win rate", "Soft gain (points; adjusted interval)",
+                           "Strict win rate", "Strict gain (points; adjusted interval)"), rows) + "\n\n" + (
+        "The displayed paired normal intervals use a Bonferroni correction for the **six predeclared comparisons**, with approximately 95% "
+        "familywise coverage under the shuffle model. Conclusions use these adjusted intervals, not the narrower marginal intervals "
+        "also recorded in the data. " + " ".join(conclusions) + " " + compact_counts + "\n\n"
+        f"Each trajectory retains repeated-position avoidance and a {protocol['options']['max_steps']:,}-move cap. Cutoffs "
+        f"(baseline/soft/strict) were: {cutoffs}. The strict player stops if no eligible unseen move remains; it does not backtrack."
+    ) + "\n\n" + (
+        "**Human interpretation.** " + takeaway + " For the eight-feature policy, the selected penalty of "
+        f"{coefficient(penalty)} changes a waste king's last-hole score from {coefficient(compact_before)} to "
+        f"{coefficient(compact_before - penalty)}, and a king transfer revealing a card scores {compact_reveal}. "
+        f"Drawing stays at {coefficient(compact['stock_action'])} and recycling at "
+        f"{coefficient(compact['stock_action'] + compact['recycle'])}; **h** still counts face-down cards in the source before the move."
+        + compact_stock_note + "\n\n"
+        "Only kings can fill holes. Spending the last hole may uncover a face-down card, enable a queen transfer that reopens another "
+        "column, or change stock access. Unlimited passes do not remove draw-three packet effects. This experiment tests a blanket "
+        "score adjustment, not those exceptions separately. Last-hole occupancy is observable, but the full policy can still inspect "
+        "unknown cards. These results concern fixed computer policies; they establish neither a universal rule nor a human win-rate gain."
+    ) + "\n\n" + (
+        "The [protocol](brute_force/results/hole-preservation.protocol.json), "
+        "[screening results](brute_force/results/hole-preservation.screen.json), "
+        "[frozen penalties](brute_force/results/hole-preservation.frozen.json), and "
+        "[confirmation outcomes](brute_force/results/hole-preservation.confirmation.json) record the matched experiment. "
+        "The [isolated builder](brute_force/hole_rule_native.py) and [study runner](brute_force/hole_rule_study.py) preserve the "
+        "historical engine and model files. The [independent verifier](brute_force/verify_hole_rule_study.py) checks the saved evidence "
+        "without simulating new games. From the repository root:\n\n"
+        "```bash\ncd original\npython3 -m brute_force.verify_hole_rule_study\n```\n\n"
+        "To repeat the experiment, build an isolated executable with `python3 -m brute_force.hole_rule_native --output /tmp/solitaire-hole-rule`, "
+        "then run `python3 -m brute_force.hole_rule_study --binary /tmp/solitaire-hole-rule "
+        "--build-manifest /tmp/solitaire-hole-rule.build.json --output-prefix hole-replication` from `original/`, "
+        "after building the reference player as described below. A fresh output prefix preserves the original evidence."
+    )
+
+
+def expanded_report(records, prefix, earnings=None, hole_study=None):
     protocol = records["protocol"]
     options, seeds = protocol["options"], protocol["seeds"]
     frozen = records["selected-policies"]["variants"]
@@ -483,6 +589,9 @@ def expanded_report(records, prefix, earnings=None):
             "unexamined variants describe the earlier stage, now extended above."
         ),
     ]
+    if hole_study is not None:
+        sections.insert(next(index for index, section in enumerate(sections) if section.startswith("## Vegas:")),
+                        hole_preservation_section(hole_study))
     return "\n\n".join(sections)
 
 
@@ -522,11 +631,16 @@ def main():
     try:
         records = load_study(args.prefix)
         earnings = None
+        hole_study = None
         if args.prefix == "variant-study":
             from brute_force.vegas_earnings import build_report
             earnings = json.loads((RESULTS / "vegas-earnings.json").read_text(encoding="utf-8"))
             require(earnings == build_report(), "Vegas earnings report is stale or inconsistent with its outcomes")
-        report = expanded_report(records, args.prefix, earnings)
+            from brute_force.verify_hole_rule_study import verify_study
+            verify_study()
+            hole_study = {kind: json.loads((RESULTS / f"hole-preservation.{kind}.json").read_text(encoding="utf-8"))
+                          for kind in ("protocol", "frozen", "confirmation")}
+        report = expanded_report(records, args.prefix, earnings, hole_study)
         output = document(GUIDE.read_text(encoding="utf-8"), report)
         require(document(output, report) == output, "Report generation is not idempotent")
     except (ValueError, KeyError, TypeError, FileNotFoundError) as error:

@@ -6,6 +6,8 @@ Experiments in Klondike strategy, trained computer players, and exact solvabilit
 
 For Vegas, the guide reports the **distribution of net earnings**, using $5 per foundation card less a $52 entry cost. The payout-focused full-information model averaged −$5.73 per deal over 250,000 held-out deals, with a −$17 median and a 25.73% chance of profit. The [complete payout distributions](original/brute_force/results/vegas-earnings.json) cover six frozen policies; these are measured computer outcomes, not established human results.
 
+The [last-hole experiment](https://peterefrancis.com/solitaire-research/#preserve-a-hole) tests preserving an empty tableau column in draw-three with unlimited recycles. On 250,000 fresh matched deals, the selected soft penalties showed no clear win-rate improvement; never filling the last hole substantially reduced wins for all three tested policies. The guide includes the definitions, paired comparisons, and reproducible evidence.
+
 - [Klondike engine and research](original/README.md)
 - [Exact solvability experiments](original/brute_force/README.md)
 - [One-color solitaire research](one-color/README.md)

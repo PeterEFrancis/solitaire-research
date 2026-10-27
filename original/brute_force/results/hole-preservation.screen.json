@@ -1,0 +1,600 @@
+{
+  "baseline_parity": {
+    "full": {
+      "deals": 1000,
+      "exact_match": true,
+      "foundations_sha256": "979e7b69245d47a5ee5eebb75566025451b4666b059c05ec365dec3d3d87efdf",
+      "wins_sha256": "35bbe53ef516c7a63cdf1166253206db5ffd8330de0aee988cc5cbdc48816554"
+    },
+    "simple_eight": {
+      "deals": 1000,
+      "exact_match": true,
+      "foundations_sha256": "ec8a2fbf9694b8e1ef05f81aa0386975b265d92091f339563a98354c3398f4dd",
+      "wins_sha256": "beb46eb052e324cb1d675c3a15716b6a6eceebadd2a1808cdf61f48ee4f5ea13"
+    },
+    "visible": {
+      "deals": 1000,
+      "exact_match": true,
+      "foundations_sha256": "1c38bdad4757ee5bddd2cff983514044b5bfdc8dea5c224574cd7c9f40774976",
+      "wins_sha256": "6ce8c6251d16f99720c231f60833334bfdc85ca28d7000a5b1b6fe4ab08144cf"
+    }
+  },
+  "complete": true,
+  "families": {
+    "full": [
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 290647,
+        "foundation_cards_squared": 10372139,
+        "mean_foundation_cards": 14.53235,
+        "mean_foundation_cards_95_ci": [
+          14.289344332009122,
+          14.775355667990876
+        ],
+        "mean_steps": 84.29885,
+        "penalty": 0.0,
+        "rule": "baseline",
+        "steps": 1685977,
+        "win_rate": 0.167,
+        "win_rate_wilson_95_ci": [
+          0.16189496192154687,
+          0.1722329340918188
+        ],
+        "wins": 3340
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 290557,
+        "foundation_cards_squared": 10366947,
+        "mean_foundation_cards": 14.52785,
+        "mean_foundation_cards_95_ci": [
+          14.284895255356421,
+          14.77080474464358
+        ],
+        "mean_steps": 84.2991,
+        "penalty": 0.5,
+        "rule": "soft",
+        "steps": 1685982,
+        "win_rate": 0.1669,
+        "win_rate_wilson_95_ci": [
+          0.16179621836934563,
+          0.1721317160512312
+        ],
+        "wins": 3338
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 291118,
+        "foundation_cards_squared": 10397994,
+        "mean_foundation_cards": 14.5559,
+        "mean_foundation_cards_95_ci": [
+          14.31265425656534,
+          14.799145743434659
+        ],
+        "mean_steps": 84.3283,
+        "penalty": 1.0,
+        "rule": "soft",
+        "steps": 1686566,
+        "win_rate": 0.16745,
+        "win_rate_wilson_95_ci": [
+          0.16233931615899988,
+          0.17268840702191524
+        ],
+        "wins": 3349
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 290490,
+        "foundation_cards_squared": 10349414,
+        "mean_foundation_cards": 14.5245,
+        "mean_foundation_cards_95_ci": [
+          14.281853533334257,
+          14.767146466665743
+        ],
+        "mean_steps": 84.5243,
+        "penalty": 2.0,
+        "rule": "soft",
+        "steps": 1690486,
+        "win_rate": 0.1664,
+        "win_rate_wilson_95_ci": [
+          0.16130251063660597,
+          0.17162561582002697
+        ],
+        "wins": 3328
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 283185,
+        "foundation_cards_squared": 9988697,
+        "mean_foundation_cards": 14.15925,
+        "mean_foundation_cards_95_ci": [
+          13.919614273792035,
+          14.398885726207965
+        ],
+        "mean_steps": 83.99535,
+        "penalty": 4.0,
+        "rule": "soft",
+        "steps": 1679907,
+        "win_rate": 0.16005,
+        "win_rate_wilson_95_ci": [
+          0.1550339012986637,
+          0.16519666401588182
+        ],
+        "wins": 3201
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 254718,
+        "foundation_cards_squared": 8465496,
+        "mean_foundation_cards": 12.7359,
+        "mean_foundation_cards_95_ci": [
+          12.511959940568719,
+          12.959840059431283
+        ],
+        "mean_steps": 81.9104,
+        "penalty": 8.0,
+        "rule": "soft",
+        "steps": 1638208,
+        "win_rate": 0.1323,
+        "win_rate_wilson_95_ci": [
+          0.12767485895475766,
+          0.13706636436090164
+        ],
+        "wins": 2646
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 237683,
+        "foundation_cards_squared": 7519947,
+        "mean_foundation_cards": 11.88415,
+        "mean_foundation_cards_95_ci": [
+          11.671792313393333,
+          12.096507686606667
+        ],
+        "mean_steps": 84.56815,
+        "penalty": 16.0,
+        "rule": "soft",
+        "steps": 1691363,
+        "win_rate": 0.1151,
+        "win_rate_wilson_95_ci": [
+          0.11075071246176818,
+          0.11959711689422114
+        ],
+        "wins": 2302
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 232573,
+        "foundation_cards_squared": 7253403,
+        "mean_foundation_cards": 11.62865,
+        "mean_foundation_cards_95_ci": [
+          11.419629061571216,
+          11.837670938428785
+        ],
+        "mean_steps": 88.9679,
+        "penalty": 32.0,
+        "rule": "soft",
+        "steps": 1779358,
+        "win_rate": 0.1105,
+        "win_rate_wilson_95_ci": [
+          0.10622959716324047,
+          0.11491999892446504
+        ],
+        "wins": 2210
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 176427,
+        "foundation_cards_squared": 4528995,
+        "mean_foundation_cards": 8.82135,
+        "mean_foundation_cards_95_ci": [
+          8.652379716243791,
+          8.99032028375621
+        ],
+        "mean_steps": 69.71735,
+        "penalty": 0.0,
+        "rule": "strict",
+        "steps": 1394347,
+        "win_rate": 0.06425,
+        "win_rate_wilson_95_ci": [
+          0.06093477076047865,
+          0.06773258866241652
+        ],
+        "wins": 1285
+      }
+    ],
+    "simple_eight": [
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 276586,
+        "foundation_cards_squared": 9540852,
+        "mean_foundation_cards": 13.8293,
+        "mean_foundation_cards_95_ci": [
+          13.594997041954976,
+          14.063602958045024
+        ],
+        "mean_steps": 75.60605,
+        "penalty": 0.0,
+        "rule": "baseline",
+        "steps": 1512121,
+        "win_rate": 0.14955,
+        "win_rate_wilson_95_ci": [
+          0.14467476971692064,
+          0.15455982835480306
+        ],
+        "wins": 2991
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 276586,
+        "foundation_cards_squared": 9540852,
+        "mean_foundation_cards": 13.8293,
+        "mean_foundation_cards_95_ci": [
+          13.594997041954976,
+          14.063602958045024
+        ],
+        "mean_steps": 75.6059,
+        "penalty": 0.5,
+        "rule": "soft",
+        "steps": 1512118,
+        "win_rate": 0.14955,
+        "win_rate_wilson_95_ci": [
+          0.14467476971692064,
+          0.15455982835480306
+        ],
+        "wins": 2991
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 276582,
+        "foundation_cards_squared": 9540764,
+        "mean_foundation_cards": 13.8291,
+        "mean_foundation_cards_95_ci": [
+          13.594796578060388,
+          14.063403421939613
+        ],
+        "mean_steps": 75.60535,
+        "penalty": 1.0,
+        "rule": "soft",
+        "steps": 1512107,
+        "win_rate": 0.14955,
+        "win_rate_wilson_95_ci": [
+          0.14467476971692064,
+          0.15455982835480306
+        ],
+        "wins": 2991
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 254307,
+        "foundation_cards_squared": 8418247,
+        "mean_foundation_cards": 12.71535,
+        "mean_foundation_cards_95_ci": [
+          12.492200239862996,
+          12.938499760137006
+        ],
+        "mean_steps": 73.96895,
+        "penalty": 2.0,
+        "rule": "soft",
+        "steps": 1479379,
+        "win_rate": 0.13015,
+        "win_rate_wilson_95_ci": [
+          0.12555780310467904,
+          0.13488424596602147
+        ],
+        "wins": 2603
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 244581,
+        "foundation_cards_squared": 7900363,
+        "mean_foundation_cards": 12.22905,
+        "mean_foundation_cards_95_ci": [
+          12.011905015239062,
+          12.44619498476094
+        ],
+        "mean_steps": 73.46395,
+        "penalty": 4.0,
+        "rule": "soft",
+        "steps": 1469279,
+        "win_rate": 0.12095,
+        "win_rate_wilson_95_ci": [
+          0.11650363395478174,
+          0.1255419485793512
+        ],
+        "wins": 2419
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 231946,
+        "foundation_cards_squared": 7221462,
+        "mean_foundation_cards": 11.5973,
+        "mean_foundation_cards_95_ci": [
+          11.388678709425236,
+          11.805921290574766
+        ],
+        "mean_steps": 75.1471,
+        "penalty": 8.0,
+        "rule": "soft",
+        "steps": 1502942,
+        "win_rate": 0.10905,
+        "win_rate_wilson_95_ci": [
+          0.1048049498379445,
+          0.11344520315432369
+        ],
+        "wins": 2181
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 227184,
+        "foundation_cards_squared": 6970844,
+        "mean_foundation_cards": 11.3592,
+        "mean_foundation_cards_95_ci": [
+          11.153857023450886,
+          11.564542976549113
+        ],
+        "mean_steps": 80.14335,
+        "penalty": 16.0,
+        "rule": "soft",
+        "steps": 1602867,
+        "win_rate": 0.10465,
+        "win_rate_wilson_95_ci": [
+          0.10048337140253663,
+          0.1089684715070253
+        ],
+        "wins": 2093
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 227164,
+        "foundation_cards_squared": 6970182,
+        "mean_foundation_cards": 11.3582,
+        "mean_foundation_cards_95_ci": [
+          11.152861879748249,
+          11.563538120251751
+        ],
+        "mean_steps": 80.3022,
+        "penalty": 32.0,
+        "rule": "soft",
+        "steps": 1606044,
+        "win_rate": 0.10465,
+        "win_rate_wilson_95_ci": [
+          0.10048337140253663,
+          0.1089684715070253
+        ],
+        "wins": 2093
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 177207,
+        "foundation_cards_squared": 4532713,
+        "mean_foundation_cards": 8.86035,
+        "mean_foundation_cards_95_ci": [
+          8.691666260740686,
+          9.029033739259315
+        ],
+        "mean_steps": 62.871,
+        "penalty": 0.0,
+        "rule": "strict",
+        "steps": 1257420,
+        "win_rate": 0.06335,
+        "win_rate_wilson_95_ci": [
+          0.06005719265842312,
+          0.06681051242937307
+        ],
+        "wins": 1267
+      }
+    ],
+    "visible": [
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 281187,
+        "foundation_cards_squared": 9868307,
+        "mean_foundation_cards": 14.05935,
+        "mean_foundation_cards_95_ci": [
+          13.821000454537087,
+          14.297699545462914
+        ],
+        "mean_steps": 83.39745,
+        "penalty": 0.0,
+        "rule": "baseline",
+        "steps": 1667949,
+        "win_rate": 0.157,
+        "win_rate_wilson_95_ci": [
+          0.15202399344780104,
+          0.1621077432866867
+        ],
+        "wins": 3140
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 281233,
+        "foundation_cards_squared": 9870861,
+        "mean_foundation_cards": 14.06165,
+        "mean_foundation_cards_95_ci": [
+          13.823275060805873,
+          14.300024939194127
+        ],
+        "mean_steps": 83.41215,
+        "penalty": 0.5,
+        "rule": "soft",
+        "steps": 1668243,
+        "win_rate": 0.15705,
+        "win_rate_wilson_95_ci": [
+          0.15207333084830238,
+          0.16215838668257976
+        ],
+        "wins": 3141
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 281313,
+        "foundation_cards_squared": 9875539,
+        "mean_foundation_cards": 14.06565,
+        "mean_foundation_cards_95_ci": [
+          13.827226155666922,
+          14.304073844333077
+        ],
+        "mean_steps": 83.4322,
+        "penalty": 1.0,
+        "rule": "soft",
+        "steps": 1668644,
+        "win_rate": 0.15715,
+        "win_rate_wilson_95_ci": [
+          0.15217200618842117,
+          0.16225967293524976
+        ],
+        "wins": 3143
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 281433,
+        "foundation_cards_squared": 9882651,
+        "mean_foundation_cards": 14.07165,
+        "mean_foundation_cards_95_ci": [
+          13.833150928066905,
+          14.310149071933095
+        ],
+        "mean_steps": 83.51205,
+        "penalty": 2.0,
+        "rule": "soft",
+        "steps": 1670241,
+        "win_rate": 0.1573,
+        "win_rate_wilson_95_ci": [
+          0.15232002054534352,
+          0.16241160096751053
+        ],
+        "wins": 3146
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 250346,
+        "foundation_cards_squared": 8226608,
+        "mean_foundation_cards": 12.5173,
+        "mean_foundation_cards_95_ci": [
+          12.296132287839699,
+          12.738467712160302
+        ],
+        "mean_steps": 82.19095,
+        "penalty": 4.0,
+        "rule": "soft",
+        "steps": 1643819,
+        "win_rate": 0.1273,
+        "win_rate_wilson_95_ci": [
+          0.12275212246718971,
+          0.13199102120903067
+        ],
+        "wins": 2546
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 235198,
+        "foundation_cards_squared": 7385396,
+        "mean_foundation_cards": 11.7599,
+        "mean_foundation_cards_95_ci": [
+          11.549263321482805,
+          11.970536678517195
+        ],
+        "mean_steps": 81.66015,
+        "penalty": 8.0,
+        "rule": "soft",
+        "steps": 1633203,
+        "win_rate": 0.11215,
+        "win_rate_wilson_95_ci": [
+          0.10785103470373593,
+          0.11659792766498443
+        ],
+        "wins": 2243
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 227996,
+        "foundation_cards_squared": 7009512,
+        "mean_foundation_cards": 11.3998,
+        "mean_foundation_cards_95_ci": [
+          11.193985446805549,
+          11.605614553194453
+        ],
+        "mean_steps": 87.37845,
+        "penalty": 16.0,
+        "rule": "soft",
+        "steps": 1747569,
+        "win_rate": 0.1057,
+        "win_rate_wilson_95_ci": [
+          0.10151444961844071,
+          0.11003699001540339
+        ],
+        "wins": 2114
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 224232,
+        "foundation_cards_squared": 6814106,
+        "mean_foundation_cards": 11.2116,
+        "mean_foundation_cards_95_ci": [
+          11.008375277279287,
+          11.414824722720715
+        ],
+        "mean_steps": 89.8339,
+        "penalty": 32.0,
+        "rule": "soft",
+        "steps": 1796678,
+        "win_rate": 0.10235,
+        "win_rate_wilson_95_ci": [
+          0.09822528665131106,
+          0.10662743962410895
+        ],
+        "wins": 2047
+      },
+      {
+        "cutoffs": 0,
+        "deals": 20000,
+        "foundation_cards": 174175,
+        "foundation_cards_squared": 4362609,
+        "mean_foundation_cards": 8.70875,
+        "mean_foundation_cards_95_ci": [
+          8.543425865786805,
+          8.874074134213195
+        ],
+        "mean_steps": 71.5797,
+        "penalty": 0.0,
+        "rule": "strict",
+        "steps": 1431594,
+        "win_rate": 0.06055,
+        "win_rate_wilson_95_ci": [
+          0.05732820775775994,
+          0.06394057273195042
+        ],
+        "wins": 1211
+      }
+    ]
+  },
+  "protocol_sha256": "cc3306d5e5c3576ec237aea0a3f1d86b88e666a42f90fa0b91a43a3f68bc068e",
+  "schema_version": 1
+}

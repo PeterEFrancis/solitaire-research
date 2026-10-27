@@ -1,0 +1,350 @@
+{
+  "complete": true,
+  "deals": 250000,
+  "families": {
+    "full": {
+      "baseline": {
+        "cutoffs": 0,
+        "deals": 250000,
+        "foundation_cards": 3594495,
+        "foundation_cards_squared": 127962795,
+        "foundations_file": "hole-preservation-outcomes/full.baseline.foundations.u8.gz",
+        "foundations_sha256": "313e073f7aa4870bced7dc1b60c054995b3df268e5e6405e303faf1faf8f926f",
+        "mean_foundation_cards": 14.37798,
+        "mean_foundation_cards_95_ci": [
+          14.309505993440354,
+          14.446454006559648
+        ],
+        "mean_steps": 84.111028,
+        "penalty": 0.0,
+        "rule": "baseline",
+        "steps": 21027757,
+        "win_rate": 0.164892,
+        "win_rate_wilson_95_ci": [
+          0.16344253237939543,
+          0.1663517658910229
+        ],
+        "wins": 41223,
+        "wins_file": "hole-preservation-outcomes/full.baseline.wins.u8.gz",
+        "wins_sha256": "3f8f558b4756a68e9966eb8e94a174e7fd84363c801553db1b1ebeacb6068ae6"
+      },
+      "selected_soft": {
+        "cutoffs": 0,
+        "deals": 250000,
+        "foundation_cards": 3595461,
+        "foundation_cards_squared": 128011755,
+        "foundations_file": "hole-preservation-outcomes/full.selected_soft.foundations.u8.gz",
+        "foundations_sha256": "570c49350f879b4911d89780ea82d99a8a3c11e52356a1dec0d246732b774630",
+        "mean_foundation_cards": 14.381844,
+        "mean_foundation_cards_95_ci": [
+          14.313360488855857,
+          14.450327511144142
+        ],
+        "mean_steps": 84.174272,
+        "paired_vs_baseline": {
+          "b_candidate_wins_baseline_loses": 409,
+          "bonferroni_familywise_95_ci_percentage_points": [
+            -0.02264844956016876,
+            0.037048449560168756
+          ],
+          "c_baseline_wins_candidate_loses": 391,
+          "deals": 250000,
+          "delta_percentage_points": 0.0072,
+          "discordant_deals": 800,
+          "familywise_comparisons": 6,
+          "net_wins": 18,
+          "paired_normal_95_ci_percentage_points": [
+            -0.014974443228274004,
+            0.029374443228274
+          ],
+          "standard_error_percentage_points": 0.011313699334877164
+        },
+        "penalty": 1.0,
+        "rule": "soft",
+        "steps": 21043568,
+        "win_rate": 0.164964,
+        "win_rate_wilson_95_ci": [
+          0.16351427645698802,
+          0.166424019600784
+        ],
+        "wins": 41241,
+        "wins_file": "hole-preservation-outcomes/full.selected_soft.wins.u8.gz",
+        "wins_sha256": "5bb7e369c492be2e84b600a4fd2a0be86234aa5b46a5411f110550645917b1a0"
+      },
+      "strict": {
+        "cutoffs": 0,
+        "deals": 250000,
+        "foundation_cards": 2154240,
+        "foundation_cards_squared": 54046732,
+        "foundations_file": "hole-preservation-outcomes/full.strict.foundations.u8.gz",
+        "foundations_sha256": "1f5462afdf0e8335941abd13df8c0d83a0c3914324b8beb73ea7e3280de2bd46",
+        "mean_foundation_cards": 8.61696,
+        "mean_foundation_cards_95_ci": [
+          8.570258419649043,
+          8.663661580350958
+        ],
+        "mean_steps": 69.268008,
+        "paired_vs_baseline": {
+          "b_candidate_wins_baseline_loses": 4622,
+          "bonferroni_familywise_95_ci_percentage_points": [
+            -10.64387213797423,
+            -10.262527862025772
+          ],
+          "c_baseline_wins_candidate_loses": 30755,
+          "deals": 250000,
+          "delta_percentage_points": -10.4532,
+          "discordant_deals": 35377,
+          "familywise_comparisons": 6,
+          "net_wins": -26133,
+          "paired_normal_95_ci_percentage_points": [
+            -10.594850523260856,
+            -10.311549476739144
+          ],
+          "standard_error_percentage_points": 0.07227200314810708
+        },
+        "penalty": 0.0,
+        "rule": "strict",
+        "steps": 17317002,
+        "win_rate": 0.06036,
+        "win_rate_wilson_95_ci": [
+          0.059433196946831565,
+          0.06130031371721323
+        ],
+        "wins": 15090,
+        "wins_file": "hole-preservation-outcomes/full.strict.wins.u8.gz",
+        "wins_sha256": "aa57c2812eaae4be429b6cce2a520e5c4816caf2b0ed61b63b2f423f82156123"
+      }
+    },
+    "simple_eight": {
+      "baseline": {
+        "cutoffs": 0,
+        "deals": 250000,
+        "foundation_cards": 3417693,
+        "foundation_cards_squared": 117671791,
+        "foundations_file": "hole-preservation-outcomes/simple_eight.baseline.foundations.u8.gz",
+        "foundations_sha256": "18981e363824ebd241c60149719f53ed0ac639eada620b84ad9113709154f524",
+        "mean_foundation_cards": 13.670772,
+        "mean_foundation_cards_95_ci": [
+          13.604734449500382,
+          13.736809550499617
+        ],
+        "mean_steps": 75.395092,
+        "penalty": 0.0,
+        "rule": "baseline",
+        "steps": 18848773,
+        "win_rate": 0.1478,
+        "win_rate_wilson_95_ci": [
+          0.14641422313911667,
+          0.14919660038894395
+        ],
+        "wins": 36950,
+        "wins_file": "hole-preservation-outcomes/simple_eight.baseline.wins.u8.gz",
+        "wins_sha256": "261ba64c874b93431779bb50501da5a20b2e57fcdbaa90388a80c5df002eaa54"
+      },
+      "selected_soft": {
+        "cutoffs": 0,
+        "deals": 250000,
+        "foundation_cards": 3417672,
+        "foundation_cards_squared": 117671182,
+        "foundations_file": "hole-preservation-outcomes/simple_eight.selected_soft.foundations.u8.gz",
+        "foundations_sha256": "9c22964b21ae7078864eea178cdd3409052221b2ebe3a9374677ecb498c9cdad",
+        "mean_foundation_cards": 13.670688,
+        "mean_foundation_cards_95_ci": [
+          13.604650465709456,
+          13.736725534290544
+        ],
+        "mean_steps": 75.395128,
+        "paired_vs_baseline": {
+          "b_candidate_wins_baseline_loses": 2,
+          "bonferroni_familywise_95_ci_percentage_points": [
+            -0.0021106058187814005,
+            0.0021106058187814005
+          ],
+          "c_baseline_wins_candidate_loses": 2,
+          "deals": 250000,
+          "delta_percentage_points": 0.0,
+          "discordant_deals": 4,
+          "familywise_comparisons": 6,
+          "net_wins": 0,
+          "paired_normal_95_ci_percentage_points": [
+            -0.0015679711876320428,
+            0.0015679711876320428
+          ],
+          "standard_error_percentage_points": 0.0007999999999999999
+        },
+        "penalty": 0.5,
+        "rule": "soft",
+        "steps": 18848782,
+        "win_rate": 0.1478,
+        "win_rate_wilson_95_ci": [
+          0.14641422313911667,
+          0.14919660038894395
+        ],
+        "wins": 36950,
+        "wins_file": "hole-preservation-outcomes/simple_eight.selected_soft.wins.u8.gz",
+        "wins_sha256": "47ac6eb0cc25aa1422377c36b0ef8bc5cbbc9d8bd33d70f9392e9a44ce7a1636"
+      },
+      "strict": {
+        "cutoffs": 0,
+        "deals": 250000,
+        "foundation_cards": 2159187,
+        "foundation_cards_squared": 53581281,
+        "foundations_file": "hole-preservation-outcomes/simple_eight.strict.foundations.u8.gz",
+        "foundations_sha256": "6769af112f77bb3dce096d517789572eb2eeca5b8ecdddba39703f545e82218d",
+        "mean_foundation_cards": 8.636748,
+        "mean_foundation_cards_95_ci": [
+          8.590410305772725,
+          8.683085694227277
+        ],
+        "mean_steps": 62.470244,
+        "paired_vs_baseline": {
+          "b_candidate_wins_baseline_loses": 4015,
+          "bonferroni_familywise_95_ci_percentage_points": [
+            -9.096449753088985,
+            -8.741150246911017
+          ],
+          "c_baseline_wins_candidate_loses": 26312,
+          "deals": 250000,
+          "delta_percentage_points": -8.918800000000001,
+          "discordant_deals": 30327,
+          "familywise_comparisons": 6,
+          "net_wins": -22297,
+          "paired_normal_95_ci_percentage_points": [
+            -9.050776180419279,
+            -8.786823819580722
+          ],
+          "standard_error_percentage_points": 0.0673360232434319
+        },
+        "penalty": 0.0,
+        "rule": "strict",
+        "steps": 15617561,
+        "win_rate": 0.058612,
+        "win_rate_wilson_95_ci": [
+          0.05769798469339263,
+          0.059539579688786884
+        ],
+        "wins": 14653,
+        "wins_file": "hole-preservation-outcomes/simple_eight.strict.wins.u8.gz",
+        "wins_sha256": "baeb54fd07f8215550d11ea499ee0aca3572b71c4ef6307a42776917ac356c4e"
+      }
+    },
+    "visible": {
+      "baseline": {
+        "cutoffs": 0,
+        "deals": 250000,
+        "foundation_cards": 3494077,
+        "foundation_cards_squared": 122814851,
+        "foundations_file": "hole-preservation-outcomes/visible.baseline.foundations.u8.gz",
+        "foundations_sha256": "0597920edef3014611f82981c7ad9ae3ad479293d880219b0bfec697024f5a09",
+        "mean_foundation_cards": 13.976308,
+        "mean_foundation_cards_95_ci": [
+          13.908874496677287,
+          14.043741503322712
+        ],
+        "mean_steps": 83.176456,
+        "penalty": 0.0,
+        "rule": "baseline",
+        "steps": 20794114,
+        "win_rate": 0.15694,
+        "win_rate_wilson_95_ci": [
+          0.15551942150560605,
+          0.15837112113930157
+        ],
+        "wins": 39235,
+        "wins_file": "hole-preservation-outcomes/visible.baseline.wins.u8.gz",
+        "wins_sha256": "106337caf5a2702283b423d1209bd497901a14d611fd643dda69c4b2d2a3a871"
+      },
+      "selected_soft": {
+        "cutoffs": 0,
+        "deals": 250000,
+        "foundation_cards": 3493544,
+        "foundation_cards_squared": 122778746,
+        "foundations_file": "hole-preservation-outcomes/visible.selected_soft.foundations.u8.gz",
+        "foundations_sha256": "5a3b76051ae2764c4a769715e890a554c739c3e81774d0f255434697ee145812",
+        "mean_foundation_cards": 13.974176,
+        "mean_foundation_cards_95_ci": [
+          13.906752162671614,
+          14.041599837328386
+        ],
+        "mean_steps": 83.274972,
+        "paired_vs_baseline": {
+          "b_candidate_wins_baseline_loses": 144,
+          "bonferroni_familywise_95_ci_percentage_points": [
+            -0.024799803958212293,
+            0.011999803958212294
+          ],
+          "c_baseline_wins_candidate_loses": 160,
+          "deals": 250000,
+          "delta_percentage_points": -0.0063999999999999994,
+          "discordant_deals": 304,
+          "familywise_comparisons": 6,
+          "net_wins": -16,
+          "paired_normal_95_ci_percentage_points": [
+            -0.020069232884618985,
+            0.007269232884618984
+          ],
+          "standard_error_percentage_points": 0.006974226563569612
+        },
+        "penalty": 2.0,
+        "rule": "soft",
+        "steps": 20818743,
+        "win_rate": 0.156876,
+        "win_rate_wilson_95_ci": [
+          0.15545565913308693,
+          0.1583068854786174
+        ],
+        "wins": 39219,
+        "wins_file": "hole-preservation-outcomes/visible.selected_soft.wins.u8.gz",
+        "wins_sha256": "9d916521adaae5852056ce1b46344c84c5e5e075192d37504894b43077395a8b"
+      },
+      "strict": {
+        "cutoffs": 0,
+        "deals": 250000,
+        "foundation_cards": 2121781,
+        "foundation_cards_squared": 51638741,
+        "foundations_file": "hole-preservation-outcomes/visible.strict.foundations.u8.gz",
+        "foundations_sha256": "e3dd95ab22a26f481aee4d814eaa2cf502cf6910bd1d8e4fd721c7402772079a",
+        "mean_foundation_cards": 8.487124,
+        "mean_foundation_cards_95_ci": [
+          8.44165804458461,
+          8.53258995541539
+        ],
+        "mean_steps": 70.784964,
+        "paired_vs_baseline": {
+          "b_candidate_wins_baseline_loses": 4464,
+          "bonferroni_familywise_95_ci_percentage_points": [
+            -10.247037694492734,
+            -9.872162305507265
+          ],
+          "c_baseline_wins_candidate_loses": 29613,
+          "deals": 250000,
+          "delta_percentage_points": -10.0596,
+          "discordant_deals": 34077,
+          "familywise_comparisons": 6,
+          "net_wins": -25149,
+          "paired_normal_95_ci_percentage_points": [
+            -10.198847651942167,
+            -9.920352348057834
+          ],
+          "standard_error_percentage_points": 0.07104602586605391
+        },
+        "penalty": 0.0,
+        "rule": "strict",
+        "steps": 17696241,
+        "win_rate": 0.056344,
+        "win_rate_wilson_95_ci": [
+          0.055446922439683896,
+          0.057254711640853495
+        ],
+        "wins": 14086,
+        "wins_file": "hole-preservation-outcomes/visible.strict.wins.u8.gz",
+        "wins_sha256": "6839f223ef70485d8d1ee23c4056c8424568ee36cd483b4dd636dcb9bec3fb0b"
+      }
+    }
+  },
+  "frozen_sha256": "5ecd424b44ae98026fd3f067503c5e1020417ed9f636a648d699063114a7923f",
+  "protocol_sha256": "cc3306d5e5c3576ec237aea0a3f1d86b88e666a42f90fa0b91a43a3f68bc068e",
+  "schema_version": 1,
+  "seed": 2026102799,
+  "variant": "draw3_unlimited"
+}

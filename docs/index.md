@@ -2,7 +2,7 @@
 layout: default
 title: "Solitaire Research: how rules change strategy"
 source_path: "original/strategy-guide.md"
-source_sha256: 59dde9df8d641e7bea6e2a0a00bbc60a77f714bd7227d80fd388a17c3809a523
+source_sha256: 1122fb31b66c5cf941e2ce78cb7411d9bc9cba4e4c5925b0a94e12b33fef49ac
 toc:
   - title: "The five games"
     id: "the-five-games"
@@ -12,6 +12,8 @@ toc:
     id: "a-scorecard-for-each-rule"
   - title: "Turning the scores into play"
     id: "turning-the-scores-into-play"
+  - title: "Should you preserve the last empty column?"
+    id: "preserve-a-hole"
   - title: "Vegas: what do you earn per $52 deal?"
     id: "vegas-earnings"
   - title: "Search, confirmation, and computation limits"
@@ -106,6 +108,37 @@ Uncover blocked columns, use the foundation-support test, and distinguish produc
 Unlimited draw-one allows returning later, changing waste urgency compared with a last pass, without guaranteeing progress. Under draw three, removing cards changes later packet alignment. Inspect the exposed waste card; one-card stock habits need rethinking.
 
 Some buried draw-three packet cards were never exposed on top. Their identities are not automatically valid memory features. Visible and eight-feature policies therefore omit all three waste-history features in every variant. Full policies can inspect hidden identities through successor scoring; their and the portfolio's rates are not established human-performance rates.
+
+## Should you preserve the last empty column? {#preserve-a-hole}
+
+**The tested soft preferences showed no clear improvement. A strict ban sharply reduced win rates for all three policies.**
+
+This follow-up tests **draw three with unlimited passes**. A move consumes the last hole exactly when the tableau has **one empty column before the move and zero afterward**. A soft preference subtracts a penalty from that move's score; the strict rule excludes it. Neither rule rewards creating a hole, penalizes going from two holes to one, or penalizes relocating a hole. Every original model weight stays fixed.
+
+For each policy, 20,000 screening deals selected the best **positive** penalty from 0.5, 1, 2, 4, 8, 16, 32. Selection used wins, then foundation cards, fewer moves, and smaller penalty. Baseline and strict results did not compete in this selection: choosing the best positive penalty does not guarantee it beats no penalty. The choices were frozen before 250,000 fresh confirmation deals, shared across all nine policy/rule combinations. These baseline rates use a new sample, so they need not match the five-rule table.
+
+| Policy | Baseline win rate | Selected penalty | Soft win rate | Soft gain (points; adjusted interval) | Strict win rate | Strict gain (points; adjusted interval) |
+|:--|:--|:--|:--|:--|:--|:--|
+| Full | 16.4892% | 1 | 16.4964% | +0.0072 (-0.023 to 0.037) | 6.0360% | −10.4532 (-10.644 to -10.263) |
+| Visible | 15.6940% | 2 | 15.6876% | −0.0064 (-0.025 to 0.012) | 5.6344% | −10.0596 (-10.247 to -9.872) |
+| Eight-feature | 14.7800% | 0.5 | 14.7800% | +0.0000 (-0.002 to 0.002) | 5.8612% | −8.9188 (-9.096 to -8.741) |
+
+The displayed paired normal intervals use a Bonferroni correction for the **six predeclared comparisons**, with approximately 95% familywise coverage under the shuffle model. Conclusions use these adjusted intervals, not the narrower marginal intervals also recorded in the data. The selected preference had an interval including zero for Full, Visible, Eight-feature. The strict rule reduced wins for Full, Visible, Eight-feature. The compact preference gained 2 deals and lost 2 relative to baseline, giving no net change in wins. With only 4 deals whose win/loss outcomes differ, its normal-approximation interval is unreliable; these counts do not establish equivalence or identical behavior.
+
+Each trajectory retains repeated-position avoidance and a 1,000-move cap. Cutoffs (baseline/soft/strict) were: Full 0/0/0; Visible 0/0/0; Eight-feature 0/0/0. The strict player stops if no eligible unseen move remains; it does not backtrack.
+
+**Human interpretation.** For the compact policy, this comparison did not resolve whether the preference helps; its adjusted interval includes zero. For the eight-feature policy, the selected penalty of 0.5 changes a waste king's last-hole score from 1 to 0.5, and a king transfer revealing a card scores 3 + h. Drawing stays at −0.5 and recycling at −1.5; **h** still counts face-down cards in the source before the move. Parking a waste king still outranks both stock actions.
+
+Only kings can fill holes. Spending the last hole may uncover a face-down card, enable a queen transfer that reopens another column, or change stock access. Unlimited passes do not remove draw-three packet effects. This experiment tests a blanket score adjustment, not those exceptions separately. Last-hole occupancy is observable, but the full policy can still inspect unknown cards. These results concern fixed computer policies; they establish neither a universal rule nor a human win-rate gain.
+
+The [protocol](https://github.com/PeterEFrancis/solitaire-research/blob/main/original/brute_force/results/hole-preservation.protocol.json), [screening results](https://github.com/PeterEFrancis/solitaire-research/blob/main/original/brute_force/results/hole-preservation.screen.json), [frozen penalties](https://github.com/PeterEFrancis/solitaire-research/blob/main/original/brute_force/results/hole-preservation.frozen.json), and [confirmation outcomes](https://github.com/PeterEFrancis/solitaire-research/blob/main/original/brute_force/results/hole-preservation.confirmation.json) record the matched experiment. The [isolated builder](https://github.com/PeterEFrancis/solitaire-research/blob/main/original/brute_force/hole_rule_native.py) and [study runner](https://github.com/PeterEFrancis/solitaire-research/blob/main/original/brute_force/hole_rule_study.py) preserve the historical engine and model files. The [independent verifier](https://github.com/PeterEFrancis/solitaire-research/blob/main/original/brute_force/verify_hole_rule_study.py) checks the saved evidence without simulating new games. From the repository root:
+
+```bash
+cd original
+python3 -m brute_force.verify_hole_rule_study
+```
+
+To repeat the experiment, build an isolated executable with `python3 -m brute_force.hole_rule_native --output /tmp/solitaire-hole-rule`, then run `python3 -m brute_force.hole_rule_study --binary /tmp/solitaire-hole-rule --build-manifest /tmp/solitaire-hole-rule.build.json --output-prefix hole-replication` from `original/`, after building the reference player as described below. A fresh output prefix preserves the original evidence.
 
 ## Vegas: what do you earn per $52 deal? {#vegas-earnings}
 

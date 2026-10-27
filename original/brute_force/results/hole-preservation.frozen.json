@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "confirmation_rules": [
+    "baseline",
+    "selected_soft",
+    "strict"
+  ],
+  "protocol_sha256": "cc3306d5e5c3576ec237aea0a3f1d86b88e666a42f90fa0b91a43a3f68bc068e",
+  "schema_version": 1,
+  "screen_sha256": "9f6a62de4ea2f4dc7a44416066a5b6cfc0f29431e8527666d6cbea29057e6c4e",
+  "selected_penalties": {
+    "full": 1.0,
+    "simple_eight": 0.5,
+    "visible": 2.0
+  }
+}

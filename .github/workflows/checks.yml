@@ -16,6 +16,7 @@ jobs:
         working-directory: original
         env:
           NATIVE_SOLVER_TEST_BINARY: ${{ github.workspace }}/original/brute_force/native_solver.variants
+          HOLE_RULE_NATIVE_TESTS: '1'
           PYTHONDONTWRITEBYTECODE: '1'
         run: python3 -m unittest discover
       - name: Test one-color research
@@ -31,5 +32,8 @@ jobs:
       - name: Verify Vegas earnings distribution
         working-directory: original
         run: python3 -m brute_force.vegas_earnings --check
+      - name: Verify last-hole preservation experiment
+        working-directory: original
+        run: python3 -m brute_force.verify_hole_rule_study
       - name: Check guide matches the numerical evidence
         run: python3 scripts/update_strategy_guide.py --check
